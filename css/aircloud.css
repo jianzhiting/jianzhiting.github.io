@@ -606,6 +606,7 @@ body {
 }
 .post-content {
   line-height: 20px;
+  padding-left: 20px;
   font-size: 15px;
   text-indent: 2em;
   color: #333333;
@@ -1149,6 +1150,7 @@ pre .javascript .function {
 }
 .toc-article ol {
   padding-left: 10px;
+  padding-right: 5px;
   cursor: pointer;
   font-size: 0;
 }

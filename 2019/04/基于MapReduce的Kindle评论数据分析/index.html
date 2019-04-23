@@ -11,7 +11,7 @@
 
     <title>
         
-        Hadoop - undefined
+        基于MapReduce的Kindle评论数据分析 - JiZiTi | 学习管理
         
     </title>
 
@@ -89,7 +89,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基于MR的Kindle评论数据分析"><span class="toc-text">基于MR的Kindle评论数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-项目简介"><span class="toc-text">1    项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-背景"><span class="toc-text">1.1    背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-项目实现目的"><span class="toc-text">1.2    项目实现目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-整体思路"><span class="toc-text">1.3    整体思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数据及集群配置说明"><span class="toc-text">2    数据及集群配置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据来源"><span class="toc-text">2.1    数据来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-数据结构说明"><span class="toc-text">2.2    数据结构说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-集群配置说明"><span class="toc-text">2.3    集群配置说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据概览"><span class="toc-text">3    数据概览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-不同时间粒度下的评论分布"><span class="toc-text">3.1    不同时间粒度下的评论分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-各阶段评分商品的评论关键词"><span class="toc-text">3.2   各阶段评分商品的评论关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-各个商品的基准平均评级"><span class="toc-text">3.3   各个商品的基准平均评级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-商品评级修正"><span class="toc-text">4    商品评级修正</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基于评论次数与整体评级的水军识别"><span class="toc-text">4.1   基于评论次数与整体评级的水军识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-基于评论时效性及帮助度的评分修正"><span class="toc-text">4.2   基于评论时效性及帮助度的评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-基于CoreNLP的评论情感识别"><span class="toc-text">4.3   基于CoreNLP的评论情感识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-基于时效性、帮助性、情感识别的书籍评分修正"><span class="toc-text">4.4   基于时效性、帮助性、情感识别的书籍评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-部分得分较高电子书列表"><span class="toc-text">4.5   部分得分较高电子书列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-总结和展望"><span class="toc-text">5    总结和展望</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-问题及总结"><span class="toc-text">5.1    问题及总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-展望"><span class="toc-text">5.2   展望</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop"><span class="toc-text">Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-项目简介"><span class="toc-text">1    项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-背景"><span class="toc-text">1.1    背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-项目实现目的"><span class="toc-text">1.2    项目实现目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-整体思路"><span class="toc-text">1.3    整体思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数据及集群配置说明"><span class="toc-text">2    数据及集群配置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据来源"><span class="toc-text">2.1    数据来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-数据结构说明"><span class="toc-text">2.2    数据结构说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-集群配置说明"><span class="toc-text">2.3    集群配置说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据概览"><span class="toc-text">3    数据概览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-不同时间粒度下的评论分布"><span class="toc-text">3.1    不同时间粒度下的评论分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-各阶段评分商品的评论关键词"><span class="toc-text">3.2   各阶段评分商品的评论关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-各个商品的基准平均评级"><span class="toc-text">3.3   各个商品的基准平均评级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-商品评级修正"><span class="toc-text">4    商品评级修正</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基于评论次数与整体评级的水军识别"><span class="toc-text">4.1   基于评论次数与整体评级的水军识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-基于评论时效性及帮助度的评分修正"><span class="toc-text">4.2   基于评论时效性及帮助度的评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-基于CoreNLP的评论情感识别"><span class="toc-text">4.3   基于CoreNLP的评论情感识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-基于时效性、帮助性、情感识别的书籍评分修正"><span class="toc-text">4.4   基于时效性、帮助性、情感识别的书籍评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-部分得分较高电子书列表"><span class="toc-text">4.5   部分得分较高电子书列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-总结和展望"><span class="toc-text">5    总结和展望</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-问题及总结"><span class="toc-text">5.1    问题及总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-展望"><span class="toc-text">5.2   展望</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -119,7 +119,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        Hadoop
+        基于MapReduce的Kindle评论数据分析
     </div>
 
     <div class="post-meta">
@@ -136,8 +136,8 @@
 </span>
 
     </div>
-    <div class="post-content ">
-        <h1 id="基于MR的Kindle评论数据分析"><a href="#基于MR的Kindle评论数据分析" class="headerlink" title="基于MR的Kindle评论数据分析"></a>基于MR的Kindle评论数据分析</h1><h2 id="1-项目简介"><a href="#1-项目简介" class="headerlink" title="1    项目简介"></a><strong>1</strong>    <strong>项目简介</strong></h2><h3 id="1-1-背景"><a href="#1-1-背景" class="headerlink" title="1.1    背景"></a><strong>1.1</strong>    <strong>背景</strong></h3><p>随着Web技术和电子商务的发展，越来越多的人会在线上对自己买过的商品发表评论。这些评论信息虽然可能会带着一些发布者的主观情感，但是能在一定程度上反映出商品的好坏以及顾客对商品的喜爱程度。基于大数据分析技术，能够从大量评论数据中分析出商品的整体评价、评论者的评论偏好等。如果能够去除评论中各种因素带来的偏差，得到的结果将能够更加准确地反映事实。</p>
+    <div class="post-content no-indent">
+        <h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><h2 id="1-项目简介"><a href="#1-项目简介" class="headerlink" title="1    项目简介"></a><strong>1</strong>    <strong>项目简介</strong></h2><h3 id="1-1-背景"><a href="#1-1-背景" class="headerlink" title="1.1    背景"></a><strong>1.1</strong>    <strong>背景</strong></h3><p>随着Web技术和电子商务的发展，越来越多的人会在线上对自己买过的商品发表评论。这些评论信息虽然可能会带着一些发布者的主观情感，但是能在一定程度上反映出商品的好坏以及顾客对商品的喜爱程度。基于大数据分析技术，能够从大量评论数据中分析出商品的整体评价、评论者的评论偏好等。如果能够去除评论中各种因素带来的偏差，得到的结果将能够更加准确地反映事实。</p>
 <p>商家得到从大量评论数据中分析出的顾客反馈后，将有助于商家进行销售策略的决策，而其他准备购买该商品的顾客也可以根据评论的反馈来帮助自己判断该商品是否值得购买。</p>
 <h3 id="1-2-项目实现目的"><a href="#1-2-项目实现目的" class="headerlink" title="1.2    项目实现目的"></a><strong>1.2</strong>    <strong>项目实现目的</strong></h3><p>基于MapReduce算法，通过不断地修改分析评论数据的标准来得到更加真实的分析结果。先通过分析不同时间粒度、不同评论星级下的评论分布以及各级评分商品的评论情况来得到数据的基本情况。在此基础上修正评分模型，剔除“水军”、对评论进行情感分析，结合时效性和帮助性来得到更加真实准确的评论情况。</p>
 <h3 id="1-3-整体思路"><a href="#1-3-整体思路" class="headerlink" title="1.3    整体思路"></a><strong>1.3</strong>    <strong>整体思路</strong></h3><p>本项目旨在分析亚马逊kindle商店1996年到2014年的百万条评论数据，修正评分模型从而得到更为真实准确的评论情况。分析过程分为以下步骤：</p>
@@ -721,13 +721,14 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
     </ul>
     
     <p>
-        <span id="busuanzi_container_site_pv">
+	to work harder
+        <!-- <span id="busuanzi_container_site_pv">
             <span id="busuanzi_value_site_pv"></span>PV
         </span>
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a> --></p>
 </footer>
 
 
@@ -780,7 +781,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <script src="/js/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Hadoop',
+        id: '基于MapReduce的Kindle评论数据分析',
         owner: 'aircloud',
         repo: 'hexo-aircloud-blog',
         oauth: {
