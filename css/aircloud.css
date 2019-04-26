@@ -10,6 +10,14 @@ html {
 body {
   margin-left: calc(100vw - 100%) !important;
 }
+table{
+  width: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+table th{
+  text-align:left;
+}
 .red {
   color: red;
 }

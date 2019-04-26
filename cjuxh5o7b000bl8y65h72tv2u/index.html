@@ -141,20 +141,18 @@
 <p>商家得到从大量评论数据中分析出的顾客反馈后，将有助于商家进行销售策略的决策，而其他准备购买该商品的顾客也可以根据评论的反馈来帮助自己判断该商品是否值得购买。</p>
 <h3 id="1-2-项目实现目的"><a href="#1-2-项目实现目的" class="headerlink" title="1.2    项目实现目的"></a><strong>1.2</strong>    <strong>项目实现目的</strong></h3><p>基于MapReduce算法，通过不断地修改分析评论数据的标准来得到更加真实的分析结果。先通过分析不同时间粒度、不同评论星级下的评论分布以及各级评分商品的评论情况来得到数据的基本情况。在此基础上修正评分模型，剔除“水军”、对评论进行情感分析，结合时效性和帮助性来得到更加真实准确的评论情况。</p>
 <h3 id="1-3-整体思路"><a href="#1-3-整体思路" class="headerlink" title="1.3    整体思路"></a><strong>1.3</strong>    <strong>整体思路</strong></h3><p>本项目旨在分析亚马逊kindle商店1996年到2014年的百万条评论数据，修正评分模型从而得到更为真实准确的评论情况。分析过程分为以下步骤：</p>
-<p>（1）  针对评论原始数据（一级数据）进行分析，得到不同时间粒度下的评论分布、各个阶段评论的词云等二级数据。</p>
-<p>（2）  求出不同标准下的各个商品的平均评级作为基准对比数据。</p>
-<p>（3）  在基准数据的基础上，识别出评论中的“水军”，根据帮助度和时效性确定每条评论评级的权重，对评论进行情感识别分析，去除不同人之间的偏好评分差异，修正评分模型，重新对一级数据进行分析，得到更加准确的结果。</p>
+<p>（1）  针对评论原始数据（一级数据）进行分析，得到不同时间粒度下的评论分布、各个阶段评论的词云等二级数据。<br>（2）  求出不同标准下的各个商品的平均评级作为基准对比数据。<br>（3）  在基准数据的基础上，识别出评论中的“水军”，根据帮助度和时效性确定每条评论评级的权重，对评论进行情感识别分析，去除不同人之间的偏好评分差异，修正评分模型，重新对一级数据进行分析，得到更加准确的结果。</p>
 <p>以上的步骤都是基于Hadoop MapReduce编程求解，得出分析结果后使用Python制作出图表。</p>
 <p>最后，本文列出了各个阶段的分析结果。</p>
 <h2 id="2-数据及集群配置说明"><a href="#2-数据及集群配置说明" class="headerlink" title="2    数据及集群配置说明"></a><strong>2</strong>    <strong>数据及集群配置说明</strong></h2><h3 id="2-1-数据来源"><a href="#2-1-数据来源" class="headerlink" title="2.1    数据来源"></a><strong>2.1</strong>    <strong>数据来源</strong></h3><p>我们从kaggle网站下载了有关亚马逊的kindle商店产品的评论数据，评论时间从1996年5月到2014年7月，总共982619条，其中每个评论者至少发布了5条评论，每个产品都至少有5条评论。</p>
-<h3 id="2-2-数据结构说明"><a href="#2-2-数据结构说明" class="headerlink" title="2.2    数据结构说明"></a><strong>2.2</strong>    <strong>数据结构说明</strong></h3><p><strong>数据格式**</strong>;** json</p>
+<h3 id="2-2-数据结构说明"><a href="#2-2-数据结构说明" class="headerlink" title="2.2    数据结构说明"></a><strong>2.2</strong>    <strong>数据结构说明</strong></h3><p><strong>数据格式:</strong> json</p>
 <p><strong>数据字段：</strong></p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>名称</th>
-<th>解释</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -213,7 +211,7 @@
 <tbody>
 <tr>
 <td>Master</td>
-<td>192.168.1.246</td>
+<td>192.168.1.246$\quad$</td>
 <td>Core i5 双核   RAM:12GB</td>
 </tr>
 <tr>
@@ -271,7 +269,7 @@
 <h3 id="3-1-不同时间粒度下的评论分布"><a href="#3-1-不同时间粒度下的评论分布" class="headerlink" title="3.1    不同时间粒度下的评论分布"></a><strong>3.1</strong>    <strong>不同时间粒度下的评论分布</strong></h3><p>首先，在该案例中，我们首先需要了解在不同时间下评论数目的分布，从而对用户的活跃情况有一个初步认识，因为评论数目一定程度上影响了Kindle书籍的销售数目，因此提高Kindle用户的活跃度，可以提高Kindle书籍的销售情况。</p>
 <p>具体处理流程如下：</p>
 <p>1.入初始数据，根据评论的UNIX时间戳进行统计，以天作为时间粒度（原始数据中UNIX时间戳缺乏精细到小时的数据），统计出不同日期的评论数目。用例如下：</p>
-<p><strong>·参考代码**</strong>CommentCountByDate.java**</p>
+<p><strong>·参考代码</strong> <strong>CommentCountByDate.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: 2000-03-05(评论日期)   value: 1（评论次数）</p>
 <p>2.在获取以天作为时间粒度，2000~2014年不同日期的评论数目后，利用Python统计出不同年份、月份、工作日的日平均评论数目：</p>
@@ -285,7 +283,7 @@
 <p>因此，Kindle销售部门可在8-12月份增加促销活动；在周日、周一等人们有较多空闲的时间，增加商品推送，从而，提高Kindle书籍销量。</p>
 <h3 id="3-2-各阶段评分商品的评论关键词"><a href="#3-2-各阶段评分商品的评论关键词" class="headerlink" title="3.2   各阶段评分商品的评论关键词"></a><strong>3.2</strong>   <strong>各阶段评分商品的评论关键词</strong></h3><p>在获取不同商品的评分后，为分析不同评论的内容对商品评分的影响 ，我们根据商品评分的不同划分为五个区间 [1,2), [2,3), [3,4), [4,5)，[5,5]根据TF-IDF方法提取出每个评论的关键词，并统计不同评分区间下关键词的分布，绘制成图云加以展示。</p>
 <p>具体处理流程如下：</p>
-<p><strong>·参考代码**</strong>CommentTermFrequency.java**</p>
+<p><strong>·参考代码</strong> <strong>CommentTermFrequency.java</strong></p>
 <p>1.在对评论进行分词并去除stopword后，计算出其词频；</p>
 <script type="math/tex; mode=display">
 TF = \frac{在某一条评论中单词w出现的次数}{该评论中去除stopword后的所有单词的数目}</script><p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
@@ -309,18 +307,13 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <p>•   在二星、三星评价的商品中，多为waste、horrible、deleted等负面词语，与我们的认知相一致；</p>
 <p>•   在四星、五星评价的商品中，多为recipes、diet等食谱类的描述词语，可能食谱类书籍评分均较高；同时还存在着部分cute、Christmas、children、kids等词语，可能儿童类书籍评分较高。</p>
 <h3 id="3-3-各个商品的基准平均评级"><a href="#3-3-各个商品的基准平均评级" class="headerlink" title="3.3   各个商品的基准平均评级"></a><strong>3.3</strong>   <strong>各个商品的基准平均评级</strong></h3><p>读入原始数据，以商品编号作为键，商品评级作为值，利用MapReduce计算每种商品的平均评级：</p>
-<p><strong>·参考代码**</strong>Overall.java**</p>
+<p><strong>·参考代码</strong> <strong>Overall.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.89（商品评级）</p>
 <p>得到每种商品的平均评级，部分示例如下：</p>
-<p>B000QCS8YM 5.0 </p>
-<p>B000QFOD8E 3.5 </p>
-<p>B000QUCOB2 4.285714 </p>
-<p>B000R3NNAE 4.4444447 </p>
-<p>B000R93D4Y 3.96 </p>
-<p>B000R93D8U 3.5 </p>
+<p>B000QCS8YM 5.0<br>B000QFOD8E 3.5<br>B000QUCOB2 4.285714<br>B000R3NNAE 4.4444447<br>B000R93D4Y 3.96<br>B000R93D8U 3.5 </p>
 <p>之后利用商品及其评级，统计各阶段评级的商品总数，商品最终评级视为评级整数部的数值大小：</p>
-<p><strong>·参考代码**</strong>CountOverall.java**</p>
+<p><strong>·参考代码</strong> <strong>CountOverall.java</strong></p>
 <p><strong>输入：</strong>B000F83SZQ  4.89 </p>
 <p><strong>输出：</strong>key: 1（商品等级）  value: 64（商品数量） </p>
 <p>利用Python统计出评级各阶段的商品总数目，并绘制成柱状图如下（Python代码：print_models.py）：</p>
@@ -351,12 +344,12 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 </div>
 <p>从上图中可以看出，Kindle的各商品评级普遍较高，集中在4星左右，一星和二星的商品较少，存在一定数量的5星商品。</p>
 <h2 id="4-商品评级修正"><a href="#4-商品评级修正" class="headerlink" title="4    商品评级修正"></a><strong>4</strong>    <strong>商品评级修正</strong></h2><h3 id="4-1-基于评论次数与整体评级的水军识别"><a href="#4-1-基于评论次数与整体评级的水军识别" class="headerlink" title="4.1   基于评论次数与整体评级的水军识别"></a><strong>4.1</strong>   <strong>基于评论次数与整体评级的水军识别</strong></h3><p>1.利用之前写的统计不同日期评论数的代码，增加条件，筛选出评论数超过20条的记录。</p>
-<p><strong>·参考代码**</strong>CommentCountByDateOver20.java**</p>
+<p><strong>·参考代码</strong> <strong>CommentCountByDateOver20.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: 2000-03-05   value: 1 </p>
 <p>2.输入原始数据，计算每位评论者每天的评论总数，当一位评论者在一天之内评论总数超过一定数目α，或者评论总数占比当天评论总数超过某个阈值β，我们怀疑该评论者可能是职业刷评人员，最后用函数整理结果，得到这些人的评论ID。</p>
 <script type="math/tex; mode=display">
-某人当天评论数 > \alpha \quad||\quad\frac{某人当天评论数}{当天评论总数} > \beta</script><p><strong>·参考代码**</strong>IsPaidPoster1.java**</p>
+某人当天评论数 > \alpha \quad||\quad\frac{某人当天评论数}{当天评论总数} > \beta</script><p><strong>·参考代码</strong> <strong>IsPaidPoster1.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: 2014-05-05,A1F6404F1VG29J   value: 20 </p>
 <p>设置α=15，β=0.25，得到潜在刷评人员60人，部分ID示例如下：</p>
@@ -367,7 +360,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 某人所有评论评级的均值>4.9\quad ||\quad某人所有评论评级的均值<0.1 \\
 某人所有评论评级的方差 < 0.1 \\
 某人所有评论评级的数目 > 100
-\end{cases}</script><p><strong>·参考代码**</strong>IsPaidPoster2.java**</p>
+\end{cases}</script><p><strong>·参考代码</strong> <strong>IsPaidPoster2.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: A12E0W3IY6RJM   value: 4.9606986  0.037756715 </p>
 <p>最终得到潜在恶评人员144位，他们的部分ID如下：</p>
@@ -406,7 +399,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 </table>
 </div>
 <p>利用之前写的统计每种商品的平均评级的代码Overall.java，增加条件，剔除水军的评论，确保每条评论的有效性。得到新的每种商品的评论评级。</p>
-<p><strong>·参考代码**</strong>OverallClean.java**</p>
+<p><strong>·参考代码</strong> <strong>OverallClean.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.25（商品评级）</p>
 <p>利用商品及其评级，重新统计各阶段评级的商品总数，商品评级整数部的数值大小视为最终评级。</p>
@@ -449,7 +442,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 针对同一商品，每条评论评级的权重为\frac{ax_i + by_i}{(ax_1 + by_1 + \cdots + ax_n + by_n)}
 \end{cases}\\
 其中，帮助度为x,时效性为y</script><p>设置帮助度系数a=1，时效性系数为b=1，即，我们认为帮助度与时效性同等重要。</p>
-<p><strong>·参考代码**</strong>OverallWeights.java**</p>
+<p><strong>·参考代码</strong> <strong>OverallWeights.java</strong></p>
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.249840640960779（商品评级）</p>
 <p>利用商品及其评级，重新统计各阶段评级的商品总数，商品评级整数部的数值大小视为最终评级。</p>
@@ -523,7 +516,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <p>经过不断的调整，四星级商品数在逐渐下滑到三星级，一星级、二星级商品数也有微量增多，我们的评级系统变得越来越严格。</p>
 <p>同时，我们观察到评级为5的商品数目在剔除水军后增加了一部分，我们分析可能是有竞争对手恶意刷评导致评分下降。然而进行了权重修改后评级为5的商品数目没有改动，这是因为评级为5的商品必须符合每条评论均为5星，这样，无论我们如何修改权重，都无法改变商品的评级。</p>
 <p>另外，我们认为评论数与销售量在一定程度上成正比，所以我们将平均评论量类比为商品受欢迎程度，以下是各阶段商品的平均评论条数（保留两位小数）。</p>
-<p><strong>·参考代码**</strong>AvgReview.java**</p>
+<p><strong>·参考代码</strong> <strong>AvgReview.java</strong></p>
 <p><img src="/img/hadoop/overallAvgReview.png" alt="img"></p>
 <div class="table-container">
 <table>
@@ -582,18 +575,18 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <table>
 <thead>
 <tr>
-<th>商品编号</th>
+<th style="text-align:left">商品编号</th>
 <th>评论者ID</th>
-<th>原评级</th>
-<th>矫正评级</th>
+<th style="text-align:left">原评级</th>
+<th style="text-align:left">矫正评级</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>B000FA64PA</td>
+<td style="text-align:left">B000FA64PA</td>
 <td>AQZH7YTWQPOBE</td>
-<td>4</td>
-<td>2</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
 </tr>
 </tbody>
 </table>
@@ -621,7 +614,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 </div>
 <p>内容：Excellent! Very well written story, very exciting with LOTS of action. The bad guys trying to kill Leia and Han. Viki Shesh is introduced.</p>
 <h3 id="4-4-基于时效性、帮助性、情感识别的书籍评分修正"><a href="#4-4-基于时效性、帮助性、情感识别的书籍评分修正" class="headerlink" title="4.4   基于时效性、帮助性、情感识别的书籍评分修正"></a><strong>4.4</strong>   <strong>基于时效性、帮助性、情感识别的书籍评分修正</strong></h3><p>依据情感分析得到的矫正评级，以及原评级，综合之前的纠正方法，重新计算情绪分析1000条数据的商品评级。</p>
-<p><strong>·参考代码**</strong>OverallSentiment.java**</p>
+<p><strong>·参考代码</strong> <strong>OverallSentiment.java</strong></p>
 <p>得到新的对比数据：各评级商品数目、各评级平均评论量，结果如下：</p>
 <div class="table-container">
 <table>
