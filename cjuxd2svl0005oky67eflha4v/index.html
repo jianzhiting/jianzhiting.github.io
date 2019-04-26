@@ -11,7 +11,7 @@
 
     <title>
         
-        JiZiTi | 学习管理
+        资料收集 - JiZiTi | 学习管理
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li class="active">
+            <li>
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -113,80 +117,34 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        资料收集
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-04-25 18:02:18</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#生活" title="生活">生活</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>04-25</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cjuxd2svl0005oky67eflha4v/">
-                        <span>
-                            资料收集
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>04-22</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cjuxd2sx7000boky6ygy3hr29/">
-                        <span>
-                            基于MapReduce的Kindle评论数据分析
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>04-22</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cjuxd2sv60002oky6orua8pn4/">
-                        <span>
-                            Markdown公式合集
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li>
-            <span>04-19</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cjuxd2sul0000oky66d0swm9g/">
-                        <span>
-                            Hexo
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+    </div>
+    <div class="post-content no-indent">
+        <p>艺术</p>
+<p>运动</p>
 
-    </ul>
-</div>
-
+        
+        <br>
+        <div id="gitalk-container">
+        </div>
+    </div>
 </div>
     </div>
 </div>
@@ -262,12 +220,14 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+<script src="/js/gitment.js"></script>
 
 
 </html>
