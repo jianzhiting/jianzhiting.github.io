@@ -6,6 +6,8 @@ body,
 html {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 body {
   margin-left: calc(100vw - 100%) !important;
