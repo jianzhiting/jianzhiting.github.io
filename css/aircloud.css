@@ -1004,6 +1004,7 @@ pre code {
 }
 .highlight .line {
   height: 20px;
+  font-family: consolas;
 }
 .gutter {
   -webkit-user-select: none;
