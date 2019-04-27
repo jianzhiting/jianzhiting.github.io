@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="2333333333">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        基于MapReduce的Kindle评论数据分析 - JiZiTi | 学习管理
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> to be better </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>JiZiTi</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hadoop"><span class="toc-text">Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-项目简介"><span class="toc-text">1    项目简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-背景"><span class="toc-text">1.1    背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-项目实现目的"><span class="toc-text">1.2    项目实现目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-整体思路"><span class="toc-text">1.3    整体思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数据及集群配置说明"><span class="toc-text">2    数据及集群配置说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-数据来源"><span class="toc-text">2.1    数据来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-数据结构说明"><span class="toc-text">2.2    数据结构说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-集群配置说明"><span class="toc-text">2.3    集群配置说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数据概览"><span class="toc-text">3    数据概览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-不同时间粒度下的评论分布"><span class="toc-text">3.1    不同时间粒度下的评论分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-各阶段评分商品的评论关键词"><span class="toc-text">3.2   各阶段评分商品的评论关键词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-各个商品的基准平均评级"><span class="toc-text">3.3   各个商品的基准平均评级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-商品评级修正"><span class="toc-text">4    商品评级修正</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-基于评论次数与整体评级的水军识别"><span class="toc-text">4.1   基于评论次数与整体评级的水军识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-基于评论时效性及帮助度的评分修正"><span class="toc-text">4.2   基于评论时效性及帮助度的评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-基于CoreNLP的评论情感识别"><span class="toc-text">4.3   基于CoreNLP的评论情感识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-基于时效性、帮助性、情感识别的书籍评分修正"><span class="toc-text">4.4   基于时效性、帮助性、情感识别的书籍评分修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-部分得分较高电子书列表"><span class="toc-text">4.5   部分得分较高电子书列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-总结和展望"><span class="toc-text">5    总结和展望</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-问题及总结"><span class="toc-text">5.1    问题及总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-展望"><span class="toc-text">5.2   展望</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> to be better </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        基于MapReduce的Kindle评论数据分析
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-04-22 15:47:21</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#专业课" title="专业课">专业课</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h1><h2 id="1-项目简介"><a href="#1-项目简介" class="headerlink" title="1    项目简介"></a><strong>1</strong>    <strong>项目简介</strong></h2><h3 id="1-1-背景"><a href="#1-1-背景" class="headerlink" title="1.1    背景"></a><strong>1.1</strong>    <strong>背景</strong></h3><p>随着Web技术和电子商务的发展，越来越多的人会在线上对自己买过的商品发表评论。这些评论信息虽然可能会带着一些发布者的主观情感，但是能在一定程度上反映出商品的好坏以及顾客对商品的喜爱程度。基于大数据分析技术，能够从大量评论数据中分析出商品的整体评价、评论者的评论偏好等。如果能够去除评论中各种因素带来的偏差，得到的结果将能够更加准确地反映事实。</p>
+<p>商家得到从大量评论数据中分析出的顾客反馈后，将有助于商家进行销售策略的决策，而其他准备购买该商品的顾客也可以根据评论的反馈来帮助自己判断该商品是否值得购买。</p>
+<h3 id="1-2-项目实现目的"><a href="#1-2-项目实现目的" class="headerlink" title="1.2    项目实现目的"></a><strong>1.2</strong>    <strong>项目实现目的</strong></h3><p>基于MapReduce算法，通过不断地修改分析评论数据的标准来得到更加真实的分析结果。先通过分析不同时间粒度、不同评论星级下的评论分布以及各级评分商品的评论情况来得到数据的基本情况。在此基础上修正评分模型，剔除“水军”、对评论进行情感分析，结合时效性和帮助性来得到更加真实准确的评论情况。</p>
+<h3 id="1-3-整体思路"><a href="#1-3-整体思路" class="headerlink" title="1.3    整体思路"></a><strong>1.3</strong>    <strong>整体思路</strong></h3><p>本项目旨在分析亚马逊kindle商店1996年到2014年的百万条评论数据，修正评分模型从而得到更为真实准确的评论情况。分析过程分为以下步骤：</p>
+<p>（1）  针对评论原始数据（一级数据）进行分析，得到不同时间粒度下的评论分布、各个阶段评论的词云等二级数据。<br>（2）  求出不同标准下的各个商品的平均评级作为基准对比数据。<br>（3）  在基准数据的基础上，识别出评论中的“水军”，根据帮助度和时效性确定每条评论评级的权重，对评论进行情感识别分析，去除不同人之间的偏好评分差异，修正评分模型，重新对一级数据进行分析，得到更加准确的结果。</p>
+<p>以上的步骤都是基于Hadoop MapReduce编程求解，得出分析结果后使用Python制作出图表。</p>
+<p>最后，本文列出了各个阶段的分析结果。</p>
+<h2 id="2-数据及集群配置说明"><a href="#2-数据及集群配置说明" class="headerlink" title="2    数据及集群配置说明"></a><strong>2</strong>    <strong>数据及集群配置说明</strong></h2><h3 id="2-1-数据来源"><a href="#2-1-数据来源" class="headerlink" title="2.1    数据来源"></a><strong>2.1</strong>    <strong>数据来源</strong></h3><p>我们从kaggle网站下载了有关亚马逊的kindle商店产品的评论数据，评论时间从1996年5月到2014年7月，总共982619条，其中每个评论者至少发布了5条评论，每个产品都至少有5条评论。</p>
+<h3 id="2-2-数据结构说明"><a href="#2-2-数据结构说明" class="headerlink" title="2.2    数据结构说明"></a><strong>2.2</strong>    <strong>数据结构说明</strong></h3><p><strong>数据格式:</strong> json</p>
+<p><strong>数据字段：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asin</td>
+<td>产品编号</td>
+</tr>
+<tr>
+<td>helpful</td>
+<td>评论是否有帮助</td>
+</tr>
+<tr>
+<td>overall</td>
+<td>产品评级</td>
+</tr>
+<tr>
+<td>reviewText</td>
+<td>评论内容</td>
+</tr>
+<tr>
+<td>reviewTime</td>
+<td>评论时间</td>
+</tr>
+<tr>
+<td>reviewerID</td>
+<td>评论者ID</td>
+</tr>
+<tr>
+<td>reviewerName</td>
+<td>评论者名称</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>评论内容的概括</td>
+</tr>
+<tr>
+<td>unixReviewTime</td>
+<td>时间戳</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注：helpful：[m,n]表示有n个人对这条评论进行了评价，其中m个人认为这条评论有帮助。</p>
+<p><strong>数据实例：</strong></p>
+<p>{“reviewerID”:”A1F6404F1VG29J”,”asin”:”B000F83SZQ”, reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”}</p>
+<h3 id="2-3-集群配置说明"><a href="#2-3-集群配置说明" class="headerlink" title="2.3    集群配置说明"></a><strong>2.3</strong>    <strong>集群配置说明</strong></h3><p><strong>集群搭建情况：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>机器名称</th>
+<th>IP地址</th>
+<th>硬件配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Master</td>
+<td>192.168.1.246$\quad$</td>
+<td>Core i5 双核   RAM:12GB</td>
+</tr>
+<tr>
+<td>Slaver0</td>
+<td>192.168.1.243</td>
+<td>Core i5 双核   RAM:8GB</td>
+</tr>
+<tr>
+<td>Slaver1</td>
+<td>192.168.1.245</td>
+<td>Core i5 双核 RAM:8GB</td>
+</tr>
+<tr>
+<td>Slaver2</td>
+<td>192.168.1.247</td>
+<td>Core i5 双核   RAM:8GB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>软件：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th><strong>版本</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hadoop</td>
+<td>2.9.0</td>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td>16.04.5</td>
+</tr>
+<tr>
+<td>VMware Workstation Pro</td>
+<td>12.1.0</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.6.4</td>
+</tr>
+<tr>
+<td>Maven</td>
+<td>3.6.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-数据概览"><a href="#3-数据概览" class="headerlink" title="3    数据概览"></a><strong>3</strong>    <strong>数据概览</strong></h2><p>经统计，共有评论者68223人，商品61934种。同时，没有同一评论者为同一商品留评超过两次。</p>
+<h3 id="3-1-不同时间粒度下的评论分布"><a href="#3-1-不同时间粒度下的评论分布" class="headerlink" title="3.1    不同时间粒度下的评论分布"></a><strong>3.1</strong>    <strong>不同时间粒度下的评论分布</strong></h3><p>首先，在该案例中，我们首先需要了解在不同时间下评论数目的分布，从而对用户的活跃情况有一个初步认识，因为评论数目一定程度上影响了Kindle书籍的销售数目，因此提高Kindle用户的活跃度，可以提高Kindle书籍的销售情况。</p>
+<p>具体处理流程如下：</p>
+<p>1.入初始数据，根据评论的UNIX时间戳进行统计，以天作为时间粒度（原始数据中UNIX时间戳缺乏精细到小时的数据），统计出不同日期的评论数目。用例如下：</p>
+<p><strong>·参考代码</strong> <strong>CommentCountByDate.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: 2000-03-05(评论日期)   value: 1（评论次数）</p>
+<p>2.在获取以天作为时间粒度，2000~2014年不同日期的评论数目后，利用Python统计出不同年份、月份、工作日的日平均评论数目：</p>
+<p>将统计结果绘制成折线图如下:</p>
+<p><img src="/img/hadoop/output_3_0.png" alt="img"></p>
+<p>从上图中可以看出，Kindle的评论数目自从2010年开始呈现井喷式增长，最终在2014年达到日平均数目为2000次。这可能是因为随着移动互联网的发展，更多的人选择在kindle上购买电子书；</p>
+<p><img src="/img/hadoop/output_4_0.png" alt="img"></p>
+<p>从上图中可以看出，日平均评论数目在1月份至7月份在525次上下波动；在8-12月份与之前相比显著下降，但仍然呈现出回升趋势。这可能是因为人们在年初的时候会一次性购买今年要阅读的书籍；</p>
+<p><img src="/img/hadoop/output_5_0.png" alt="img"></p>
+<p>从上图中可以看出，在周日、周一时，日平均评论数目与平时相比较高。这可能是因为在周日、周一等人们有较多空闲的时间来阅读书籍和对书籍进行评论。</p>
+<p>因此，Kindle销售部门可在8-12月份增加促销活动；在周日、周一等人们有较多空闲的时间，增加商品推送，从而，提高Kindle书籍销量。</p>
+<h3 id="3-2-各阶段评分商品的评论关键词"><a href="#3-2-各阶段评分商品的评论关键词" class="headerlink" title="3.2   各阶段评分商品的评论关键词"></a><strong>3.2</strong>   <strong>各阶段评分商品的评论关键词</strong></h3><p>在获取不同商品的评分后，为分析不同评论的内容对商品评分的影响 ，我们根据商品评分的不同划分为五个区间 [1,2), [2,3), [3,4), [4,5)，[5,5]根据TF-IDF方法提取出每个评论的关键词，并统计不同评分区间下关键词的分布，绘制成图云加以展示。</p>
+<p>具体处理流程如下：</p>
+<p><strong>·参考代码</strong> <strong>CommentTermFrequency.java</strong></p>
+<p>1.在对评论进行分词并去除stopword后，计算出其词频；</p>
+<script type="math/tex; mode=display">
+TF = \frac{在某一条评论中单词w出现的次数}{该评论中去除stopword后的所有单词的数目}</script><p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: nice B000F83SZQ+A1F6404F1VG29J   value: 0.10（词频）</p>
+<p>2.在获取该案例中评论的词频后，我们计算出每条评论中的词频-逆文件频率；</p>
+<script type="math/tex; mode=display">
+TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script><p><strong>输入：</strong>nice B000F83SZQ+A1F6404F1VG29J    0.10（上一步骤中的输出） </p>
+<p><strong>输出：</strong>nice B000F83SZQ+A1F6404F1VG29J    0.15 </p>
+<p>3.在得到每个评论中每个单词的词频-逆文件频率后，我们选取最高者，作为该评论的关键词；</p>
+<p><strong>输入：</strong>nice B000F83SZQ+A1F6404F1VG29J    0.15 （上一步骤中的输出）</p>
+<p><strong>输出：</strong> B000F83SZQ+A1F6404F1VG29J    nice </p>
+<p>4.在获取到每条评论的关键词后，根据该评论所评论的商品进行汇总，以降低文件大小，提高下一步骤中使用Python进行数据分析的效率；</p>
+<p><strong>输入：</strong> B000F83SZQ+A1F6404F1VG29J    nice（上一步骤中的输出） </p>
+<p><strong>输出：</strong> B000F83SZQ nice      5 </p>
+<p>5.根据前面计算出的不同商品的最终评分，利用Python对商品评论关键词的数目进行统计，得出不同评分区间下高频关键词的不同，进而分析评论内容对商品评分的影响。</p>
+<p>我们根据所得出的不同评分区间下关键词的个数，利用Python绘制成图云，如下所示：</p>
+<p><img src="/img/hadoop/level.jpg" alt="img"></p>
+<p>从左到右、从上到下分布为商品评分在[1,2), [2,3), [3,4), [4,5)，[5,5]评论关键词的词云分布图。</p>
+<p>从图中，我们可以看出：</p>
+<p>•   因为一星评价的商品比较少，所以其评论数目也较少，且通过TF-IDF识别出来的关键字中多为姓名，不具有代表性；</p>
+<p>•   在二星、三星评价的商品中，多为waste、horrible、deleted等负面词语，与我们的认知相一致；</p>
+<p>•   在四星、五星评价的商品中，多为recipes、diet等食谱类的描述词语，可能食谱类书籍评分均较高；同时还存在着部分cute、Christmas、children、kids等词语，可能儿童类书籍评分较高。</p>
+<h3 id="3-3-各个商品的基准平均评级"><a href="#3-3-各个商品的基准平均评级" class="headerlink" title="3.3   各个商品的基准平均评级"></a><strong>3.3</strong>   <strong>各个商品的基准平均评级</strong></h3><p>读入原始数据，以商品编号作为键，商品评级作为值，利用MapReduce计算每种商品的平均评级：</p>
+<p><strong>·参考代码</strong> <strong>Overall.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.89（商品评级）</p>
+<p>得到每种商品的平均评级，部分示例如下：</p>
+<p>B000QCS8YM 5.0<br>B000QFOD8E 3.5<br>B000QUCOB2 4.285714<br>B000R3NNAE 4.4444447<br>B000R93D4Y 3.96<br>B000R93D8U 3.5 </p>
+<p>之后利用商品及其评级，统计各阶段评级的商品总数，商品最终评级视为评级整数部的数值大小：</p>
+<p><strong>·参考代码</strong> <strong>CountOverall.java</strong></p>
+<p><strong>输入：</strong>B000F83SZQ  4.89 </p>
+<p><strong>输出：</strong>key: 1（商品等级）  value: 64（商品数量） </p>
+<p>利用Python统计出评级各阶段的商品总数目，并绘制成柱状图如下（Python代码：print_models.py）：</p>
+<p><img src="/img/hadoop/overallBase.png" alt="img"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>评级</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商品总数</td>
+<td>64</td>
+<td>823</td>
+<td>10734</td>
+<td>45596</td>
+<td>4717</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>从上图中可以看出，Kindle的各商品评级普遍较高，集中在4星左右，一星和二星的商品较少，存在一定数量的5星商品。</p>
+<h2 id="4-商品评级修正"><a href="#4-商品评级修正" class="headerlink" title="4    商品评级修正"></a><strong>4</strong>    <strong>商品评级修正</strong></h2><h3 id="4-1-基于评论次数与整体评级的水军识别"><a href="#4-1-基于评论次数与整体评级的水军识别" class="headerlink" title="4.1   基于评论次数与整体评级的水军识别"></a><strong>4.1</strong>   <strong>基于评论次数与整体评级的水军识别</strong></h3><p>1.利用之前写的统计不同日期评论数的代码，增加条件，筛选出评论数超过20条的记录。</p>
+<p><strong>·参考代码</strong> <strong>CommentCountByDateOver20.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: 2000-03-05   value: 1 </p>
+<p>2.输入原始数据，计算每位评论者每天的评论总数，当一位评论者在一天之内评论总数超过一定数目α，或者评论总数占比当天评论总数超过某个阈值β，我们怀疑该评论者可能是职业刷评人员，最后用函数整理结果，得到这些人的评论ID。</p>
+<script type="math/tex; mode=display">
+某人当天评论数 > \alpha \quad||\quad\frac{某人当天评论数}{当天评论总数} > \beta</script><p><strong>·参考代码</strong> <strong>IsPaidPoster1.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: 2014-05-05,A1F6404F1VG29J   value: 20 </p>
+<p>设置α=15，β=0.25，得到潜在刷评人员60人，部分ID示例如下：</p>
+<p>A320TMDV6KCFU  A2YXNKWOGHP6AW   AAK9CEYIL2XL5   A9XRB71GIX26M AKE6711D72LTX  A1RXR105ND8OSH   A2AY83K9N60V38  A5IDWDZ2L1LA AAVZOTZWVQYRV  A1BSKHVCABJFXN 3FOL8CN5A1TFR</p>
+<p>3.输入原始数据，计算每位评论者所有评级的均值与方差，当一位评论者所有评级的均值大于4.9或小于1.1，并且所有评级的方差小于0.1，这些评论均视为恶评或好评，我们怀疑这些评论者可能是恶意刷评人员，即使不是，他们的评论也具有混淆产品评级的不当影响，我们将其等同于水军。最后用函数整理结果，只得到这些人的评论编号。为了加大该处理的可信度，我们只考虑了评论总数在100以上的评论者。</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+某人所有评论评级的均值>4.9\quad ||\quad某人所有评论评级的均值<0.1 \\
+某人所有评论评级的方差 < 0.1 \\
+某人所有评论评级的数目 > 100
+\end{cases}</script><p><strong>·参考代码</strong> <strong>IsPaidPoster2.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: A12E0W3IY6RJM   value: 4.9606986  0.037756715 </p>
+<p>最终得到潜在恶评人员144位，他们的部分ID如下：</p>
+<p>A107QCQSFVT6VN    A10C4X94VN9IG8    A1141DEY00149Z    A12E0W3IY6RJMA12NCJPL1Y3AH4    A13D5S4OXQUPRM    A141H51I3H4B1S A17YQQLSTXODGV A18L0QYPXCUD8E    A18YWXFF8FFGB2    A19BBQS3X97H2B</p>
+<p>将两种处理方式汇总，我们得到了199位潜在评论不当用户，其中5位兼具刷评与恶意评论两条性质，他们的ID以及昵称如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>昵称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1ENV91MFAEVA3</td>
+<td>JoT</td>
+</tr>
+<tr>
+<td>A24F8TZ7WU4JDQ</td>
+<td>Rebecca Palmer</td>
+</tr>
+<tr>
+<td>A28MPK002D2WJ1</td>
+<td>AA</td>
+</tr>
+<tr>
+<td>A3M7QUA7XT7XIM</td>
+<td>Jr.</td>
+</tr>
+<tr>
+<td>A3PTWPKPXOG8Y5</td>
+<td>Alexis</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>利用之前写的统计每种商品的平均评级的代码Overall.java，增加条件，剔除水军的评论，确保每条评论的有效性。得到新的每种商品的评论评级。</p>
+<p><strong>·参考代码</strong> <strong>OverallClean.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.25（商品评级）</p>
+<p>利用商品及其评级，重新统计各阶段评级的商品总数，商品评级整数部的数值大小视为最终评级。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>评级</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商品总数</td>
+<td>70</td>
+<td>872</td>
+<td>11056</td>
+<td>45033</td>
+<td>4902</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们发现经过处理，商品总数减少了1个，对应的事实便是，少了的商品的全部评论均由水军带来，或者说均是我们认定的无效评论。该商品的AsinID及平均评级为：</p>
+<p>B00IT2GHAS 5.0</p>
+<p>截止2018年12月，该商品具体信息如下：</p>
+<p><img src="/img/hadoop/gay.png" alt="img"></p>
+<p>可以发现，现阶段该商品增加了许多1星评论，而且它的评级呈现5星和1星的两极化趋势，所以，该商品很可能符合我们的猜想，全部评论均由水军带来，存在不实评价的情况。</p>
+<h3 id="4-2-基于评论时效性及帮助度的评分修正"><a href="#4-2-基于评论时效性及帮助度的评分修正" class="headerlink" title="4.2   基于评论时效性及帮助度的评分修正"></a><strong>4.2</strong>   <strong>基于评论时效性及帮助度的评分修正</strong></h3><p>依据评论的帮助评分与评论时间，赋予每个评级不同帮助度与时效性的权重，重新计算剔除水军后的商品评级。</p>
+<p>输入原始数据，利用之前写的统计剔除水军后的每种商品的平均评级的代码OverallClean.java，融入每条评论评级权重信息，重新计算每种商品评级。参考参数helpful及unixReviewTime，计算每条评论的帮助度以及时效性。</p>
+<p>【帮助度】当一条评论没有帮助度时，我们将本条关于该商品的评论设为所有其他有帮助度的均值，平均其重要度。取值区间为(0, 1]；</p>
+<p>【时效性】我们用评论时间戳比上最新的2014-7-23，即unixTime=1406073600的结果再平方（以增加区别度），当做时效性的参数。取值区间为(0, 1]；</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+针对同一商品，每条评论评级的得分为ax_i + by_i \\
+针对同一商品，每条评论评级的权重为\frac{ax_i + by_i}{(ax_1 + by_1 + \cdots + ax_n + by_n)}
+\end{cases}\\
+其中，帮助度为x,时效性为y</script><p>设置帮助度系数a=1，时效性系数为b=1，即，我们认为帮助度与时效性同等重要。</p>
+<p><strong>·参考代码</strong> <strong>OverallWeights.java</strong></p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: B000F83SZQ（商品编号）  value: 4.249840640960779（商品评级）</p>
+<p>利用商品及其评级，重新统计各阶段评级的商品总数，商品评级整数部的数值大小视为最终评级。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>评级</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商品总数</td>
+<td>88</td>
+<td>1086</td>
+<td>12775</td>
+<td>43082</td>
+<td>4902</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>利用Python绘制成折线图，对比三阶段的商品评级统计结果。</p>
+<p>首先是各阶段评级商品总数（Python代码：print_zhe.py）：</p>
+<p><img src="/img/hadoop/overall.png" alt="img"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>评级</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>overall</td>
+<td>64</td>
+<td>823</td>
+<td>10724</td>
+<td>45596</td>
+<td>4717</td>
+</tr>
+<tr>
+<td>overallClean</td>
+<td>70</td>
+<td>872</td>
+<td>11056</td>
+<td>45033</td>
+<td>4902</td>
+</tr>
+<tr>
+<td>overallWeights</td>
+<td>88</td>
+<td>1086</td>
+<td>12775</td>
+<td>43082</td>
+<td>4902</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>经过不断的调整，四星级商品数在逐渐下滑到三星级，一星级、二星级商品数也有微量增多，我们的评级系统变得越来越严格。</p>
+<p>同时，我们观察到评级为5的商品数目在剔除水军后增加了一部分，我们分析可能是有竞争对手恶意刷评导致评分下降。然而进行了权重修改后评级为5的商品数目没有改动，这是因为评级为5的商品必须符合每条评论均为5星，这样，无论我们如何修改权重，都无法改变商品的评级。</p>
+<p>另外，我们认为评论数与销售量在一定程度上成正比，所以我们将平均评论量类比为商品受欢迎程度，以下是各阶段商品的平均评论条数（保留两位小数）。</p>
+<p><strong>·参考代码</strong> <strong>AvgReview.java</strong></p>
+<p><img src="/img/hadoop/overallAvgReview.png" alt="img"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>评级</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>overall</td>
+<td>7.06</td>
+<td>9.54</td>
+<td>14.64</td>
+<td>16.54</td>
+<td>6.62</td>
+</tr>
+<tr>
+<td>overallClean</td>
+<td>7.07</td>
+<td>9.53</td>
+<td>14.54</td>
+<td>16.63</td>
+<td>6.58</td>
+</tr>
+<tr>
+<td>overallWeights</td>
+<td>6.91</td>
+<td>8.91</td>
+<td>13.83</td>
+<td>16.98</td>
+<td>6.58</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>整体上分析我们发现，1~4级评级递增时，平均评论量也是依次递增的，符合了我们的假设，即评论数与销售量在一定程度上成正比。反观5星评级的商品却又有最低的评论量，我们猜测5星评级商品会更少有争议，少了大量的吐槽评论，购买者意见较为一致，会更多的选择点赞帮助评分，而不是自行评价，同时会有更多的回购用户，而回购用户往往不会进行二次评价。</p>
+<p>​    分开来看三条折线，经过不断的调整，1~4星的平均评论量递增曲线变得愈加陡峭，具体表现为评级为1~3的商品平均评论量均在不断下降，而评级为4的商品平均评论量在不断上升。评级不同，商品平均评论量的差距也在拉大。</p>
+<h3 id="4-3-基于CoreNLP的评论情感识别"><a href="#4-3-基于CoreNLP的评论情感识别" class="headerlink" title="4.3   基于CoreNLP的评论情感识别"></a><strong>4.3</strong>   <strong>基于</strong>CoreNLP的评论情感识别</h3><p>正如我们前面的发现，评级为5的商品是无论如何都不会再被降级的，那么对于那些商品普通，评论很少，评论里描述平平的，就因为仅有的几条评论就能保持5星的情况，显然是不符合实际的。这些评级本身就十分不严谨，外加已经存在评级为5星的商品却拥有最低的商品平均评论量的现状，我们意识到了每条评论的星级本身也需要具有准确性。</p>
+<p>我们还发现，每个人的评论标准都不大相同，有的人要求严格，评分整体偏低，有的人比较随意，评分忽高忽低，所以，我们有必要给出科学的评级方式，再结合原本的评级，对每条评论本身的星级进行修改。</p>
+<p>情感分析是指利用机器提取人们对某人或事物的态度，从而发现潜在的问题用于改进或预测。商品的评价分为星级评价和文本评价。星级评价和好评率在排序算法中占据重要地位。有的商家为了提升排名，采取“五星好评返现”的方式来诱导顾客好评，但实际上用户可能对商品并不满意，因此会在文本评论或者追加评论时说出对商品不满意的真实评价。因此，对评论文本进行情感分析并使用文本评论好评率来对商品进行重新排序，指导人们根据真实评价选取商品就很显得有意义。本文中，利用CoreNLP包对商品评论进行情感分析，以对商品评分进行矫正。</p>
+<p>为简化模型，我们做出如下假设：</p>
+<p>• 评论中长度最长的一句话代表该评论的情感；</p>
+<p>由于，该模型较为复杂，需要运行较长的时间，我们仅运行前1000条的评论数据。</p>
+<p><strong>·参考代码**</strong>SentimentAnalysis.java**</p>
+<p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
+<p><strong>输出：</strong>key: B000F83SZQ+A1F6404F1VG29J   value: 2 </p>
+<p>输出的value值表示评论的正负面情绪，其中，1~5分别代表极度负面、负面、中性、正面、极度正面）</p>
+<p>列出矫正示例如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">商品编号</th>
+<th>评论者ID</th>
+<th style="text-align:left">原评级</th>
+<th style="text-align:left">矫正评级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">B000FA64PA</td>
+<td>AQZH7YTWQPOBE</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>内容：This is a short story focused on Darth Maul’s role in helping the Trade Federation gain a mining colony. It’s not bad, but it’s also nothing exceptional. It’s fairly short so we don’t really get to see any characters develop. The few events that do happen seem to go by quickly, including what should have been major battles. The story is included in the novelShadow Hunter (Star Wars: Darth Maul), which is worth reading, so don’t bother to buy this one separately.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>商品编号</th>
+<th>评论者ID</th>
+<th>原评级</th>
+<th>矫正评级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B000FA64PK</td>
+<td>A2QK1U70OJ74P</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>内容：Excellent! Very well written story, very exciting with LOTS of action. The bad guys trying to kill Leia and Han. Viki Shesh is introduced.</p>
+<h3 id="4-4-基于时效性、帮助性、情感识别的书籍评分修正"><a href="#4-4-基于时效性、帮助性、情感识别的书籍评分修正" class="headerlink" title="4.4   基于时效性、帮助性、情感识别的书籍评分修正"></a><strong>4.4</strong>   <strong>基于时效性、帮助性、情感识别的书籍评分修正</strong></h3><p>依据情感分析得到的矫正评级，以及原评级，综合之前的纠正方法，重新计算情绪分析1000条数据的商品评级。</p>
+<p><strong>·参考代码</strong> <strong>OverallSentiment.java</strong></p>
+<p>得到新的对比数据：各评级商品数目、各评级平均评论量，结果如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>1000条数据处理结果</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原（商品数目）</td>
+<td>-</td>
+<td>1</td>
+<td>37</td>
+<td>50</td>
+<td>5</td>
+</tr>
+<tr>
+<td>矫正（商品数目）</td>
+<td>-</td>
+<td>10</td>
+<td>75</td>
+<td>8</td>
+<td>-</td>
+</tr>
+<tr>
+<td>原（平均评论量）</td>
+<td>-</td>
+<td>15.0</td>
+<td>9.51</td>
+<td>11.66</td>
+<td>5.6</td>
+</tr>
+<tr>
+<td>矫正（平均评论量）</td>
+<td>-</td>
+<td>10.4</td>
+<td>10.96</td>
+<td>6.5</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由于数据量较少，整体分析我们发现针对原本的处理结果，商品数目是比较吻合之前的所有数据处理结果的趋势的，即商品数目集中处于4等评级左右，但是平均评论量就与之前的趋势不符，我们认为这可能是数据量少，导致数据采集不够随机而出现的偏差，所以平均评论量的测量并不能反映样本代表总体的结果，商品数目便成为了我们分析的重点。</p>
+<p>首先，我们看到情绪分析的结果对评级结果有十分大的改动。情绪分析后评级总体呈下降趋势，许多4星商品变成了3星商品，5星商品甚至完全消失，而2级商品仅有增加却没有下降，最终商品数目的数据集中点变成了3等评级。我们认为情绪分析的结果评级为5或1是鲜少的，即评论内容想要达到极度正面或极度负面是十分困难的，所以情绪分析的结果符合我们对偏好差异的修正，结果贴合现实中极少出现一致好评或一致恶评的判断情形，呈现比较中等客观的评分情形。</p>
+<h3 id="4-5-部分得分较高电子书列表"><a href="#4-5-部分得分较高电子书列表" class="headerlink" title="4.5   部分得分较高电子书列表"></a><strong>4.5</strong>   <strong>部分得分较高电子书列表</strong></h3><p>B000QCS8YM</p>
+<p><img src="/img/hadoop/1.png" alt="img"></p>
+<p>B000UH5Z3A</p>
+<p><img src="/img/hadoop/2.png" alt="img"></p>
+<p>B002F0826C</p>
+<p><img src="/img/hadoop/3.png" alt="img"></p>
+<p>B002RHP5TK</p>
+<p><img src="/img/hadoop/4.png" alt="img"></p>
+<p>更多更好的书单请关注我们的输出结果中的OverallWeights</p>
+<h2 id="5-总结和展望"><a href="#5-总结和展望" class="headerlink" title="5    总结和展望"></a><strong>5</strong>    <strong>总结和展望</strong></h2><h3 id="5-1-问题及总结"><a href="#5-1-问题及总结" class="headerlink" title="5.1    问题及总结"></a><strong>5.1</strong>    <strong>问题及总结</strong></h3><p>问题：缺乏相对准确的客观评分，无法通过最小二乘法等估计出相对准确的各参数取值；</p>
+<p>问题：情绪分析的模型较为复杂，导致运算速度较慢，无法对全部数据进行分析，且情绪分析结果存在误差；</p>
+<p>问题：数据与当下的时间脱轨，未能完全反应当下的需求。</p>
+<p>总结：我们的项目实现了商品评论的修正，得到了相对真实的评论情况。由于缺乏相对准确的评分、及时的数据、简单有效的模型，所以导致我们的评分修正模型仍存在一定的误差。</p>
+<h3 id="5-2-展望"><a href="#5-2-展望" class="headerlink" title="5.2   展望"></a><strong>5.2</strong>   <strong>展望</strong></h3><p>· 通过人工对Kindle产品进行判断，得出相对准确的客观评分，从而通过最小二乘估计等办法，得出相对准确的参数估计值；</p>
+<p>· 优化情感分析算法，使之可以在更多的时间内能够处理更多的数据，且判断更加准确；</p>
+<p>· 搜集最近的数据，用以验证我们的评分修正模型的准确性；</p>
+<p>· 考虑用户之间的联系，通过网络自回归模型，对评分模型进行进一步的修正等。</p>
+
+        
+        <br>
+        <div id="gitalk-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+	to work harder
+        <!-- 
+	<span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> 
+	<a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+	-->
+        <a href="https://hexo.io/">Hexo</a></p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/gitment.js"></script>
+
+
+</html>
