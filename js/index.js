@@ -3,6 +3,14 @@
  * All right reserved
  * IF you have any question please email onlythen@yeah.net
  */
+// Others
+$(window).scroll(function() {
+    if ($(this).scrollTop()) {
+      $('#gotop:hidden').stop(true, true).fadeIn();
+    } else {
+      $('#gotop').stop(true, true).fadeOut();
+    }
+  });
 
 // Global functions and listeners
 window.onresize = () => {

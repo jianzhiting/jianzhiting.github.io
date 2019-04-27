@@ -18,6 +18,15 @@ table{
 table th{
   text-align:left;
 }
+#gotop{
+  position: fixed;
+  bottom: 4vh;
+  right: 1vw;
+  color: grey;
+}
+i.iconfont.icon-up-circle{
+  font-size: 25px;
+}
 .red {
   color: red;
 }
