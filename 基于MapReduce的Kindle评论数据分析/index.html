@@ -151,54 +151,7 @@
 <h2 id="2-数据及集群配置说明"><a href="#2-数据及集群配置说明" class="headerlink" title="2    数据及集群配置说明"></a><strong>2</strong>    <strong>数据及集群配置说明</strong></h2><h3 id="2-1-数据来源"><a href="#2-1-数据来源" class="headerlink" title="2.1    数据来源"></a><strong>2.1</strong>    <strong>数据来源</strong></h3><p>我们从kaggle网站下载了有关亚马逊的kindle商店产品的评论数据，评论时间从1996年5月到2014年7月，总共982619条，其中每个评论者至少发布了5条评论，每个产品都至少有5条评论。</p>
 <h3 id="2-2-数据结构说明"><a href="#2-2-数据结构说明" class="headerlink" title="2.2    数据结构说明"></a><strong>2.2</strong>    <strong>数据结构说明</strong></h3><p><strong>数据格式:</strong> json</p>
 <p><strong>数据字段：</strong></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>asin</td>
-<td>产品编号</td>
-</tr>
-<tr>
-<td>helpful</td>
-<td>评论是否有帮助</td>
-</tr>
-<tr>
-<td>overall</td>
-<td>产品评级</td>
-</tr>
-<tr>
-<td>reviewText</td>
-<td>评论内容</td>
-</tr>
-<tr>
-<td>reviewTime</td>
-<td>评论时间</td>
-</tr>
-<tr>
-<td>reviewerID</td>
-<td>评论者ID</td>
-</tr>
-<tr>
-<td>reviewerName</td>
-<td>评论者名称</td>
-</tr>
-<tr>
-<td>summary</td>
-<td>评论内容的概括</td>
-</tr>
-<tr>
-<td>unixReviewTime</td>
-<td>时间戳</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>asin:  产品编号<br>helpful:  评论是否有帮助<br>overall:  产品评级<br>reviewText:  评论内容<br>reviewTime:  评论时间<br>reviewerID:  评论者ID<br>reviewerName:  评论者名称<br>summary:  评论内容的概括<br>unixReviewTime:  时间戳</p>
 <p>注：helpful：[m,n]表示有n个人对这条评论进行了评价，其中m个人认为这条评论有帮助。</p>
 <p><strong>数据实例：</strong></p>
 <p>{“reviewerID”:”A1F6404F1VG29J”,”asin”:”B000F83SZQ”, reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”}</p>
@@ -215,7 +168,7 @@
 <tbody>
 <tr>
 <td>Master</td>
-<td>192.168.1.246$\quad$</td>
+<td>192.168.1.246</td>
 <td>Core i5 双核   RAM:12GB</td>
 </tr>
 <tr>
@@ -722,7 +675,9 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
         <span id="busuanzi_container_site_uv">
             <span id="busuanzi_value_site_uv"></span>UV
         </span> 
+----------------------------����if you are looking for my theme����---------------------------
 	<a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
 </footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="2333333333">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        数据挖掘知识整理 - JiZiTi | 学习管理
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/font_1165120_4ntyt37bahb.css" rel="stylesheet" type="text/css">
+    <!-- https://www.bootcdn.cn/mathjax/ -->
+    
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> to be better </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>JiZiTi</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据探查与预处理"><span class="toc-text">数据探查与预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多元线性回归"><span class="toc-text">多元线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑回归"><span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#决策树"><span class="toc-text">决策树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯-k近邻-SVM"><span class="toc-text">贝叶斯-k近邻-SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器的评估与不平衡分布类"><span class="toc-text">分类器的评估与不平衡分布类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#决策阈值"><span class="toc-text">决策阈值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类器的评估指标"><span class="toc-text">分类器的评估指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评估方法（验证集的划分方法）"><span class="toc-text">评估方法（验证集的划分方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#辅助图形"><span class="toc-text">辅助图形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不平衡分布类处理技术"><span class="toc-text">不平衡分布类处理技术</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> to be better </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        数据挖掘知识整理
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-04-28 08:54:09</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#专业课" title="专业课">专业课</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>简单地说，数据挖掘就是从大量数据中自动发现或“挖掘”隐藏在数据背后的有用信息的过程</p>
+<script type="math/tex; mode=display">
+数据集\begin{cases}
+    训练集 \begin{cases}
+    训练集：构建模型
+    \\
+    验证集：选择和调整模型
+    \end{cases}
+\\\\
+测试集：评估模型在新数据上的预测能力
+\end{cases}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据集的一行</th>
+<th style="text-align:center">数据集的某列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据对象</td>
+<td style="text-align:center">属性</td>
+</tr>
+<tr>
+<td style="text-align:center">实例</td>
+<td style="text-align:center">变量</td>
+</tr>
+<tr>
+<td style="text-align:center">记录</td>
+<td style="text-align:center">维</td>
+</tr>
+<tr>
+<td style="text-align:center">观测</td>
+<td style="text-align:center">特征</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>按照数据集中是否已知目标变量的取值：<ul>
+<li>预测性挖掘任务(有监督学习)<br>根据某些属性的值预测特定属性的值，往往用于对新数据的预测.<br>被预测的属性一般称为目标变量(或因变量)，用来预测的变量称为输入变量(或自变量，说明变量)</li>
+<li>描述性挖掘任务(无监督学习)<br>描述数据的特征<br>降维与可视化(数据预处理)<br>聚类分析<br>关联分析<br>孤立点检测</li>
+</ul>
+</li>
+<li>按照学习结果能否实时动态更新和应用，也是训练数据的方法<ul>
+<li>批量挖掘(线下学习)<br>先从历史数据集学习，再将学习结果应用于新数据.如果历史数据有更新，则需要重新学习.学习费事耗资源.</li>
+<li>增量学习(在线学习)<br>从顺序输入的单个或小批量数据集不断学习，每次学习都廉价快速.适用于从不断变化的数据中学习，或历史数据集太大不能全部放入内存的情况.</li>
+</ul>
+</li>
+<li>按照学习方式的不同<ul>
+<li>基于模型的学习(理性主义)</li>
+<li>基于实例的学习(经验主义)</li>
+</ul>
+</li>
+<li>按照目标变量的类型<ul>
+<li>回归(连续)<br>线性回归与多项式回归<br>分类与回归树<or>？？？</or><br>SVR<or>？？？</or><br>神经网络<br>K近邻  …</li>
+<li>分类(离散)<br>逻辑回归<br>SVM<br>决策树与随机森林<br>神经网络<br>贝叶斯<br>K近邻 …</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据探查与预处理"><a href="#数据探查与预处理" class="headerlink" title="数据探查与预处理"></a>数据探查与预处理</h2><p>数据探查的目的是：评估数据质量，发现数据问题、理解数据、为数据预处理提供依据和思路.</p>
+<h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><h2 id="贝叶斯-k近邻-SVM"><a href="#贝叶斯-k近邻-SVM" class="headerlink" title="贝叶斯-k近邻-SVM"></a>贝叶斯-k近邻-SVM</h2><h2 id="分类器的评估与不平衡分布类"><a href="#分类器的评估与不平衡分布类" class="headerlink" title="分类器的评估与不平衡分布类"></a>分类器的评估与不平衡分布类</h2><h3 id="决策阈值"><a href="#决策阈值" class="headerlink" title="决策阈值"></a>决策阈值</h3><p>二分类的决策阈值：<strong>t=0.5</strong></p>
+<h3 id="分类器的评估指标"><a href="#分类器的评估指标" class="headerlink" title="分类器的评估指标"></a>分类器的评估指标</h3><p><strong>二分类问题的混淆矩阵</strong>  </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th>预测+</th>
+<th>预测-</th>
+<th>总</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">实际+</td>
+<td>tp</td>
+<td>fn</td>
+<td>tp+fn</td>
+</tr>
+<tr>
+<td style="text-align:left">实际-</td>
+<td>fp</td>
+<td>tn</td>
+<td>fp+tn</td>
+</tr>
+<tr>
+<td style="text-align:left">总</td>
+<td>tp+fp</td>
+<td>fn+tn</td>
+<td>all</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>准确率:  (tp+tn)/all        (识别率)<br>误分类率：(fp+fn)/all</p>
+<p>Precision：返回的结果中真正和信息需求相关的文档所占的百分比tp/(tp+fp)<br>recall：所有和信息需求真正相关的文档中被检索系统返回的百分比tp/(tp+fn)</p>
+<p>真正率：tp/(tp+fn)             tp/实际+            （灵敏度）<br>真负率：tn/(fp+tn)             tn/实际-            （特指度）<br>假正率：fp/(fp+tn)             fp/实际-<br>假负率：fn/(tp+fn)             fn/实际+</p>
+<h3 id="评估方法（验证集的划分方法）"><a href="#评估方法（验证集的划分方法）" class="headerlink" title="评估方法（验证集的划分方法）"></a>评估方法（验证集的划分方法）</h3><h3 id="辅助图形"><a href="#辅助图形" class="headerlink" title="辅助图形"></a>辅助图形</h3><h3 id="不平衡分布类处理技术"><a href="#不平衡分布类处理技术" class="headerlink" title="不平衡分布类处理技术"></a>不平衡分布类处理技术</h3>
+        <a id="gotop" href="#"><i class="iconfont icon-up-circle"></i></a>
+        
+        <br>
+        <div id="gitalk-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+	to work harder
+        <!-- 
+	<span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span> 
+----------------------------����if you are looking for my theme����---------------------------
+	<a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+----------------------------------------------------------------------------------------------
+	-->
+        <a href="https://hexo.io/">Hexo</a></p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/gitment.js"></script>
+
+
+</html>
