@@ -16,7 +16,7 @@ $(window).scroll(function() {
 window.onresize = () => {
     // when window resize , we show remove some class that me be added
     // often for debug
-    if(window.document.documentElement.clientWidth > 680){
+    if(window.document.documentElement.clientWidth > 780){
         let aboutContent = document.getElementById('nav-content')
         aboutContent.classList.remove('hide-block')
         aboutContent.classList.remove('show-block');

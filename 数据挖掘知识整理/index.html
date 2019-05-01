@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据探查与预处理"><span class="toc-text">数据探查与预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多元线性回归"><span class="toc-text">多元线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑回归"><span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#决策树"><span class="toc-text">决策树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯-k近邻-SVM"><span class="toc-text">贝叶斯-k近邻-SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器的评估与不平衡分布类"><span class="toc-text">分类器的评估与不平衡分布类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#决策阈值"><span class="toc-text">决策阈值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类器的评估指标"><span class="toc-text">分类器的评估指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评估方法（验证集的划分方法）"><span class="toc-text">评估方法（验证集的划分方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#辅助图形"><span class="toc-text">辅助图形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不平衡分布类处理技术"><span class="toc-text">不平衡分布类处理技术</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据探查与预处理"><span class="toc-text">数据探查与预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据质量"><span class="toc-text">数据质量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性特征"><span class="toc-text">属性特征</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多元线性回归"><span class="toc-text">多元线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑回归"><span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#决策树"><span class="toc-text">决策树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#贝叶斯-k近邻-SVM"><span class="toc-text">贝叶斯-k近邻-SVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器的评估与不平衡分布类"><span class="toc-text">分类器的评估与不平衡分布类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#决策阈值"><span class="toc-text">决策阈值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类器的评估指标"><span class="toc-text">分类器的评估指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评估方法（验证集的划分方法）"><span class="toc-text">评估方法（验证集的划分方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#辅助图形"><span class="toc-text">辅助图形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不平衡分布类处理技术"><span class="toc-text">不平衡分布类处理技术</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -202,7 +202,423 @@
 </li>
 </ol>
 <h2 id="数据探查与预处理"><a href="#数据探查与预处理" class="headerlink" title="数据探查与预处理"></a>数据探查与预处理</h2><p>数据探查的目的是：评估数据质量，发现数据问题、理解数据、为数据预处理提供依据和思路.</p>
-<h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><h2 id="贝叶斯-k近邻-SVM"><a href="#贝叶斯-k近邻-SVM" class="headerlink" title="贝叶斯-k近邻-SVM"></a>贝叶斯-k近邻-SVM</h2><h2 id="分类器的评估与不平衡分布类"><a href="#分类器的评估与不平衡分布类" class="headerlink" title="分类器的评估与不平衡分布类"></a>分类器的评估与不平衡分布类</h2><h3 id="决策阈值"><a href="#决策阈值" class="headerlink" title="决策阈值"></a>决策阈值</h3><p>二分类的决策阈值：<strong>t=0.5</strong></p>
+<ul>
+<li><p>数据建模之前使用数据预处理技术，减少噪声、不完整和不一致数据，可以提高模型的质量，进而提高数据挖掘的有效性和准确性。一个挖掘项目中需要的数据预处理与初始数据的质量、采用的分析方法、分析目标都有关系。</p>
+</li>
+<li><p>数据清洗</p>
+<p>前三项问题可以理解为数据存在噪声</p>
+<ul>
+<li><p>处理错误或不一致的数据</p>
+</li>
+<li><p>处理缺失值</p>
+<ul>
+<li>数据缺少的主要原因<ul>
+<li>数据不可得或获取成本太大</li>
+<li>输入遗漏，理解错误，或传输错误等</li>
+<li>属性值不存在（例如未婚者的配偶）</li>
+</ul>
+</li>
+<li>处理<ul>
+<li>不做处理</li>
+<li>删除该条记录</li>
+<li>填补<ul>
+<li>人工确定值或固定值</li>
+<li>均值（中位数）或众数</li>
+<li>同类别的均值（中位数）或众数</li>
+<li>预测值：利用分类预测技术推断出最大可能取值</li>
+</ul>
+</li>
+<li>增加标识变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>识别处理孤立点</p>
+<ul>
+<li>识别<ul>
+<li>常识</li>
+<li>统计规则<br>盒图中：上下超过1.5倍箱体长度以外的点或：正太分布均值的3个标准差之外的点</li>
+<li>聚类，…</li>
+</ul>
+</li>
+<li>处理<ul>
+<li>去除</li>
+<li>视为噪声，进行平滑，盖帽法</li>
+<li>保留</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>平滑噪声数据</p>
+<p>噪声：变量取值存在的随机误差、不可理解的取值、错误、极端值</p>
+<ul>
+<li><p>分箱</p>
+<p><img src="https://mubu.com/document_image/c7b185df-0e3d-4920-b5e2-b4ab856acd2e-2734354.jpg" alt="img"></p>
+<p>分箱方法利用数据的“近邻”（即周围的值）来平滑一组有序数据的值。首先对数据进行排序，并分配到具有相同高度（每箱数据项个数相同）或宽度（等距）的不同的“箱”中；其次通过箱子的平均值（Means）、中值（Median）、或者边界值等来进行平滑处理。一种观点：通过分箱个数（分箱后为有序变量）量化变量的权重</p>
+<ul>
+<li>等高分箱：每箱数据个数相同</li>
+<li>等宽分箱：每箱的箱距相同</li>
+</ul>
+</li>
+<li><p>聚类<br>聚类后找出孤立点，确定其存在的噪声属性，修改该属性值</p>
+</li>
+<li><p>回归</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据集成</p>
+<ul>
+<li>合并多个数据源中的数据，将之存放在一个一致的数据存储中<ul>
+<li>模式集成问题 ：同名不同义，同义不同名。</li>
+<li>数据值冲突的检测与处理<br>例如：不同的计量单位、取值层次</li>
+<li>数据冗余问题</li>
+</ul>
+</li>
+<li>纵向集成和横向集成</li>
+</ul>
+</li>
+<li><p>数据消减</p>
+<p>数据消减(data reduction)的目的就是缩小所挖掘数据的规模，但却不会影响(或基本不影响)最终的挖掘结果。 Aggregation（聚合）：例如：汇总数据代替明细数据，注意汇总的粒度；</p>
+<ul>
+<li><p>维归约</p>
+<ul>
+<li><p>属性构造</p>
+<ul>
+<li>汇总属性的粒度<br>电话流失客户分月通话分钟数、电话流失客户分天通话分钟数</li>
+</ul>
+</li>
+<li><p>数据压缩（PCA、奇异值分解、小波变换等）</p>
+<p>数据压缩是使用数据编码或变换，以便得到原数据的“压缩”表示。如果根据压缩的数据集可以恢复原来的数据集，则数据压缩是无损的，否则，数据压缩是有损的。</p>
+<ul>
+<li>主成分分析<br>主成分分析是对于原先提出的所有变量，建立尽可能少的新变量，使得这些新变量是两两不相关的，而且这些新变量在反映课题的信息方面尽可能保持原有的信息</li>
+<li>小波变换</li>
+<li>奇异值分解</li>
+</ul>
+</li>
+<li><p>属性子集选择</p>
+<ul>
+<li><p>手工消除无用或无关属性</p>
+<ul>
+<li>具有唯一值或近似唯一值的变量</li>
+<li>具有单一值或近似单一值的变量</li>
+<li>可以相互转换或同意义的变量，存在函数依赖的变量</li>
+</ul>
+</li>
+<li><p>特征子集选取</p>
+<p>特征子集选取就是选取最小的特征属性集合，得到的数据挖掘结果与所有特征参加的数据挖掘结果相近或完全一致。</p>
+<ul>
+<li>和建模过程集成 （嵌入方法）<br>多元回归分析、决策树方法</li>
+<li>进行独立的选取工作（过滤方法和包装方法）<br>例如：用关联分析选取重要变量、用决策树方法选取重要变量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>行规约</p>
+<ul>
+<li>抽样<ul>
+<li>简单随机抽样（有放回和无放回）</li>
+<li>分层抽样</li>
+<li>簇抽样</li>
+<li>自适应或渐进抽样<br>Adaptive or progressive  sampling（自适应或渐进抽样）：it’sdifficulty to decide the number of observations in the sample, so at first  select little sample to mine, and thenenlarge the sample gradually and estimate the result model to get a appropriate（合适的）sample。</li>
+</ul>
+</li>
+<li>聚合</li>
+<li>聚类</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数据转换</p>
+<p>将购买量转换为  是否购买某类产品由身份证号推出身份或年龄或性别分布偏斜的取LOG，降低峰度取平方根</p>
+<ul>
+<li><p>函数变换</p>
+</li>
+<li><p>数值数据规范化处理</p>
+<p>不同变量常常具有不同的单位和不同的取值及变异程度。   例如：第1个变量的单位是kg，第2个变量的单位是cm，那么将第1个变量与第2个变量的值相加有何意义？  不同变量自身具有相差较大的变异时，会使在计算出的关系系数中，不同变量所占的比重大不相同。为了消除量纲影响和变量自身变异大小和数值大小的影响，需要将数据规范化。</p>
+<ul>
+<li><p>最小-最大规范化</p>
+<p><img src="https://mubu.com/document_image/6782eb9b-5fa6-4139-ab48-b928a0a8474c-2734354.jpg" alt="img"></p>
+<p>A属性的原取值区间[minA，maxA] 目标新区间[new_minA, new_maxA]最小-最大规范化保留了原始数据值之间的关系。但是当有新数落在原数据区之外时，该方法将面临“越界”错误。另外，该方法受到孤立点的影响可能会比较大。</p>
+</li>
+<li><p>z-score规范化（标准化）<br>将属性A的值v转换为标准化值v’​v’=(v-μ)/ σ</p>
+</li>
+<li><p>十进制缩放规范化</p>
+<p><img src="https://mubu.com/document_image/4393136a-9112-469a-896c-19166edfb284-2734354.jpg" alt="img"></p>
+<p>将每个数值除以10的相同次方取整，A的值v规范化为v’，举例如年龄分段</p>
+</li>
+</ul>
+</li>
+<li><p>数值数据离散化</p>
+<ul>
+<li>无监督离散化<ul>
+<li>二元化</li>
+<li>分箱：等高、等宽、自定义</li>
+</ul>
+</li>
+<li>有监督离散化<ul>
+<li>基于熵<br>基于熵的离散化：先分成熵总和最小的两个区间，再将熵最大的区间分成两个小区间，依次分下去直到需要的区间数。思想同二叉决策树提高算法的效率</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>类别数据的数值化与数据泛化</p>
+<ul>
+<li><p>名义变量（标称变量NOMINAL）的编码</p>
+</li>
+<li><p>有序变量（Odinal）的数值化</p>
+<ul>
+<li><p>以顺序代替原值</p>
+</li>
+<li><p>规范化（将每个rif映射到[0,1]区间）</p>
+<p><img src="https://mubu.com/document_image/0dab63b2-a8c5-45fb-ab83-389715187b44-2734354.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>类别数据的泛化<br>例如：地址：国家  省  地市   区县  街道</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>复杂数据类型的预处理：特征提取</p>
+</li>
+</ul>
+<h3 id="数据质量"><a href="#数据质量" class="headerlink" title="数据质量"></a>数据质量</h3><ul>
+<li><p>数据的可用性<br>属性含义、类型、取值单位、范围及约束说明</p>
+</li>
+<li><p>数据对应用的适合性</p>
+</li>
+<li><p>相关性、完备性、时效性</p>
+</li>
+<li><p>数据的代表性(抽样偏倚)</p>
+</li>
+<li><p>数据收集问题<br>数据的重复、缺失、不一致问题</p>
+</li>
+</ul>
+<h3 id="属性特征"><a href="#属性特征" class="headerlink" title="属性特征"></a>属性特征</h3><ul>
+<li><p>属性的含义、取值单位（粒度）</p>
+</li>
+<li><p>属性类型与测量水平</p>
+<p><img src="\img\datamining\var.png" alt="属性类型"></p>
+</li>
+<li><p>是否存在缺失值</p>
+</li>
+<li><p>描述性统计指标</p>
+</li>
+</ul>
+<h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><ul>
+<li><p>多元线性回归方程的形式和假定</p>
+<p><img src="https://mubu.com/document_image/f9dcfff5-9cb3-4a9d-9211-dedbfb445549-2734354.jpg" alt="img"></p>
+<p>其中ε代表其他所有别的因素的总和；</p>
+<ul>
+<li><p>假定X和Y之间存在线性关系：散点图、相关系数、假设检验</p>
+</li>
+<li><p>X相互独立：多重共线性检验（方差膨胀因子VIF）、变量选择法、回归优化法、pca等</p>
+</li>
+<li><p>ε独立同分布       ε ~ N（0，σ 2）</p>
+</li>
+<li><p>多项式回归</p>
+<p><img src="https://mubu.com/document_image/79239e7a-bd19-4c65-8658-45c2d2b04397-2734354.jpg" alt="img"></p>
+<p>在线性回归方程中加入输入变量的指数项（包括变量的交互项）；指数的最高值称为degree；</p>
+</li>
+</ul>
+</li>
+<li><p>方差分析与回归目标</p>
+<p><img src="https://mubu.com/document_image/f89398c4-be46-4606-8a39-09ff9bd10421-2734354.jpg" alt="img"></p>
+<ul>
+<li><p>SST（total sum of squares）总离差和：反映了数据y1,y2,…,yn的波动大小；</p>
+<p><img src="https://mubu.com/document_image/546ddf3d-4a8a-4e6d-aa0c-190f7fbbc893-2734354.jpg" alt="img"></p>
+</li>
+<li><p>SSE（error sum of squares）残差平方和：表示X不能解释的误差部分，反映除去Y与X1,X2,…,Xp-1之间的线性关系以外的因素引起的数据y1,y2,…yn的波动；</p>
+<p><img src="https://mubu.com/document_image/5326185f-5e4a-49d7-a8c4-59b859fd89dd-2734354.jpg" alt="img"></p>
+</li>
+<li><p>SSR（regression sum of squares）回归平方和：反映了线性拟合值与它们的平均值的总偏差，即由变量X1,X2,…,Xp-1的变化引起的y1,y2…,yn的波动。若SSR=0，则每个拟合值相等，即y1,y2,…,yn不随着X1,X2,…,Xp-1的变化而变化</p>
+<p><img src="https://mubu.com/document_image/2bb19d69-4eaf-4f63-b688-80e90ef85585-2734354.jpg" alt="img"></p>
+</li>
+<li><p>机器学习：MSE =SSE / n<br>MAE(平均绝对误差)</p>
+</li>
+<li><p>目标： min(MSE)（或min(SSE)）<br>成本函数（损失函数：cost（θ）=MSE （θ）</p>
+</li>
+</ul>
+</li>
+<li><p>回归参数求解</p>
+<ul>
+<li><p>最小二乘</p>
+<p>成本函数对参数求偏导，偏导为0，解方程组</p>
+<ul>
+<li><p>回归方程的矩阵形式：Y=X θ </p>
+<p><img src="https://mubu.com/document_image/0e396e67-7bea-4564-9dbd-7ec0d11188a1-2734354.jpg" alt="img"></p>
+</li>
+<li><p>自变量的相关性影响矩阵求逆</p>
+</li>
+<li><p>回归关系的显著性检验</p>
+</li>
+<li><p>回归系数的检验</p>
+</li>
+<li><p>误差项的正态性检验</p>
+</li>
+<li><p>最小二乘法矩阵求逆运算量大，所以适合于数据量小的情况</p>
+</li>
+</ul>
+</li>
+<li><p>梯度下降</p>
+<p><img src="https://mubu.com/document_image/ad00819e-6f0e-4f72-a1e3-9f5b92298fd2-2734354.jpg" alt="img"></p>
+<p>不断更新θ，使损失函数趋向最小值</p>
+<ul>
+<li><p>变动的方向：梯度负向</p>
+</li>
+<li><p>变动的大小：学习率η，学习率随着迭代减小</p>
+</li>
+<li><p>迭代次数：训练遍数epoch，设置一个较大的迭代次数，当梯度变化小于某个参数时停止迭代</p>
+</li>
+<li><p>输入变量不同取值范围的影响<br>各输入变量的取值范围差别较大时导致成本函数为椭圆盘，收敛需要更多的步数和时间。输入变量建模前需要规范化</p>
+</li>
+<li><p>批量梯度下降（Batch Gradient Desent）</p>
+<p><img src="https://mubu.com/document_image/11e8f99a-3921-4037-864b-d896ba5bf240-2734354.jpg" alt="img"></p>
+<p>θ的每次更新都需要所有训练集的实例进行计算；批量法是一定朝着正确的梯度的；</p>
+</li>
+<li><p>随机梯度下降（Stochastic Gradient Desent）<br>θ的每次更新只需要随机选择一个训练实例进行计算；成本函数收敛快，但不一定达到最小，当成本函数为不规则函数时有优势。一般学习率逐渐减小​；适合大规模数据集​</p>
+</li>
+<li><p>小批量梯度下降（ Mini-batch  Gradient Desent）<br>θ的每次更新选择一组训练实例进行计算；兼具批量梯度下降的稳定性和随机梯度下降的快速性​</p>
+</li>
+<li><p>超参：学习率；迭代次数；多项式迭代中指数的最高项degree；</p>
+</li>
+</ul>
+</li>
+<li><p>其他方法</p>
+<ul>
+<li>牛顿迭代法<br>利用目标函数f(x)的泰勒展开式并保留其线性部分来求解f(x)=0的近似解</li>
+<li>牛顿法最值优化<br>求f’(x)=0时的根，使用了二阶导数，在每轮迭代中涉及海森矩阵的求逆，计算复杂度相当高，尤其在高维问题中几乎不可行。若能以较低的计算代价寻求海森矩阵的近似逆矩阵，则可以显著降低计算的时间，这就是拟牛顿法</li>
+<li>常用的拟牛顿法有DFP、BFGS、SR1方法等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>模型评估与误差来源分析</p>
+<ul>
+<li><p>训练误差：训练集上的模型预测误差</p>
+</li>
+<li><p>泛化误差：新数据集上的模型预测误差<br>测试集的误差作为泛化误差的无偏估计</p>
+</li>
+<li><p>评估</p>
+<ul>
+<li><p>好的分类模型</p>
+<p><img src="https://mubu.com/document_image/6c85b495-859e-4423-91e0-cda43d5e2af8-2734354.jpg" alt="img"></p>
+<ul>
+<li>低训练误差</li>
+<li>低泛化误差</li>
+</ul>
+</li>
+<li><p>拟合不足（欠拟合）：</p>
+<p><img src="https://mubu.com/document_image/d3591c77-00e9-40c0-800d-17a7c5d254cd-2734354.jpg" alt="img"></p>
+<ul>
+<li>较高训练误差</li>
+<li>较高泛化误差</li>
+</ul>
+</li>
+<li><p>过拟合</p>
+<p><img src="https://mubu.com/document_image/29d78e7d-8b39-43c2-86ee-b03de63c31f3-2734354.jpg" alt="img"></p>
+<p>解决办法：简化模型</p>
+<ul>
+<li>低训练误差</li>
+<li>较高泛化误差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>回归方程的评估复相关系数</p>
+<p><img src="https://mubu.com/document_image/dbf694c3-9466-488a-8753-1973f0aa0776-2734354.jpg" alt="img"></p>
+<p>在一个包含p-1个自变量的线性回归模型中（即模型中有p个参数），其中SSEp和SSRp分别表示拟合该模型的残差平方和及回归平方和，而总平方和SST是不随p变化的一个量；复相关系数越大则该回归方程描述因变量总变化量的比例越大；回归方程中不断添加自变量时，R2的值单调递增，因此，当所有M个自变量都在回归方程中，R2   的值最大；实际应用中，当p增加时，候选模型所对应的R2值一般开始增加较快，后逐渐趋于平缓，即增加自变量已不能显著提高拟合精度，则将由较快增加到趋于平缓的分界点处的R2值所对应的那个回归方程为最优的回归方程；</p>
+</li>
+<li><p>修正的复相关系数</p>
+<p><img src="https://mubu.com/document_image/37146158-7eb2-4385-962d-033aa7865878-2734354.jpg" alt="img"></p>
+<p>Rp中没有直接考虑模型中待估参数的个数P的作用。而一个好的模型应该既能充分反映 yi（1≤i≤n）的变化，又包含较少的待估系数（因而包括较少的自变量），因此将 P的控制引入到Rp中，得到它的一个修正量Ra</p>
+</li>
+<li><p>模型误差的来源</p>
+<ul>
+<li>bias<br>模型类型的偏差，bias越大模型拟合度越低，欠拟合的可能性越大</li>
+<li>Variance<br>模型复杂度造成的偏差，模型复杂度越大，variance越大，过拟合的可能性越大</li>
+<li>Irreducibleerror<br>数据本身造成的误差，是不可减少的误差</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>回归方程选择与正则化</p>
+<p>在一定的准则下选取对因变量影响较为显著的自变量，建立一个既合理又简单实用的回归模型</p>
+<ul>
+<li><p>数据集</p>
+<p>选出最佳模型参数后，根据整个训练集重新训练模型</p>
+<ul>
+<li>训练集<ul>
+<li>训练集：练集构建模型</li>
+<li>验证集：选择和调整模型</li>
+</ul>
+</li>
+<li>测试集：评估模型在新数据上的预测能力</li>
+</ul>
+</li>
+<li><p>逐步回归法</p>
+<ul>
+<li><p>逐步回归法的基本步骤是依次拟合一系列回归方程，后一个回归方程在前一个的基础上增加或删除一个自变量</p>
+</li>
+<li><p>增加或删除某个自变量的准测用残差平方和的增加或减少量来衡量</p>
+</li>
+<li><p>一般采用偏F检验统计量</p>
+<p><img src="https://mubu.com/document_image/8ed53585-c9c9-453e-9f65-2af9405eaa2f-2734354.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+<li><p>正则化（预防过拟合）</p>
+<p>在模型拟合度和模型复杂度之间进行平衡</p>
+<ul>
+<li><p>岭回归</p>
+<p><img src="https://mubu.com/document_image/e7748df9-fc2e-4dde-8987-ba8679e73602-2734354.jpg" alt="img"></p>
+</li>
+<li><p>Lasso回归</p>
+<p><img src="https://mubu.com/document_image/e84b49e6-7a21-4861-ab60-bf7cb72ddda6-2734354.jpg" alt="img"></p>
+<p>Lasso变量筛选能力强</p>
+</li>
+<li><p>Elastic Net</p>
+<p><img src="https://mubu.com/document_image/4c0006e8-d441-4860-8258-bc9a818132a3-2734354.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>其它问题</p>
+<ul>
+<li><p>缺失值对回归的影响</p>
+</li>
+<li><p>类别变量如何加入回归方程</p>
+<ul>
+<li>名义变量的编码<ul>
+<li>one-hot编码</li>
+<li>线性回归中，为避免k个二元变量的完全线性相关，往往取消1个二元变量（其对应取值作为参照水平）</li>
+</ul>
+</li>
+<li>序数变量的编码<br>pranks(职称)：助教、讲师、副教授、教授顺序编码：  0、1、2、3</li>
+</ul>
+</li>
+<li><p>回归系数如何理解？<br>系数:  影响方向、影响量自变量增减一个单位，因变量的变动量对类别变量，则表示当前水平相对于参照水平，因变量的变动量</p>
+</li>
+<li><p>数值属性的重要性</p>
+<p>数值变量的规范化</p>
+<ul>
+<li><p>标准化<br>v’=(v-μ)/ σ</p>
+</li>
+<li><p>最大最小规范化</p>
+<p><img src="https://mubu.com/document_image/d30f4fbd-aeb4-4644-a534-12c5d2eebd1f-2734354.jpg" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h2><h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><h2 id="贝叶斯-k近邻-SVM"><a href="#贝叶斯-k近邻-SVM" class="headerlink" title="贝叶斯-k近邻-SVM"></a>贝叶斯-k近邻-SVM</h2><h2 id="分类器的评估与不平衡分布类"><a href="#分类器的评估与不平衡分布类" class="headerlink" title="分类器的评估与不平衡分布类"></a>分类器的评估与不平衡分布类</h2><h3 id="决策阈值"><a href="#决策阈值" class="headerlink" title="决策阈值"></a>决策阈值</h3><p>二分类的决策阈值：<strong>t=0.5</strong></p>
 <h3 id="分类器的评估指标"><a href="#分类器的评估指标" class="headerlink" title="分类器的评估指标"></a>分类器的评估指标</h3><p><strong>二分类问题的混淆矩阵</strong>  </p>
 <div class="table-container">
 <table>
