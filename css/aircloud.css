@@ -1032,6 +1032,7 @@ pre code {
   padding-left: 10px;
   padding-right: 10px;
   background-color: #f8f8f8;
+  font-weight: 500;
 }
 .code pre span{
   font-family: consolas;
