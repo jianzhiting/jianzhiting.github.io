@@ -25,6 +25,16 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.min.js"></script>
+    <script type="text/javascript">
+      $(function() {         
+          $("img").lazyload({
+            placeholder:"/img/loading.gif",
+              effect:"fadeIn"
+            });
+          });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -208,10 +218,10 @@
 <li>数据是否具有稀疏性</li>
 </ol>
 <h3 id="探查数据质量"><a href="#探查数据质量" class="headerlink" title="探查数据质量"></a>探查数据质量</h3><ol>
-<li>数据的可用性<br>属性含义、类型、取值单位、范围及约束说明</li>
-<li>数据对应用的适合性<br>相关性、完备性、时效性</li>
+<li>数据的可用性<br> 属性含义、类型、取值单位、范围及约束说明</li>
+<li>数据对应用的适合性<br> 相关性、完备性、时效性</li>
 <li>数据的代表性(抽样偏倚)</li>
-<li>数据收集问题<br>数据的重复、缺失、不一致问题</li>
+<li>数据收集问题<br> 数据的重复、缺失、不一致问题</li>
 </ol>
 <h3 id="探查属性特征"><a href="#探查属性特征" class="headerlink" title="探查属性特征"></a>探查属性特征</h3><ol>
 <li><p>属性的含义、取值单位（粒度）</p>
@@ -221,7 +231,7 @@
 </li>
 <li><p>是否存在缺失值</p>
 </li>
-<li><p>描述性统计指标<br>数值型属性也可以取字符型属性的测量水平</p>
+<li><p>描述性统计指标<br> 数值型属性也可以取字符型属性的测量水平</p>
 <ul>
 <li>属性取值的中心趋势<br>数值属性：均值、截尾均值、三均值<br>字符属性：众数</li>
 <li>属性取值的离散程度<br>数值属性：极差、方差、标准差、平均绝对偏差、四分位数、四分位极差、变异系数<br>字符属性：取值个数</li>
@@ -231,15 +241,15 @@
 </ul>
 </li>
 <li><p>数据的图形表示</p>
-<p>安斯库姆四重奏<br><img src="/img/datamining/ansi.png" style="width: 80%"><br><img src="/img/datamining/kumu.png" style="width: 40%"><br>分位数图、直方图(数值型数据)或柱形图(字符型数据)、盒形图、茎叶图、饼图、散点图、折线图</p>
+<p>安斯库姆四重奏<br><img src="/img/datamining/ansi.png" style="width: 80%"><br><img src="/img/datamining/kumu.png" style="width: 40%"></p>
+<p>分位数图、直方图(数值型数据)或柱形图(字符型数据)、盒形图、茎叶图、饼图、散点图、折线图</p>
 </li>
 </ol>
 <hr>
 
 <p>数据预处理的目的：减少噪声、不完整和不一致数据，可以提高模型的质量，进而提高数据挖掘的有效性和准确性。（一个挖掘项目中需要的数据预处理与初始数据的质量、采用的分析方法、分析目标都有关系）</p>
 <h3 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h3><ol>
-<li><p>处理错误或不一致的数据</p>
-</li>
+<li>处理错误或不一致的数据</li>
 <li><p>处理缺失值</p>
 <ul>
 <li>数据缺少的主要原因<br>数据不可得或获取成本太大<br>输入遗漏，理解错误，或传输错误等<br>属性值不存在（例如未婚者的配偶）</li>
@@ -258,7 +268,7 @@
 <li>处理<br>去除<br>视为噪声，进行平滑，盖帽法<br>保留</li>
 </ul>
 </li>
-<li><p>平滑噪声数据<br>噪声：变量取值存在的随机误差、不可理解的取值、错误、极端值</p>
+<li><p>平滑噪声数据<br> 噪声：变量取值存在的随机误差、不可理解的取值、错误、极端值</p>
 <ul>
 <li><p>分箱<br>排序→确定相数→确定每箱数据个数/确定箱距→分配→替换<br>分箱方法利用数据的“近邻”(即周围的值)来平滑一组有序数据的值。首先对数据进行排序，并分配到具有相同高度(每箱数据项个数相同)或宽度(等距)的不同的“箱”中；其次通过箱子的平均值(Means)、中值(Median)、或者边界值等来进行平滑处理。一种观点：通过分箱个数(分箱后为有序变量)量化变量的权重</p>
 <p>等高分箱：每箱数据个数相同<br>等宽分箱：每箱的箱距相同</p>
@@ -322,7 +332,7 @@
 <ul>
 <li><p>最小-最大规范化</p>
 <script type="math/tex; mode=display">
-v'=\frac{v-min_A}{max_A-min_A}(new\_max_A-new\_min_A)+new\_min_A</script><p>A属性的原取值区间<script type="math/tex">[min_A，max_A]</script>目标新区间<script type="math/tex">[new\_min_A, new\_max_A]</script><br>最小-最大规范化保留了原始数据值之间的关系。但是当有新数落在原数据区之外时，该方法将面临“越界”错误。另外，该方法受到孤立点的影响可能会比较大。</p>
+v'=\frac{v-min_A}{max_A-min_A}(new\_max_A-new\_min_A)+new\_min_A</script><p>A属性的原取值区间<script type="math/tex">[min_A，max_A]</script>目标新区间<script type="math/tex">[new\_min_A, new\_max_A]</script>目标新区建常为[0,1]<br>最小-最大规范化保留了原始数据值之间的关系。但是当有新数落在原数据区之外时，该方法将面临“越界”错误。另外，该方法受到孤立点的影响可能会比较大。</p>
 </li>
 <li><p>z-score规范化(标准化)<br>将属性A的值v转换为标准化值v’，均值为μ，标准差为σ</p>
 <script type="math/tex; mode=display">
@@ -340,13 +350,13 @@ v' = \frac{v}{10^j}</script></li>
 </li>
 <li><p>类别数据的数值化与数据泛化</p>
 <ul>
-<li><p>名义变量(标称变量nominal)的编码<br>one-hot编码</p>
+<li><p>名义变量(标称变量nominal)的编码<br>one-hot编码(在回归时，常需要一个全为0的参照变量)</p>
 </li>
-<li><p>有序变量(odinal)的数值化<br>设序数变量f的第<em>i</em>个对象的值为<em>x**if</em>，则用它在可能取值中的顺序<script type="math/tex">r_{if}</script>代替<em>x**if</em> (假设f有Mf个有序状态)<br>以顺序代替原值<br>规范化（将每个rif映射到[0,1]区间）</p>
+<li><p>有序变量(ordinal)的数值化<br>设序数变量的第i个对象的值为<script type="math/tex">x_i</script>，则用它在可能取值中的顺序<script type="math/tex">r_i</script>代替<script type="math/tex">x_i</script>(假设该变量有M个有序状态)<br>以顺序代替原值<script type="math/tex">r_i</script>→<script type="math/tex">x_i</script><br>规范化(将每个<script type="math/tex">r_i</script>映射到[0,1]区间)<script type="math/tex">z_i</script>→<script type="math/tex">x_i</script></p>
 <script type="math/tex; mode=display">
-Z_{if}=\frac{r_{if}-1}{M_f-1}\qquad r_{if}∈\{1,...,M_f\} \\
-Z_1:0\quad Z_j:\frac{2}{3}</script></li>
-<li><p>类别数据的泛化<br>例如：地址：国家  省  地市   区县  街道</p>
+z_i=\frac{r_i-1}{M-1}\qquad r_i∈\{1,...,M\} \\
+z_1:0</script></li>
+<li><p>类别数据的泛化<br>例如：地址：国家  省  地市   区县  街道(概念层次的上升，不关注值归入“其他”)</p>
 </li>
 </ul>
 </li>

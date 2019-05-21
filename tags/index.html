@@ -22,6 +22,16 @@
     <link href="//at.alicdn.com/t/font_1165120_4ntyt37bahb.css" rel="stylesheet" type="text/css">
     <!-- https://www.bootcdn.cn/mathjax/ -->
     
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.min.js"></script>
+    <script type="text/javascript">
+      $(function() {         
+          $("img").lazyload({
+            placeholder:"/img/loading.gif",
+              effect:"fadeIn"
+            });
+          });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -115,9 +125,9 @@
     
     <a href="#学习笔记" title="学习笔记" rel="3">学习笔记</a>
     
-    <a href="#生活" title="生活" rel="1">生活</a>
+    <a href="#专业课" title="专业课" rel="3">专业课</a>
     
-    <a href="#专业课" title="专业课" rel="2">专业课</a>
+    <a href="#生活" title="生活" rel="1">生活</a>
     
 </div>
 
@@ -174,8 +184,8 @@
 </div>
 
 <div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="生活">
-                    <span class="tag-text">生活</span>
+                <span class="fa fa-tag listing-seperator" id="专业课">
+                    <span class="tag-text">专业课</span>
                 </span>
     
     <!-- <li class="listing-item">
@@ -183,21 +193,14 @@
     <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li> -->
     <div class="post-preview">
-        <a href="/资料收集/">
+        <a href="/文本挖掘/">
             <h2 class="post-title">
-                资料收集
+                文本挖掘
             </h2>
             
         </a>
         <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
     </div>
-    
-</div>
-
-<div class="one-tag-list">
-                <span class="fa fa-tag listing-seperator" id="专业课">
-                    <span class="tag-text">专业课</span>
-                </span>
     
     <!-- <li class="listing-item">
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -221,6 +224,27 @@
         <a href="/基于MapReduce的Kindle评论数据分析/">
             <h2 class="post-title">
                 基于MapReduce的Kindle评论数据分析
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="生活">
+                    <span class="tag-text">生活</span>
+                </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/资料收集/">
+            <h2 class="post-title">
+                资料收集
             </h2>
             
         </a>
