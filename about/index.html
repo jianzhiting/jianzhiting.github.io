@@ -23,9 +23,10 @@
     <!-- https://www.bootcdn.cn/mathjax/ -->
     
     <script type="text/javascript" src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery-lazyload/1.9.5/jquery.lazyload.min.js"></script>
     <script type="text/javascript">
-      $(function() {         
+      jQuery(document).ready(function ($){
           $("img").lazyload({
             placeholder:"/img/loading.gif",
               effect:"fadeIn"
