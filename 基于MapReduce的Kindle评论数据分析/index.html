@@ -22,7 +22,7 @@
     <link href="//at.alicdn.com/t/font_1165120_4ntyt37bahb.css" rel="stylesheet" type="text/css">
     <!-- https://www.bootcdn.cn/mathjax/ -->
     
-    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
@@ -230,12 +230,9 @@
 <p><strong>输入：</strong>{“reviewerID”: “A1F6404F1VG29J”, “asin”: “B000F83SZQ”, “reviewerName”: “Avidreader”, “helpful”: [0, 0], “reviewText”: “I enjoy vintage … for me.”, “overall”: 5.0, “summary”: “Nice vintage story”, “unixReviewTime”: 1399248000, “reviewTime”: “05 5, 2014”} </p>
 <p><strong>输出：</strong>key: 2000-03-05(评论日期)   value: 1（评论次数）</p>
 <p>2.在获取以天作为时间粒度，2000~2014年不同日期的评论数目后，利用Python统计出不同年份、月份、工作日的日平均评论数目：</p>
-<p>将统计结果绘制成折线图如下:</p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/output_3_0.png" alt="img"></p>
-<p>从上图中可以看出，Kindle的评论数目自从2010年开始呈现井喷式增长，最终在2014年达到日平均数目为2000次。这可能是因为随着移动互联网的发展，更多的人选择在kindle上购买电子书；</p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/output_4_0.png" alt="img"></p>
-<p>从上图中可以看出，日平均评论数目在1月份至7月份在525次上下波动；在8-12月份与之前相比显著下降，但仍然呈现出回升趋势。这可能是因为人们在年初的时候会一次性购买今年要阅读的书籍；</p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/output_5_0.png" alt="img"></p>
+<p>将统计结果绘制成折线图如下:<br><img src="../img/loading.gif" data-original="/img/hadoop/output_3_0.png" style="width: 60%"></p>
+<p>从上图中可以看出，Kindle的评论数目自从2010年开始呈现井喷式增长，最终在2014年达到日平均数目为2000次。这可能是因为随着移动互联网的发展，更多的人选择在kindle上购买电子书；<br><img src="../img/loading.gif" data-original="/img/hadoop/output_4_0.png" style="width: 60%"></p>
+<p>从上图中可以看出，日平均评论数目在1月份至7月份在525次上下波动；在8-12月份与之前相比显著下降，但仍然呈现出回升趋势。这可能是因为人们在年初的时候会一次性购买今年要阅读的书籍；<br><img src="../img/loading.gif" data-original="/img/hadoop/output_5_0.png" style="width: 60%"></p>
 <p>从上图中可以看出，在周日、周一时，日平均评论数目与平时相比较高。这可能是因为在周日、周一等人们有较多空闲的时间来阅读书籍和对书籍进行评论。</p>
 <p>因此，Kindle销售部门可在8-12月份增加促销活动；在周日、周一等人们有较多空闲的时间，增加商品推送，从而，提高Kindle书籍销量。</p>
 <h3 id="3-2-各阶段评分商品的评论关键词"><a href="#3-2-各阶段评分商品的评论关键词" class="headerlink" title="3.2   各阶段评分商品的评论关键词"></a><strong>3.2</strong>   <strong>各阶段评分商品的评论关键词</strong></h3><p>在获取不同商品的评分后，为分析不同评论的内容对商品评分的影响 ，我们根据商品评分的不同划分为五个区间 [1,2), [2,3), [3,4), [4,5)，[5,5]根据TF-IDF方法提取出每个评论的关键词，并统计不同评分区间下关键词的分布，绘制成图云加以展示。</p>
@@ -273,8 +270,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <p><strong>·参考代码</strong> <strong>CountOverall.java</strong><sup><a href="#fn_4" id="reffn_4">4</a></sup></p>
 <p><strong>输入：</strong>B000F83SZQ  4.89 </p>
 <p><strong>输出：</strong>key: 1（商品等级）  value: 64（商品数量） </p>
-<p>利用Python统计出评级各阶段的商品总数目，并绘制成柱状图如下（Python代码：print_models.py）：</p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/overallBase.png" alt="img"></p>
+<p>利用Python统计出评级各阶段的商品总数目，并绘制成柱状图如下（Python代码：print_models.py）：<br><img src="../img/loading.gif" data-original="/img/hadoop/overallBase.png" style="width: 60%"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -428,8 +424,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 </table>
 </div>
 <p>利用Python绘制成折线图，对比三阶段的商品评级统计结果。</p>
-<p>首先是各阶段评级商品总数（Python代码：print_zhe.py）：</p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/overall.png" alt="img"></p>
+<p>首先是各阶段评级商品总数（Python代码：print_zhe.py）：<br><img src="../img/loading.gif" data-original="/img/hadoop/overall.png" style="width: 60%"></p>
 <div class="table-container">
 <table>
 <thead>
@@ -473,8 +468,7 @@ TF - IDF_w = TF_w\times lg\frac{评论总数}{包含单词w的评论数}</script
 <p>经过不断的调整，四星级商品数在逐渐下滑到三星级，一星级、二星级商品数也有微量增多，我们的评级系统变得越来越严格。</p>
 <p>同时，我们观察到评级为5的商品数目在剔除水军后增加了一部分，我们分析可能是有竞争对手恶意刷评导致评分下降。然而进行了权重修改后评级为5的商品数目没有改动，这是因为评级为5的商品必须符合每条评论均为5星，这样，无论我们如何修改权重，都无法改变商品的评级。</p>
 <p>另外，我们认为评论数与销售量在一定程度上成正比，所以我们将平均评论量类比为商品受欢迎程度，以下是各阶段商品的平均评论条数（保留两位小数）。</p>
-<p><strong>·参考代码</strong> <strong>AvgReview.java</strong></p>
-<p><img src="../img/loading.gif" data-original="/img/hadoop/overallAvgReview.png" alt="img"></p>
+<p><strong>·参考代码</strong> <strong>AvgReview.java</strong><br><img src="../img/loading.gif" data-original="/img/hadoop/overallReview.png" style="width: 60%"></p>
 <div class="table-container">
 <table>
 <thead>
