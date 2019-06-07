@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/css/aircloud.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <link href="//at.alicdn.com/t/font_1165120_4ntyt37bahb.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
     <!-- https://www.bootcdn.cn/mathjax/ -->
     
     <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
@@ -151,7 +151,7 @@
 
 <hr>
 
-<p>设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n < b_n</script>，则<script type="math/tex">\lim_{n \to +\infty} a_n \color{red}{<} \lim_{n \to + \infty} b_n</script></p>
+<p>设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n < b_n</script>，则<script type="math/tex">\lim_{n \to \infty} a_n \color{red}{<} \lim_{n \to \infty} b_n</script></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 证：&设\lim_{n \to + \infty}a_n = a，\lim_{n \to + \infty}b_n = b\\
@@ -168,6 +168,8 @@
 \end{aligned}</script><hr>
 
 <p>分析该证明错误原因：</p>
+<p>根据<script type="math/tex">\color{red}{\exists\delta>0，当n>N_0\quad a_n+\delta\le b_n}</script>可知<script type="math/tex">\delta \le min\{b_n-a_n\}</script></p>
+<p>若当<script type="math/tex">n \to \infty</script>时，<script type="math/tex">b_n-a_n</script>取得最小值，那么<script type="math/tex">\delta = \lim_{n \to \infty} (b_n-a_n)</script> </p>
 
         <a id="gotop" href="#"><i class="iconfont icon-up-circle"></i></a>
         
@@ -181,7 +183,13 @@
 
 <footer class="footer">
     <ul class="list-inline text-center">
-        
+        <li>
+            <a target="_blank" href="https://xn--i0v668g.com/">
+                            <span>
+                                <i class="iconfont icon-yang"></i>
+                            </span>
+            </a>
+        </li>
         
 
         
