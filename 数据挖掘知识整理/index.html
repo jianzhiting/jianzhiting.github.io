@@ -158,7 +158,7 @@
 <li>基于实例的学习(经验主义)</li>
 </ul>
 </li>
-<li>按照目标变量的类型<ul>
+<li>预测性挖掘中按照目标变量的类型<ul>
 <li>回归(连续)<br>线性回归与多项式回归<br>分类与回归树<br>SVR<br>神经网络<br>K近邻  …</li>
 <li>分类(离散)<br>逻辑回归<br>SVM<br>决策树与随机森林<br>神经网络<br>贝叶斯<br>K近邻 …</li>
 </ul>
@@ -214,19 +214,13 @@
 <li>数据收集问题<br> 数据的重复、缺失、不一致问题</li>
 </ol>
 <h3 id="探查属性特征"><a href="#探查属性特征" class="headerlink" title="探查属性特征"></a>探查属性特征</h3><ol>
-<li><p>属性的含义、取值单位（粒度）</p>
-</li>
-<li><p>属性类型与测量水平</p>
-<p><img src="../img/loading.gif" data-original="\img\datamining\var.png" alt="属性类型"><br>区间：没有绝对零值（即当变量值为0时不是表示没有，如温度变量，当温度为0时，并不是表示没有温度）<br>比率：有绝对零值，两个数的倍数是有意义的</p>
-</li>
-<li><p>是否存在缺失值</p>
-</li>
-<li><p>描述性统计指标<br> 数值型属性也可以取字符型属性的测量水平</p>
-<ul>
+<li>属性的含义、取值单位（粒度）</li>
+<li>属性类型与测量水平<br><img src="../img/loading.gif" data-original="\img\datamining\var.png" style="width:100%"><br>  区间：没有绝对零值（即当变量值为0时不是表示没有，如温度变量，当温度为0时，并不是表示没有温度）<br>  比率：有绝对零值，两个数的倍数是有意义的</li>
+<li>描述性统计指标<br>数值型属性也可以取字符型属性的测量水平<ul>
 <li>属性取值的中心趋势<br>数值属性：均值、截尾均值、三均值<br>字符属性：众数</li>
 <li>属性取值的离散程度<br>数值属性：极差、方差、标准差、平均绝对偏差、四分位数、四分位极差、变异系数<br>字符属性：取值个数</li>
 <li>极端值的识别<br>根据极值和常识判断<br>根据上下截断点<br>正态分布的3σ原则</li>
-<li>分布的对称性与中心集中度<br><img src="../img/loading.gif" data-original="/img/datamining/paindu.png" style="width:80%"><br><img src="../img/loading.gif" data-original="/img/datamining/fengdu.png" style="width:80%"></li>
+<li>分布的对称性与中心集中度<br><img src="../img/loading.gif" data-original="/img/datamining/fengdu.png" style="width:80%"><br><img src="../img/loading.gif" data-original="/img/datamining/piandu.png" style="width:80%"></li>
 <li>属性间取值的相关性<br>数值型变量：<a href="https://www.zhihu.com/question/19734616" target="_blank" rel="noopener">Pearson相关系数</a>、夹角余弦；spearman相关系数、kendall相关系数Tau-b、Hoeffding相关系数<br>名义变量：<script type="math/tex">{\chi}^2</script>检验<br>名义变量与数值变量之间：数值型变量离散化、统计方法（如T检验，Z检验，方差分析）</li>
 </ul>
 </li>
@@ -433,7 +427,7 @@ Y=Xθ\quad →\quad θ=(X^TX)^{-1}X^TY</script></li>
 <h3 id="模型评估与误差来源分析"><a href="#模型评估与误差来源分析" class="headerlink" title="模型评估与误差来源分析"></a>模型评估与误差来源分析</h3><ol>
 <li><p>训练误差：训练集上的模型预测误差</p>
 </li>
-<li><p>泛化误差：新数据集上的模型预测误差<br>测试集的误差作为泛化误差的无偏估计</p>
+<li><p>泛化误差：新数据集上的模型预测误差<br> 测试集的误差作为泛化误差的无偏估计</p>
 </li>
 <li><p>评估</p>
 <ul>
