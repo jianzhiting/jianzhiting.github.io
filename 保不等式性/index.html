@@ -131,10 +131,7 @@
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#有意思" title="有意思">有意思</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#数学" title="数学">数学</a>
+        <a class="tag" href="/tags/#math" title="math">math</a>
         <span>/</span>
         
         
@@ -149,9 +146,7 @@
 \lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script><p>如果把定理中的条件换成严格不等式<script type="math/tex">a_n < b_n</script>，结论中仍为<script type="math/tex">\lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script></p>
 <or>以下是一个错误证明：</or>
 
-<hr>
-
-<p>设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n < b_n</script>，则<script type="math/tex">\lim_{n \to \infty} a_n \color{red}{<} \lim_{n \to \infty} b_n</script></p>
+<p><hr><br>设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n < b_n</script>，则<script type="math/tex">\lim_{n \to \infty} a_n \color{red}{<} \lim_{n \to \infty} b_n</script></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 证：&设\lim_{n \to + \infty}a_n = a，\lim_{n \to + \infty}b_n = b\\
@@ -165,9 +160,7 @@
 &\;\forall\varepsilon>0，\exists\delta>0，有a<b+2\varepsilon-\delta，则a<b\\
 &\;反证：倘若结论不成立，有a\ge b，令\varepsilon=\frac{a-b+\delta}{2}，则a=b+2\varepsilon-\delta与条件矛盾\\
 &\qquad\;\;\;从而必有a<b.得证
-\end{aligned}</script><hr>
-
-<p>分析该证明错误原因：</p>
+\end{aligned}</script><p><hr><br>分析该证明错误原因：</p>
 <p>根据<script type="math/tex">\color{red}{\exists\delta>0，当n>N_0\quad a_n+\delta\le b_n}</script>可知<script type="math/tex">\delta \le min\{b_n-a_n\}</script></p>
 <p>若当<script type="math/tex">n \to \infty</script>时，<script type="math/tex">b_n-a_n</script>取得最小值，那么<script type="math/tex">\delta = \lim_{n \to \infty} (b_n-a_n)</script> </p>
 
