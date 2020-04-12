@@ -151,7 +151,8 @@ width: auto;
 <li><p>如何是使用数学公式渲染器</p>
 <p>mathjax: true</p>
 </li>
-<li></li>
+<li><p>评论开关<br>comment: true</p>
+</li>
 </ol>
 <h3 id="写作提示"><a href="#写作提示" class="headerlink" title="写作提示"></a>写作提示</h3><blockquote>
 <p>这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用</p>
@@ -190,7 +191,7 @@ width: auto;
 <li>[x] 数学公式渲染功能</li>
 <li>[x] 回到顶部功能</li>
 <li>[x] 图片懒加载功能</li>
-<li>[ ] <a href="https://www.axutongxue.com/2019/05/blogger-valine.html" target="_blank" rel="noopener">预计更换评论功能，增加匿名评论</a></li>
+<li>[x] <a href="https://www.axutongxue.com/2019/05/blogger-valine.html" target="_blank" rel="noopener">预计更换评论功能，增加匿名评论</a></li>
 <li>[ ] 预计改变渲染引擎，使渲染加速katex</li>
 </ul>
 
@@ -238,12 +239,12 @@ width: auto;
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 <script>
     // We expose some of the variables needed by the front end
@@ -255,22 +256,6 @@ width: auto;
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-<!--Leancloud 操作库:-->
-<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
-<!--Valine 的核心代码库:-->
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-window.onload = function(){
-	new Valine({
-		av: AV, 
-	    el: '#gitalk-container',
-	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
-	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
-	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment'
-	});
-}
-</script>
 
 
 </html>
