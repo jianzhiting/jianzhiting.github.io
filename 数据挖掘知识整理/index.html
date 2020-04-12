@@ -28,6 +28,11 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
+<style>
+.vcard .vcontent img{
+width: auto;
+}
+</style>
 <body>
 
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
@@ -611,10 +616,20 @@ J(\theta)=MSE(\theta)+r\alpha\sum_{i=1}^n\left|\theta_i\right|+\frac{1-r}{2}\alp
 
 
 <!--Leancloud 操作库:-->
-<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'/>
+<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
 <!--Valine 的核心代码库:-->
-<script src="./dist/Valine.min.js"></script>
-<script src="/js/valine.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+window.onload = function(){
+	new Valine({
+		av: AV, 
+	    el: '#gitalk-container',
+	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
+	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
+	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment'
+	});
+}
+</script>
 
 
 </html>
