@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.jiziti.fun/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</loc>
+    <lastmod>2020-04-13</lastmod>
+  </url>  <url>
+    <loc>http://www.jiziti.fun/LeetCode%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2020-04-12</lastmod>
+  </url>  <url>
     <loc>http://www.jiziti.fun/Hexo/</loc>
     <lastmod>2020-04-12</lastmod>
   </url>  <url>
@@ -13,9 +19,6 @@
     <loc>http://www.jiziti.fun/Web%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2020-04-11</lastmod>
   </url>  <url>
-    <loc>http://www.jiziti.fun/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</loc>
-    <lastmod>2020-04-11</lastmod>
-  </url>  <url>
     <loc>http://www.jiziti.fun/%E4%BF%9D%E4%B8%8D%E7%AD%89%E5%BC%8F%E6%80%A7/</loc>
     <lastmod>2020-04-11</lastmod>
   </url>  <url>
@@ -23,9 +26,6 @@
     <lastmod>2020-04-11</lastmod>
   </url>  <url>
     <loc>http://www.jiziti.fun/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2020-04-11</lastmod>
-  </url>  <url>
-    <loc>http://www.jiziti.fun/LeetCode%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-04-11</lastmod>
   </url>
 </urlset>

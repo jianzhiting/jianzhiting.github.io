@@ -22,6 +22,9 @@
     <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
     <!-- https://www.bootcdn.cn/mathjax/ -->
     
+    <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -95,7 +98,7 @@ width: auto;
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#发现规律"><span class="toc-text">发现规律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决问题"><span class="toc-text">解决问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#举个例子"><span class="toc-text">举个例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#适用分析"><span class="toc-text">适用分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高效做法"><span class="toc-text">高效做法</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -143,10 +146,86 @@ width: auto;
 
     </div>
     <div class="post-content no-indent">
-        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。在跳过指定数量的人之后，执行下一个人。对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。</p>
-<p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p>
-<p>例如：18人，从编号为1开始顺时针每次跳过1人进行处决</p>
-<p><img src="../img/loading.gif" data-original="e:\blog\hexo\source\img\Joseph\ex.png" style="width:20%"></p>
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>人们站在一个等待被处决的圈子里。 从圆圈中编号为1的人开始处决，并沿顺时针方向围绕圆圈进行。每次跳过一人，处决下一个人。对剩下的人重复该过程，直到只剩下一个人，并被释放。</p>
+<p><img src="../img/loading.gif" data-original="\img\Joseph\ex.png" style="width:20%"><br>例如：18人，从编号为1开始顺时针每次跳过1人进行处决，一圈下来剩下9人<br><img src="../img/loading.gif" data-original="\img\Joseph\ex2.png" style="width:20%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex3.png" style="width:18.5%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex4.png" style="width:18%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex5.png" style="width:18%"><br>由于上一个处决的编号为17，因此，接下来处决2号，直至最后4号存活。</p>
+<h3 id="发现规律"><a href="#发现规律" class="headerlink" title="发现规律"></a>发现规律</h3><p>当总人数为<script type="math/tex">2^n</script>时:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>总人数</th>
+<th>存活编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td><script type="math/tex">2^n</script></td>
+<td><script type="math/tex">2^n</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>即，一号待处决人逆时针的邻居，最后一位编号人员会存活。</p>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><h4 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h4><p>当总人数不为<script type="math/tex">2^n</script>时:</p>
+<p>如，有18人<br>1.找到最接近，却小于18的2的幂次方，即当n=4时，<script type="math/tex">2^4 = 16</script><br>2.此时，我们只需处决18-16=2人，即可重新回到<script type="math/tex">2^n</script>的易处理场景<br>3.处决的两人编号分别为[1, 3]，下一个开始处决的人编号为5<br>4.5号逆时针的邻居4号将存活</p>
+<p>结论与最初的模拟一致！</p>
+<h4 id="适用分析"><a href="#适用分析" class="headerlink" title="适用分析"></a>适用分析</h4><p>所有非<script type="math/tex">2^n</script>情况都可以这样处理吗？</p>
+<p>1.假设总人数为N，<br>2.存在n，满足<script type="math/tex">2^n < N < 2^{n+1}</script>，<br>3.令<script type="math/tex">2^n+m=N</script>，则有<script type="math/tex">m < 2^n</script>，<br>4.我们需要预先处决m人<br>5.我们知道一圈下来，我们最多处决一半的人，即<script type="math/tex">\frac{N}{2}</script><br>6.如果<script type="math/tex">m < \frac{N}{2}</script>，我们便可以在一圈下来预处决m人<br>7.处决m人编号分别为[1, 3, …, 2m-1]<br>8.编号为2m的人将存活</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&为证：m < \frac{N}{2}\\
+&即证：m < \frac{2^n+m}{2}\\
+&即证：2m < 2^n+m\\ \\
+&即证：m < 2^n\tag{有已知条件3可得证}
+\end{align}</script><h4 id="高效做法"><a href="#高效做法" class="headerlink" title="高效做法"></a>高效做法</h4><p>联系到2进制码，最高位的1代表最接近的<script type="math/tex">2^n</script><br>其余位便是m<br>结果为2m，扩大两倍，便是在最低位添加一个0<br>总结为：逻辑左移一位</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th><script type="math/tex">2^4</script></th>
+<th><script type="math/tex">2^3</script></th>
+<th><script type="math/tex">2^2</script></th>
+<th><script type="math/tex">2^1</script></th>
+<th><script type="math/tex">2^0</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
 
         <a id="gotop" href="#"><i class="iconfont icon-up-circle"></i></a>
         
@@ -192,12 +271,12 @@ width: auto;
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 <script>
     // We expose some of the variables needed by the front end
@@ -209,6 +288,22 @@ width: auto;
 <script src="/js/index.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+
+<!--Leancloud 操作库:-->
+<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
+<!--Valine 的核心代码库:-->
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+window.onload = function(){
+	new Valine({
+		av: AV, 
+	    el: '#gitalk-container',
+	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
+	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
+	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment'
+	});
+}
+</script>
 
 
 </html>
