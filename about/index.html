@@ -25,11 +25,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<style>
-.vcard .vcontent img{
-width: auto;
-}
-</style>
 <body>
 
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
@@ -120,7 +115,7 @@ width: auto;
 <div class="post-content no-indent">
     <h2 id="补番计划"><a href="#补番计划" class="headerlink" title="补番计划"></a>补番计划</h2><p>搞笑番：<br>《男子高中生的日常》<br>《月刊少女野崎君》<br>《齐木楠雄的灾难》</p>
 <p>治愈番：<br>《夏目友人帐》</p>
-<h2 id="相关账户"><a href="#相关账户" class="headerlink" title="相关账户"></a>相关账户</h2><p>网易云：<a href="https://music.163.com/#/user/home?id=557271548" target="_blank" rel="noopener">J乙丁</a><br>B站：<a href="https://space.bilibili.com/50146626?from=search&amp;seid=15037865582393636035" target="_blank" rel="noopener">狎客a</a><br>微博： <a href="https://weibo.com/u/5650881412?is_hot=1" target="_blank" rel="noopener">挺秃然的-_-</a></p>
+<h2 id="相关账户"><a href="#相关账户" class="headerlink" title="相关账户"></a>相关账户</h2><p>B站：<a href="https://space.bilibili.com/50146626?from=search&amp;seid=15037865582393636035" target="_blank" rel="noopener">狎客a</a><br>LeetCode：<a href="https://leetcode.com/jiziti/" target="_blank" rel="noopener">Angelia</a></p>
 
     
     <div id="gitalk-container">
@@ -167,12 +162,12 @@ width: auto;
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</footer>
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 <script>
     // We expose some of the variables needed by the front end
@@ -188,12 +183,15 @@ width: auto;
 <!--Leancloud 操作库:-->
 <script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
 <!--Valine 的核心代码库:-->
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+<script src='https://axu.nos-eastchina1.126.net/blogger/Valine.min.js'></script>
 <script>
 window.onload = function(){
 	new Valine({
-		av: AV, 
+	    av: AV, 
 	    el: '#gitalk-container',
+	    emoticon_url: 'https://cloud.panjunwen.com/alu',
+            emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
 	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
 	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
 	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment'
