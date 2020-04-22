@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
 
     <title>
         
@@ -17,15 +18,23 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
-    <!-- https://www.bootcdn.cn/mathjax/ -->
+    <link href="//at.alicdn.com/t/font_1165120_0wsyrhj51lx.css" rel="stylesheet" type="text/css">
     
     <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js" integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous"></script>
+    <script>
+    renderMathInElement(document.body,{
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          }
+    );
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
     
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body>
@@ -138,15 +147,15 @@
 
     </div>
     <div class="post-content no-indent">
-        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>人们站在一个等待被处决的圈子里。 从圆圈中编号为1的人开始处决，并沿顺时针方向围绕圆圈进行。每次跳过一人，处决下一个人。对剩下的人重复该过程，直到只剩下一个人，并被释放。</p>
-<p><img src="../img/loading.gif" data-original="\img\Joseph\ex.png" style="width:20%"><br>例如：18人，从编号为1开始顺时针每次跳过1人进行处决，一圈下来剩下9人<br><img src="../img/loading.gif" data-original="\img\Joseph\ex2.png" style="width:20%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex3.png" style="width:18.5%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex4.png" style="width:18%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex5.png" style="width:18%"><br>由于上一个处决的编号为17，因此，接下来处决2号，直至最后4号存活。</p>
-<h3 id="发现规律"><a href="#发现规律" class="headerlink" title="发现规律"></a>发现规律</h3><p>当总人数为<script type="math/tex">2^n</script>时:</p>
+        <h3 id="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"><a href="#&#x95EE;&#x9898;&#x63CF;&#x8FF0;" class="headerlink" title="&#x95EE;&#x9898;&#x63CF;&#x8FF0;"></a>&#x95EE;&#x9898;&#x63CF;&#x8FF0;</h3><p>&#x4EBA;&#x4EEC;&#x7AD9;&#x5728;&#x4E00;&#x4E2A;&#x7B49;&#x5F85;&#x88AB;&#x5904;&#x51B3;&#x7684;&#x5708;&#x5B50;&#x91CC;&#x3002; &#x4ECE;&#x5706;&#x5708;&#x4E2D;&#x7F16;&#x53F7;&#x4E3A;1&#x7684;&#x4EBA;&#x5F00;&#x59CB;&#x5904;&#x51B3;&#xFF0C;&#x5E76;&#x6CBF;&#x987A;&#x65F6;&#x9488;&#x65B9;&#x5411;&#x56F4;&#x7ED5;&#x5706;&#x5708;&#x8FDB;&#x884C;&#x3002;&#x6BCF;&#x6B21;&#x8DF3;&#x8FC7;&#x4E00;&#x4EBA;&#xFF0C;&#x5904;&#x51B3;&#x4E0B;&#x4E00;&#x4E2A;&#x4EBA;&#x3002;&#x5BF9;&#x5269;&#x4E0B;&#x7684;&#x4EBA;&#x91CD;&#x590D;&#x8BE5;&#x8FC7;&#x7A0B;&#xFF0C;&#x76F4;&#x5230;&#x53EA;&#x5269;&#x4E0B;&#x4E00;&#x4E2A;&#x4EBA;&#xFF0C;&#x5E76;&#x88AB;&#x91CA;&#x653E;&#x3002;</p>
+<p><img src="../img/loading.gif" data-original="\img\Joseph\ex.png" style="width:20%"><br>&#x4F8B;&#x5982;&#xFF1A;18&#x4EBA;&#xFF0C;&#x4ECE;&#x7F16;&#x53F7;&#x4E3A;1&#x5F00;&#x59CB;&#x987A;&#x65F6;&#x9488;&#x6BCF;&#x6B21;&#x8DF3;&#x8FC7;1&#x4EBA;&#x8FDB;&#x884C;&#x5904;&#x51B3;&#xFF0C;&#x4E00;&#x5708;&#x4E0B;&#x6765;&#x5269;&#x4E0B;9&#x4EBA;<br><img src="../img/loading.gif" data-original="\img\Joseph\ex2.png" style="width:20%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex3.png" style="width:18.5%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex4.png" style="width:18%"> <img src="../img/loading.gif" data-original="\img\Joseph\ex5.png" style="width:18%"><br>&#x7531;&#x4E8E;&#x4E0A;&#x4E00;&#x4E2A;&#x5904;&#x51B3;&#x7684;&#x7F16;&#x53F7;&#x4E3A;17&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5904;&#x51B3;2&#x53F7;&#xFF0C;&#x76F4;&#x81F3;&#x6700;&#x540E;4&#x53F7;&#x5B58;&#x6D3B;&#x3002;</p>
+<h3 id="&#x53D1;&#x73B0;&#x89C4;&#x5F8B;"><a href="#&#x53D1;&#x73B0;&#x89C4;&#x5F8B;" class="headerlink" title="&#x53D1;&#x73B0;&#x89C4;&#x5F8B;"></a>&#x53D1;&#x73B0;&#x89C4;&#x5F8B;</h3><p>&#x5F53;&#x603B;&#x4EBA;&#x6570;&#x4E3A;<script type="math/tex">2^n</script>&#x65F6;:</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>总人数</th>
-<th>存活编号</th>
+<th>&#x603B;&#x4EBA;&#x6570;</th>
+<th>&#x5B58;&#x6D3B;&#x7F16;&#x53F7;</th>
 </tr>
 </thead>
 <tbody>
@@ -163,8 +172,8 @@
 <td>8</td>
 </tr>
 <tr>
-<td>…</td>
-<td>…</td>
+<td>&#x2026;</td>
+<td>&#x2026;</td>
 </tr>
 <tr>
 <td><script type="math/tex">2^n</script></td>
@@ -173,24 +182,24 @@
 </tbody>
 </table>
 </div>
-<p>即，一号待处决人逆时针的邻居，最后一位编号人员会存活。</p>
-<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><h4 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h4><p>当总人数不为<script type="math/tex">2^n</script>时:</p>
-<p>如，有18人<br>1.找到最接近，却小于18的2的幂次方，即当n=4时，<script type="math/tex">2^4 = 16</script><br>2.此时，我们只需处决18-16=2人，即可重新回到<script type="math/tex">2^n</script>的易处理场景<br>3.处决的两人编号分别为[1, 3]，下一个开始处决的人编号为5<br>4.5号逆时针的邻居4号将存活</p>
-<p>结论与最初的模拟一致！</p>
-<h4 id="适用分析"><a href="#适用分析" class="headerlink" title="适用分析"></a>适用分析</h4><p>所有非<script type="math/tex">2^n</script>情况都可以这样处理吗？</p>
-<p>1.假设总人数为N，<br>2.存在n，满足<script type="math/tex">2^n < N < 2^{n+1}</script>，<br>3.令<script type="math/tex">2^n+m=N</script>，则有<script type="math/tex">m < 2^n</script>，<br>4.我们需要预先处决m人<br>5.我们知道一圈下来，我们最多处决一半的人，即<script type="math/tex">\frac{N}{2}</script><br>6.如果<script type="math/tex">m < \frac{N}{2}</script>，我们便可以在一圈下来预处决m人<br>7.处决m人编号分别为[1, 3, …, 2m-1]<br>8.编号为2m的人将存活</p>
+<p>&#x5373;&#xFF0C;&#x4E00;&#x53F7;&#x5F85;&#x5904;&#x51B3;&#x4EBA;&#x9006;&#x65F6;&#x9488;&#x7684;&#x90BB;&#x5C45;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x4F4D;&#x7F16;&#x53F7;&#x4EBA;&#x5458;&#x4F1A;&#x5B58;&#x6D3B;&#x3002;</p>
+<h3 id="&#x89E3;&#x51B3;&#x95EE;&#x9898;"><a href="#&#x89E3;&#x51B3;&#x95EE;&#x9898;" class="headerlink" title="&#x89E3;&#x51B3;&#x95EE;&#x9898;"></a>&#x89E3;&#x51B3;&#x95EE;&#x9898;</h3><h4 id="&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;"><a href="#&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;" class="headerlink" title="&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;"></a>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;</h4><p>&#x5F53;&#x603B;&#x4EBA;&#x6570;&#x4E0D;&#x4E3A;<script type="math/tex">2^n</script>&#x65F6;:</p>
+<p>&#x5982;&#xFF0C;&#x6709;18&#x4EBA;<br>1.&#x627E;&#x5230;&#x6700;&#x63A5;&#x8FD1;&#xFF0C;&#x5374;&#x5C0F;&#x4E8E;18&#x7684;2&#x7684;&#x5E42;&#x6B21;&#x65B9;&#xFF0C;&#x5373;&#x5F53;n=4&#x65F6;&#xFF0C;<script type="math/tex">2^4 = 16</script><br>2.&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x5904;&#x51B3;18-16=2&#x4EBA;&#xFF0C;&#x5373;&#x53EF;&#x91CD;&#x65B0;&#x56DE;&#x5230;<script type="math/tex">2^n</script>&#x7684;&#x6613;&#x5904;&#x7406;&#x573A;&#x666F;<br>3.&#x5904;&#x51B3;&#x7684;&#x4E24;&#x4EBA;&#x7F16;&#x53F7;&#x5206;&#x522B;&#x4E3A;[1, 3]&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x5F00;&#x59CB;&#x5904;&#x51B3;&#x7684;&#x4EBA;&#x7F16;&#x53F7;&#x4E3A;5<br>4.5&#x53F7;&#x9006;&#x65F6;&#x9488;&#x7684;&#x90BB;&#x5C45;4&#x53F7;&#x5C06;&#x5B58;&#x6D3B;</p>
+<p>&#x7ED3;&#x8BBA;&#x4E0E;&#x6700;&#x521D;&#x7684;&#x6A21;&#x62DF;&#x4E00;&#x81F4;&#xFF01;</p>
+<h4 id="&#x9002;&#x7528;&#x5206;&#x6790;"><a href="#&#x9002;&#x7528;&#x5206;&#x6790;" class="headerlink" title="&#x9002;&#x7528;&#x5206;&#x6790;"></a>&#x9002;&#x7528;&#x5206;&#x6790;</h4><p>&#x6240;&#x6709;&#x975E;<script type="math/tex">2^n</script>&#x60C5;&#x51B5;&#x90FD;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5904;&#x7406;&#x5417;&#xFF1F;</p>
+<p>1.&#x5047;&#x8BBE;&#x603B;&#x4EBA;&#x6570;&#x4E3A;N&#xFF0C;<br>2.&#x5B58;&#x5728;n&#xFF0C;&#x6EE1;&#x8DB3;<script type="math/tex">2^n < N < 2^{n+1}</script>&#xFF0C;<br>3.&#x4EE4;<script type="math/tex">2^n+m=N</script>&#xFF0C;&#x5219;&#x6709;<script type="math/tex">m < 2^n</script>&#xFF0C;<br>4.&#x6211;&#x4EEC;&#x9700;&#x8981;&#x9884;&#x5148;&#x5904;&#x51B3;m&#x4EBA;<br>5.&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x4E00;&#x5708;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x591A;&#x5904;&#x51B3;&#x4E00;&#x534A;&#x7684;&#x4EBA;&#xFF0C;&#x5373;<script type="math/tex">\frac{N}{2}</script><br>6.&#x5982;&#x679C;<script type="math/tex">m < \frac{N}{2}</script>&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x5708;&#x4E0B;&#x6765;&#x9884;&#x5904;&#x51B3;m&#x4EBA;<br>7.&#x5904;&#x51B3;m&#x4EBA;&#x7F16;&#x53F7;&#x5206;&#x522B;&#x4E3A;[1, 3, &#x2026;, 2m-1]<br>8.&#x7F16;&#x53F7;&#x4E3A;2m&#x7684;&#x4EBA;&#x5C06;&#x5B58;&#x6D3B;</p>
 <script type="math/tex; mode=display">
 \begin{align}
 &为证：m < \frac{N}{2}\\
 &即证：m < \frac{2^n+m}{2}\\
 &即证：2m < 2^n+m\\ \\
 &即证：m < 2^n\tag{有已知条件3可得证}
-\end{align}</script><h4 id="高效做法"><a href="#高效做法" class="headerlink" title="高效做法"></a>高效做法</h4><p>联系到2进制码，最高位的1代表最接近的<script type="math/tex">2^n</script><br>其余位便是m<br>结果为2m，扩大两倍，便是在最低位添加一个0<br>总结为：逻辑左移一位</p>
+\end{align}</script><h4 id="&#x9AD8;&#x6548;&#x505A;&#x6CD5;"><a href="#&#x9AD8;&#x6548;&#x505A;&#x6CD5;" class="headerlink" title="&#x9AD8;&#x6548;&#x505A;&#x6CD5;"></a>&#x9AD8;&#x6548;&#x505A;&#x6CD5;</h4><p>&#x8054;&#x7CFB;&#x5230;2&#x8FDB;&#x5236;&#x7801;&#xFF0C;&#x6700;&#x9AD8;&#x4F4D;&#x7684;1&#x4EE3;&#x8868;&#x6700;&#x63A5;&#x8FD1;&#x7684;<script type="math/tex">2^n</script><br>&#x5176;&#x4F59;&#x4F4D;&#x4FBF;&#x662F;m<br>&#x7ED3;&#x679C;&#x4E3A;2m&#xFF0C;&#x6269;&#x5927;&#x4E24;&#x500D;&#xFF0C;&#x4FBF;&#x662F;&#x5728;&#x6700;&#x4F4E;&#x4F4D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;0<br>&#x603B;&#x7ED3;&#x4E3A;&#xFF1A;&#x903B;&#x8F91;&#x5DE6;&#x79FB;&#x4E00;&#x4F4D;</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>值</th>
+<th>&#x503C;</th>
 <th><script type="math/tex">2^4</script></th>
 <th><script type="math/tex">2^3</script></th>
 <th><script type="math/tex">2^2</script></th>
@@ -237,18 +246,22 @@
                             </span>
             </a>
         </li>
-        
-
-        
-
-        
-
-        
-
-        
+        <li>
+            <a target="_blank" href="https://github.com/jianzhiting">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+	<li>
+            <a target="_blank" href="https://space.bilibili.com/50146626?from=search&seid=15037865582393636035/">
+                            <span>
+                                <i class="iconfont icon-bilibili-line"></i>
+                            </span>
+            </a>
+        </li>
 
     </ul>
-    
     <p>
 	to work harder
         <!-- 
@@ -263,12 +276,12 @@
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 <script>
     // We expose some of the variables needed by the front end
@@ -282,20 +295,23 @@
 
 
 <!--Leancloud 操作库:-->
-<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
+<!--<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>-->
 <!--Valine 的核心代码库:-->
-<!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
-<script src='https://axu.nos-eastchina1.126.net/blogger/Valine.min.js'></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<!-- <script src='https://axu.nos-eastchina1.126.net/blogger/Valine.min.js'></script> -->
 <script>
 window.onload = function(){
 	new Valine({
-	    av: AV, 
 	    el: '#gitalk-container',
-	    emoticon_url: 'https://cloud.panjunwen.com/alu',
-            emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
 	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
 	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
-	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment'
+	    placeholder: 'ヾﾉ≧∀≦)o Write a Comment',
+	    emojiCDN:'\/\/cdn.jsdelivr.net\/gh\/FFRaycoder\/cdn@latest\/imgs\/emoji\/',
+	    emojiMaps:{
+		"c_一分":"c_onef.png","c_一毛":"c_onem.png","c_五毛":"c_fivem.png","c_一块":"c_oney.png","c_10块":"c_teny.png","c_100块":"c_oy.png","em_呲牙笑":"1f601.png","em_笑哭":"1f602.png","em_流汗":"1f605.png","em_傻笑":"1f606.png","em_天使光环":"1f607.png","em_红晕":"1f60a.png","em_吐舌头":"1f60b.png","em_爱心":"1f60d.png","em_装酷":"1f60e.png","em_飞吻":"1f618.png","em_痴迷":"1f61a.png","em_大哭":"1f62d.png","em_尴尬":"1f630.png","em_惊恐":"1f631.png","em_die":"1f632.png","em_大眼睛":"1f633.png","em_狐狸笑":"1f638.png","em_狐狸笑哭":"1f639.png","em_狐狸生气":"1f63e.png","em_狐狸尴尬":"1f63f.png","em_doge":"doge.png","em_红包":"d_9.png","em_给力":"f_geili.png","em_互粉":"f_hufen.png","em_囧":"f_jiong.png","em_萌":"f_meng.png","em_神马":"f_shenma.png","em_v5":"f_v5.png","em_滑稽":"huaji.png","em_机智":"jizhi.png","em_流汗滑稽":"liuhanhuaji.png","em_墨镜滑稽":"mojinghuaji.png","em_打脸":"motion_1012.png","em_喝茶":"motion_1016.png","em_遮脸":"motion_1017.png","em_色":"se.gif","em_受虐滑稽":"shounuehuaji.png","pureem_白眼":"baiyan.gif","pureem_抱拳":"baoquan.gif","pureem_擦汗":"cahan.gif","pureem_吃瓜":"chigua.png","pureem_呲牙":"ciya.gif","pureem_害羞":"haixiu.gif","pureem_憨笑":"hanxiao.gif","pureem_哈欠":"haqian.gif","pureem_坏笑":"huaixiao.gif","pureem_酷":"ku.gif","pureem_困":"kun.gif","pureem_泪奔":"leiben.gif","pureem_冷汗":"lenghan.gif","pureem_流汗":"liuhan.gif","pureem_流泪":"liulei.gif","pureem_握手":"woshou.gif","pureem_笑哭":"xiaoku.gif","pureem_斜眼笑":"xieyanxiao.gif","pureem_阴险":"yinxian.gif","pureem_晕":"yun.gif","pureem_再见":"zaijian.gif","pureem_眨眼间":"zhayanjian.gif","pureem_折磨":"zhemo.gif","pureem_左哼哼":"zuohengheng.gif","pureem_发呆":"fadai.gif","pureem_OK":"OK.gif","pureem_喷血":"penxue.gif","pureem_枪":"qiang.gif","pureem_糗呆了":"qiudale.gif","内裤滑稽":"coshuaji.png","tv_doge":"tv_doge.gif","tv_亲亲":"tv_亲亲.png","tv_偷笑":"tv_偷笑.png","tv_再见":"tv_再见.png","tv_冷漠":"tv_冷漠.png","tv_发怒":"tv_发怒.png","tv_发财":"tv_发财.png","tv_可爱":"tv_可爱.gif","tv_吐血":"tv_吐血.gif","tv_呆":"tv_呆.png","tv_呕吐":"tv_呕吐.png","tv_困":"tv_困.png","tv_坏笑":"tv_坏笑.gif","tv_大佬":"tv_大佬.gif","tv_大哭":"tv_大哭.png","tv_委屈":"tv_委屈.png","tv_害羞":"tv_害羞.gif","tv_尴尬":"tv_尴尬.gif","tv_微笑":"tv_微笑.png","tv_思考":"tv_思考.png","tv_惊吓":"tv_惊吓.gif","tv_打脸":"tv_打脸.png","tv_抓狂":"tv_抓狂.png","tv_抠鼻":"tv_抠鼻.gif","tv_斜眼笑":"tv_斜眼笑.png","tv_无奈":"tv_无奈.gif","tv_晕":"tv_晕.png","tv_流汗":"tv_流汗.gif","tv_流泪":"tv_流泪.png","tv_流鼻血":"tv_流鼻血.png","tv_点赞":"tv_点赞.gif","tv_生气":"tv_生气.png","tv_生病":"tv_生病.png","tv_疑问":"tv_疑问.png","tv_白眼":"tv_白眼.png","tv_皱眉":"tv_皱眉.png","tv_目瞪口呆":"tv_目瞪口呆.png","tv_睡着":"tv_睡着.png","tv_笑哭":"tv_笑哭.gif","tv_腼腆":"tv_腼腆.gif","tv_色":"tv_色.gif","tv_调侃":"tv_调侃.png","tv_调皮":"tv_调皮.png","tv_鄙视":"tv_鄙视.png","tv_闭嘴":"tv_闭嘴.png","tv_难过":"tv_难过.gif","tv_馋":"tv_馋.png","tv_鬼脸":"tv_鬼脸.png","tv_黑人问号":"tv_黑人问号.gif","tv_鼓掌":"tv_鼓掌.gif","x_不出所料":"不出所料.png","x_不说话":"不说话.png","x_不高兴":"不高兴.png","x_中刀":"中刀.png","x_中指":"中指.png","x_中枪":"中枪.png","x_亲亲":"亲亲.png","x_便便":"便便.png","x_内伤":"内伤.png","x_击掌":"击掌.png","x_口水":"口水.png","x_呲牙":"呲牙.png","x_咽气":"咽气.png","x_哭泣":"哭泣.png","x_喜极而泣":"喜极而泣.png","x_喷水":"喷水.png","x_喷血":"喷血.png","x_坐等":"坐等.png","x_害羞":"害羞.png","x_小眼睛":"小眼睛.png","x_尴尬":"尴尬.png","x_得意":"得意.png","x_惊喜":"惊喜.png","x_想一想":"想一想.png","x_愤怒":"愤怒.png","x_扇耳光":"扇耳光.png","x_投降":"投降.png","x_抠鼻":"抠鼻.png","x_抽烟":"抽烟.png","x_无奈":"无奈.png","x_无所谓":"无所谓.png","x_无语":"无语.png","x_暗地观察":"暗地观察.png","x_期待":"期待.png","x_欢呼":"欢呼.png","x_汗":"汗.png","x_深思":"深思.png","x_狂汗":"狂汗.png","x_献花":"献花.png","x_献黄瓜":"献黄瓜.png","x_皱眉":"皱眉.png","x_看不见":"看不见.png","x_看热闹":"看热闹.png","x_高兴":"高兴.png","x_黑线":"黑线.png","x_鼓掌":"鼓掌.png","x_瞅你":"瞅你.png","x_肿包":"肿包.png","x_脸红":"脸红.png","x_蜡烛":"蜡烛.png","x_装大款":"装大款.png","x_观察":"观察.png","x_赞一个":"赞一个.png","x_邪恶":"邪恶.png","x_锁眉":"锁眉.png","x_锤":"锤.png","x_长草":"长草.png","x_阴暗":"阴暗.png","x_吐":"吐.png","x_吐舌":"吐舌.png","x_吐血倒地":"吐血倒地.png","害":"害.png","张三":"张三.png","我全都要":"我全都要.png","我哭了":"我哭了.png","我太南了":"我太南了.png","我裂开了":"我裂开了.png","我酸了":"我酸了.png","打卡":"打卡.png","有内味了":"有内味了.png","有生之年":"有生之年.png","这次一定":"这次一定.png","镇站之宝":"镇站之宝.png","高产":"高产.png","三连":"三连.png","下次一定":"下次一定.png","不愧是你":"不愧是你.png","你币有了":"你币有了.png","危":"危.png","吹爆":"吹爆.png","大师球":"大师球.png","奥力给":"奥力给.png","妙啊":"妙啊.png","完结撒花":"完结撒花.png","爱了爱了":"爱了爱了.png","爷关更":"爷关更.png","狼火":"狼火.png","猛男必看":"猛男必看.png","真香":"真香.png","知识盲区":"知识盲区.png","神仙UP":"神仙UP.png","秀":"秀.png","知识增加":"知识增加.png","标准结局":"标准结局.png","AWSL":"AWSL.png","可以":"可以.png","你细品":"你细品.png"
+	    },
+	    avatar: 'retro',
+	    pageSize: 5,
 	});
 }
 </script>

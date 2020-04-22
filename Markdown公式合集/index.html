@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
 
     <title>
         
@@ -17,15 +18,23 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
-    <!-- https://www.bootcdn.cn/mathjax/ -->
+    <link href="//at.alicdn.com/t/font_1165120_0wsyrhj51lx.css" rel="stylesheet" type="text/css">
     
     <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js" integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous"></script>
+    <script>
+    renderMathInElement(document.body,{
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          }
+    );
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
     
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body>
@@ -138,8 +147,8 @@
 
     </div>
     <div class="post-content no-indent">
-        <h3 id="角标"><a href="#角标" class="headerlink" title="角标"></a>角标</h3><p>“_”—&gt;down<br>“^”—&gt;up</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x_1 \\\\</span><br><span class="line"></span><br><span class="line">x_1^2 \\\\</span><br><span class="line"></span><br><span class="line">x^2_1 \\</span><br><span class="line"></span><br><span class="line">x_&#123;22&#125;^&#123;(n)&#125; \\</span><br><span class="line"></span><br><span class="line">^*x^* \\</span><br><span class="line"></span><br><span class="line">x_&#123;down&#125;^&#123;up&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="&#x89D2;&#x6807;"><a href="#&#x89D2;&#x6807;" class="headerlink" title="&#x89D2;&#x6807;"></a>&#x89D2;&#x6807;</h3><p>&#x201C;_&#x201D;&#x2014;&gt;down<br>&#x201C;^&#x201D;&#x2014;&gt;up</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">x_1 \\\\</span><br><span class="line"></span><br><span class="line">x_1^2 \\\\</span><br><span class="line"></span><br><span class="line">x^2_1 \\</span><br><span class="line"></span><br><span class="line">x_{22}^{(n)} \\</span><br><span class="line"></span><br><span class="line">^*x^* \\</span><br><span class="line"></span><br><span class="line">x_{down}^{up}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 x_1 \\\\
 
@@ -151,26 +160,26 @@ x_{22}^{(n)} \\
 
 ^*x^* \\
 
-x_{down}^{up}</script><h3 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h3><p>frac</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;x+y&#125;&#123;2&#125; \\</span><br><span class="line"></span><br><span class="line">\frac&#123;1&#125;&#123;1+\frac&#123;1&#125;&#123;2&#125;&#125;</span><br></pre></td></tr></table></figure>
+x_{down}^{up}</script><h3 id="&#x5206;&#x53F7;"><a href="#&#x5206;&#x53F7;" class="headerlink" title="&#x5206;&#x53F7;"></a>&#x5206;&#x53F7;</h3><p>frac</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\frac{x+y}{2} \\</span><br><span class="line"></span><br><span class="line">\frac{1}{1+\frac{1}{2}}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \frac{x+y}{2} \\
 
-\frac{1}{1+\frac{1}{2}}</script><h3 id="根号"><a href="#根号" class="headerlink" title="根号"></a>根号</h3><p>sqrt<br>第二和第三个的区别在于为了美观微调位置 ^_^</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\sqrt&#123;2&#125;&lt;\sqrt[3]&#123;3&#125; \\</span><br><span class="line"></span><br><span class="line">\sqrt&#123;1+\sqrt[p]&#123;1+a^2&#125;&#125; \\</span><br><span class="line"></span><br><span class="line">\sqrt&#123;1+\sqrt[^p\!]&#123;1+a^2&#125;&#125;</span><br></pre></td></tr></table></figure>
+\frac{1}{1+\frac{1}{2}}</script><h3 id="&#x6839;&#x53F7;"><a href="#&#x6839;&#x53F7;" class="headerlink" title="&#x6839;&#x53F7;"></a>&#x6839;&#x53F7;</h3><p>sqrt<br>&#x7B2C;&#x4E8C;&#x548C;&#x7B2C;&#x4E09;&#x4E2A;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x4E3A;&#x4E86;&#x7F8E;&#x89C2;&#x5FAE;&#x8C03;&#x4F4D;&#x7F6E; ^_^</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\sqrt{2}&lt;\sqrt[3]{3} \\</span><br><span class="line"></span><br><span class="line">\sqrt{1+\sqrt[p]{1+a^2}} \\</span><br><span class="line"></span><br><span class="line">\sqrt{1+\sqrt[^p\!]{1+a^2}}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \sqrt{2}<\sqrt[3]{3} \\
 
 \sqrt{1+\sqrt[p]{1+a^2}} \\
 
-\sqrt{1+\sqrt[^p\!]{1+a^2}}</script><h3 id="求和、积分"><a href="#求和、积分" class="headerlink" title="求和、积分"></a>求和、积分</h3><p>sum<br>int</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\sum_&#123;k=1&#125;^&#123;n&#125;\frac&#123;1&#125;&#123;k&#125; \\</span><br><span class="line"></span><br><span class="line">\int_a^b f(x)dx \\</span><br><span class="line"></span><br><span class="line">\int_a^b f(x)\mathrm&#123;d&#125;x</span><br></pre></td></tr></table></figure>
+\sqrt{1+\sqrt[^p\!]{1+a^2}}</script><h3 id="&#x6C42;&#x548C;&#x3001;&#x79EF;&#x5206;"><a href="#&#x6C42;&#x548C;&#x3001;&#x79EF;&#x5206;" class="headerlink" title="&#x6C42;&#x548C;&#x3001;&#x79EF;&#x5206;"></a>&#x6C42;&#x548C;&#x3001;&#x79EF;&#x5206;</h3><p>sum<br>int</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\sum_{k=1}^{n}\frac{1}{k} \\</span><br><span class="line"></span><br><span class="line">\int_a^b f(x)dx \\</span><br><span class="line"></span><br><span class="line">\int_a^b f(x)\mathrm{d}x</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \sum_{k=1}^{n}\frac{1}{k} \\
 
 \int_a^b f(x)dx \\
 
-\int_a^b f(x)\mathrm{d}x</script><h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">紧贴 a\!b \\</span><br><span class="line">没有空格 ab \\</span><br><span class="line">小空格 a\,b \\</span><br><span class="line">中等空格 a\;b \\</span><br><span class="line">大空格 a\ b \\</span><br><span class="line">quad空格 a\quad b \\</span><br><span class="line">两个quad空格 a\qquad b \\</span><br></pre></td></tr></table></figure>
+\int_a^b f(x)\mathrm{d}x</script><h3 id="&#x7A7A;&#x683C;"><a href="#&#x7A7A;&#x683C;" class="headerlink" title="&#x7A7A;&#x683C;"></a>&#x7A7A;&#x683C;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x7D27;&#x8D34; a\!b \\</span><br><span class="line">&#x6CA1;&#x6709;&#x7A7A;&#x683C; ab \\</span><br><span class="line">&#x5C0F;&#x7A7A;&#x683C; a\,b \\</span><br><span class="line">&#x4E2D;&#x7B49;&#x7A7A;&#x683C; a\;b \\</span><br><span class="line">&#x5927;&#x7A7A;&#x683C; a\ b \\</span><br><span class="line">quad&#x7A7A;&#x683C; a\quad b \\</span><br><span class="line">&#x4E24;&#x4E2A;quad&#x7A7A;&#x683C; a\qquad b \\</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 紧贴 a\!b \\
 没有空格 ab \\
@@ -178,10 +187,10 @@ x_{down}^{up}</script><h3 id="分号"><a href="#分号" class="headerlink" title
 中等空格 a\;b \\
 大空格 a\ b \\
 quad空格 a\quad b \\
-两个quad空格 a\qquad b \\</script><h3 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\left(\sum_&#123;k=\frac&#123;1&#125;&#123;2&#125;&#125;^&#123;N^2&#125;\frac&#123;1&#125;&#123;k&#125;\right) \\</span><br><span class="line">(\sum_&#123;k=\frac&#123;1&#125;&#123;2&#125;&#125;^&#123;N^2&#125;\frac&#123;1&#125;&#123;k&#125;)</span><br></pre></td></tr></table></figure>
+两个quad空格 a\qquad b \\</script><h3 id="&#x62EC;&#x53F7;"><a href="#&#x62EC;&#x53F7;" class="headerlink" title="&#x62EC;&#x53F7;"></a>&#x62EC;&#x53F7;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right) \\</span><br><span class="line">(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k})</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right) \\
-(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k})</script><h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;matrix&#125;1&amp;2\\3&amp;4\end&#123;matrix&#125; \\</span><br><span class="line"></span><br><span class="line">\begin&#123;pmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;pmatrix&#125; \\</span><br><span class="line"></span><br><span class="line">\begin&#123;bmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;bmatrix&#125; \\</span><br><span class="line"></span><br><span class="line">\begin&#123;Bmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;Bmatrix&#125; \\</span><br><span class="line"></span><br><span class="line">\begin&#123;vmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;vmatrix&#125; \\</span><br><span class="line"></span><br><span class="line">\left|\begin&#123;matrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;matrix&#125;\right| \\</span><br><span class="line"></span><br><span class="line">\begin&#123;Vmatrix&#125;1 &amp; 2\\\\3 &amp;4\end&#123;Vmatrix&#125;</span><br></pre></td></tr></table></figure>
+(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k})</script><h3 id="&#x77E9;&#x9635;"><a href="#&#x77E9;&#x9635;" class="headerlink" title="&#x77E9;&#x9635;"></a>&#x77E9;&#x9635;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">\begin{matrix}1&amp;2\\3&amp;4\end{matrix} \\</span><br><span class="line"></span><br><span class="line">\begin{pmatrix}1 &amp; 2\\\\3 &amp;4\end{pmatrix} \\</span><br><span class="line"></span><br><span class="line">\begin{bmatrix}1 &amp; 2\\\\3 &amp;4\end{bmatrix} \\</span><br><span class="line"></span><br><span class="line">\begin{Bmatrix}1 &amp; 2\\\\3 &amp;4\end{Bmatrix} \\</span><br><span class="line"></span><br><span class="line">\begin{vmatrix}1 &amp; 2\\\\3 &amp;4\end{vmatrix} \\</span><br><span class="line"></span><br><span class="line">\left|\begin{matrix}1 &amp; 2\\\\3 &amp;4\end{matrix}\right| \\</span><br><span class="line"></span><br><span class="line">\begin{Vmatrix}1 &amp; 2\\\\3 &amp;4\end{Vmatrix}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \begin{matrix}1&2\\3&4\end{matrix} \\
 
@@ -195,14 +204,14 @@ quad空格 a\quad b \\
 
 \left|\begin{matrix}1 & 2\\\\3 &4\end{matrix}\right| \\
 
-\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\mathbf&#123;X&#125; =</span><br><span class="line">\left( \begin&#123;array&#125;&#123;ccc&#125;</span><br><span class="line">x_&#123;11&#125; &amp; x\_&#123;12&#125; &amp; \ldots \\\\</span><br><span class="line">x\_&#123;21&#125; &amp; x\_&#123;22&#125; &amp; \ldots \\\\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots</span><br><span class="line">\end&#123;array&#125; \right)</span><br></pre></td></tr></table></figure>
+\begin{Vmatrix}1 & 2\\\\3 &4\end{Vmatrix}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\mathbf{X} =</span><br><span class="line">\left( \begin{array}{ccc}</span><br><span class="line">x_{11} &amp; x\_{12} &amp; \ldots \\\\</span><br><span class="line">x\_{21} &amp; x\_{22} &amp; \ldots \\\\</span><br><span class="line">\vdots &amp; \vdots &amp; \ddots</span><br><span class="line">\end{array} \right)</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \mathbf{X} =
 \left( \begin{array}{ccc}
 x_{11} & x\_{12} & \ldots \\\\
 x\_{21} & x\_{22} & \ldots \\\\
 \vdots & \vdots & \ddots
-\end{array} \right)</script><h3 id="长公式"><a href="#长公式" class="headerlink" title="长公式"></a>长公式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">不对齐\\</span><br><span class="line">\begin&#123;multline&#125;</span><br><span class="line">x = a+b+c+&#123;&#125; \\\\</span><br><span class="line">d+e+f+g</span><br><span class="line">\end&#123;multline&#125;</span><br><span class="line">\\对齐\\</span><br><span class="line">\begin&#123;aligned&#125;</span><br><span class="line">x =&#123;&#125;&amp; a+b+c+&#123;&#125; \\\\</span><br><span class="line">&amp;d+e+f+g</span><br><span class="line">\end&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
+\end{array} \right)</script><h3 id="&#x957F;&#x516C;&#x5F0F;"><a href="#&#x957F;&#x516C;&#x5F0F;" class="headerlink" title="&#x957F;&#x516C;&#x5F0F;"></a>&#x957F;&#x516C;&#x5F0F;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x4E0D;&#x5BF9;&#x9F50;\\</span><br><span class="line">\begin{multline}</span><br><span class="line">x = a+b+c+{} \\\\</span><br><span class="line">d+e+f+g</span><br><span class="line">\end{multline}</span><br><span class="line">\\&#x5BF9;&#x9F50;\\</span><br><span class="line">\begin{aligned}</span><br><span class="line">x ={}&amp; a+b+c+{} \\\\</span><br><span class="line">&amp;d+e+f+g</span><br><span class="line">\end{aligned}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 不对齐\\
 \begin{multline}
@@ -213,7 +222,7 @@ d+e+f+g
 \begin{aligned}
 x ={}& a+b+c+{} \\\\
 &d+e+f+g
-\end{aligned}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\left.</span><br><span class="line">\begin&#123;array&#125;&#123;l&#125;</span><br><span class="line">\text&#123;if $n$ is even:&#125;&amp;n/2\\</span><br><span class="line">\text&#123;if $n$ is odd:&#125;&amp;3n+1</span><br><span class="line">\end&#123;array&#125;</span><br><span class="line">\right\&#125;</span><br><span class="line">=f(n)</span><br></pre></td></tr></table></figure>
+\end{aligned}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\left.</span><br><span class="line">\begin{array}{l}</span><br><span class="line">\text{if $n$ is even:}&amp;n/2\\</span><br><span class="line">\text{if $n$ is odd:}&amp;3n+1</span><br><span class="line">\end{array}</span><br><span class="line">\right\}</span><br><span class="line">=f(n)</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \left.
 \begin{array}{l}
@@ -221,24 +230,24 @@ x ={}& a+b+c+{} \\\\
 \text{if $n$ is odd:}&3n+1
 \end{array}
 \right\}
-=f(n)</script><h3 id="公式组"><a href="#公式组" class="headerlink" title="公式组"></a>公式组</h3><p>居中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;gather&#125;</span><br><span class="line">a = b+c+d \\</span><br><span class="line">x = y+z</span><br><span class="line">\end&#123;gather&#125;</span><br></pre></td></tr></table></figure>
+=f(n)</script><h3 id="&#x516C;&#x5F0F;&#x7EC4;"><a href="#&#x516C;&#x5F0F;&#x7EC4;" class="headerlink" title="&#x516C;&#x5F0F;&#x7EC4;"></a>&#x516C;&#x5F0F;&#x7EC4;</h3><p>&#x5C45;&#x4E2D;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{gather}</span><br><span class="line">a = b+c+d \\</span><br><span class="line">x = y+z</span><br><span class="line">\end{gather}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \begin{gather}
 a = b+c+d \\
 x = y+z
-\end{gather}</script><p>对齐</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;align&#125;</span><br><span class="line">a &amp;= b+c+d \tag&#123;行标&#125;\\</span><br><span class="line">x &amp;= y+z</span><br><span class="line">\end&#123;align&#125;</span><br></pre></td></tr></table></figure>
+\end{gather}</script><p>&#x5BF9;&#x9F50;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin{align}</span><br><span class="line">a &amp;= b+c+d \tag{&#x884C;&#x6807;}\\</span><br><span class="line">x &amp;= y+z</span><br><span class="line">\end{align}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \begin{align}
 a &= b+c+d \tag{行标}\\
 x &= y+z
-\end{align}</script><h3 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y=\begin&#123;cases&#125;</span><br><span class="line">-x,\quad x\leq 0 \\\\</span><br><span class="line">x,\quad x&gt;0</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
+\end{align}</script><h3 id="&#x5206;&#x6BB5;&#x51FD;&#x6570;"><a href="#&#x5206;&#x6BB5;&#x51FD;&#x6570;" class="headerlink" title="&#x5206;&#x6BB5;&#x51FD;&#x6570;"></a>&#x5206;&#x6BB5;&#x51FD;&#x6570;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">y=\begin{cases}</span><br><span class="line">-x,\quad x\leq 0 \\\\</span><br><span class="line">x,\quad x&gt;0</span><br><span class="line">\end{cases}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 y=\begin{cases}
 -x,\quad x\leq 0 \\\\
 x,\quad x>0
-\end{cases}</script><h3 id="划线、制表"><a href="#划线、制表" class="headerlink" title="划线、制表"></a>划线、制表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\left(\begin&#123;array&#125;&#123;|c|c|&#125;</span><br><span class="line">1 &amp; 2 \\</span><br><span class="line">\hline</span><br><span class="line">3 &amp; 4</span><br><span class="line">\end&#123;array&#125;\right) \\</span><br><span class="line"></span><br><span class="line">\begin&#123;array&#125;&#123;|c|c|&#125;</span><br><span class="line">\hline11 &amp; \cdots \\</span><br><span class="line">\hline3 &amp; 4 \\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
+\end{cases}</script><h3 id="&#x5212;&#x7EBF;&#x3001;&#x5236;&#x8868;"><a href="#&#x5212;&#x7EBF;&#x3001;&#x5236;&#x8868;" class="headerlink" title="&#x5212;&#x7EBF;&#x3001;&#x5236;&#x8868;"></a>&#x5212;&#x7EBF;&#x3001;&#x5236;&#x8868;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">\left(\begin{array}{|c|c|}</span><br><span class="line">1 &amp; 2 \\</span><br><span class="line">\hline</span><br><span class="line">3 &amp; 4</span><br><span class="line">\end{array}\right) \\</span><br><span class="line"></span><br><span class="line">\begin{array}{|c|c|}</span><br><span class="line">\hline11 &amp; \cdots \\</span><br><span class="line">\hline3 &amp; 4 \\</span><br><span class="line">\hline</span><br><span class="line">\end{array}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \left(\begin{array}{|c|c|}
 1 & 2 \\
@@ -252,141 +261,141 @@ x,\quad x>0
 \hline
 3 & 4 \\
 \hline
-\end{array}</script><h3 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h3><div class="table-container">
+\end{array}</script><h3 id="&#x5360;&#x4F4D;&#x7B26;"><a href="#&#x5360;&#x4F4D;&#x7B26;" class="headerlink" title="&#x5360;&#x4F4D;&#x7B26;"></a>&#x5360;&#x4F4D;&#x7B26;</h3><div class="table-container">
 <table>
 <thead>
 <tr>
-<th>符号</th>
-<th>编码</th>
-<th>符号</th>
-<th>编码</th>
+<th>&#x7B26;&#x53F7;</th>
+<th>&#x7F16;&#x7801;</th>
+<th>&#x7B26;&#x53F7;</th>
+<th>&#x7F16;&#x7801;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>&forall;</td>
+<td>&#x2200;</td>
 <td><code>&amp;forall;</code></td>
-<td>&exist;</td>
+<td>&#x2203;</td>
 <td><code>&amp;exist;</code></td>
 </tr>
 <tr>
 <td>&amp;</td>
 <td><code>&amp;amp;</code></td>
-<td>&yen;</td>
+<td>&#xA5;</td>
 <td><code>&amp;yen;</code></td>
 </tr>
 <tr>
-<td>&iquest;</td>
+<td>&#xBF;</td>
 <td><code>&amp;iquest;</code></td>
-<td>&euro;</td>
+<td>&#x20AC;</td>
 <td><code>&amp;euro;</code></td>
 </tr>
 <tr>
-<td>&sect;</td>
+<td>&#xA7;</td>
 <td><code>&amp;sect;</code></td>
-<td>&cent;</td>
+<td>&#xA2;</td>
 <td><code>&amp;cent;</code></td>
 </tr>
 <tr>
-<td>&times;</td>
+<td>&#xD7;</td>
 <td><code>&amp;times;</code></td>
-<td>&pound;</td>
+<td>&#xA3;</td>
 <td><code>&amp;pound;</code></td>
 </tr>
 <tr>
-<td>&divide;</td>
+<td>&#xF7;</td>
 <td><code>&amp;divide;</code></td>
-<td>&deg;</td>
+<td>&#xB0;</td>
 <td><code>&amp;deg;</code></td>
 </tr>
 <tr>
-<td>&plusmn;</td>
+<td>&#xB1;</td>
 <td><code>&amp;plusmn;</code></td>
-<td>&permil;</td>
+<td>&#x2030;</td>
 <td><code>&amp;permil;</code></td>
 </tr>
 <tr>
-<td>&infin;</td>
+<td>&#x221E;</td>
 <td><code>&amp;infin;</code></td>
-<td>&there4;</td>
+<td>&#x2234;</td>
 <td><code>&amp;there4; &amp;therefore;</code></td>
 </tr>
 <tr>
-<td>&ne;</td>
+<td>&#x2260;</td>
 <td><code>&amp;ne;</code></td>
-<td>&because;</td>
+<td>&#x2235;</td>
 <td><code>&amp;because;</code></td>
 </tr>
 <tr>
-<td>&equiv;</td>
+<td>&#x2261;</td>
 <td><code>&amp;equiv;</code></td>
-<td>&larr;</td>
+<td>&#x2190;</td>
 <td><code>&amp;larr;</code></td>
 </tr>
 <tr>
-<td>&le;</td>
+<td>&#x2264;</td>
 <td><code>&amp;le;</code></td>
-<td>&rarr;</td>
+<td>&#x2192;</td>
 <td><code>&amp;rarr;</code></td>
 </tr>
 <tr>
-<td>&ge;</td>
+<td>&#x2265;</td>
 <td><code>&amp;ge;</code></td>
-<td>&lArr;</td>
+<td>&#x21D0;</td>
 <td><code>&amp;lArr;</code></td>
 </tr>
 <tr>
-<td>&approx;</td>
+<td>&#x2248;</td>
 <td><code>&amp;approx;</code></td>
-<td>&rArr;</td>
+<td>&#x21D2;</td>
 <td><code>&amp;rArr;</code></td>
 </tr>
 <tr>
-<td>&perp;</td>
+<td>&#x22A5;</td>
 <td><code>&amp;perp;</code></td>
-<td>&hArr;</td>
+<td>&#x21D4;</td>
 <td><code>&amp;hArr;</code></td>
 </tr>
 <tr>
-<td>&oplus;</td>
+<td>&#x2295;</td>
 <td><code>&amp;oplus;</code></td>
-<td>&emptyset;</td>
+<td>&#x2205;</td>
 <td><code>&amp;emptyset;</code></td>
 </tr>
 <tr>
-<td>&bigotimes;</td>
+<td>&#x2A02;</td>
 <td><code>&amp;bigotimes;</code></td>
-<td>&in;</td>
+<td>&#x2208;</td>
 <td><code>&amp;in;</code></td>
 </tr>
 <tr>
-<td>&bigodot;</td>
+<td>&#x2A00;</td>
 <td><code>&amp;bigodot;</code></td>
-<td>&notin;</td>
+<td>&#x2209;</td>
 <td><code>&amp;notin;</code></td>
 </tr>
 <tr>
-<td>&mid;</td>
+<td>&#x2223;</td>
 <td><code>&amp;mid;</code></td>
-<td>&subset; &subseteq;</td>
+<td>&#x2282; &#x2286;</td>
 <td><code>&amp;subset; &amp;subseteq;</code></td>
 </tr>
 <tr>
-<td>&pi;</td>
+<td>&#x3C0;</td>
 <td><code>&amp;pi;</code></td>
-<td>&supset; &supseteq;</td>
+<td>&#x2283; &#x2287;</td>
 <td><code>&amp;supset; &amp;supseteq;</code></td>
 </tr>
 <tr>
-<td>&sim;</td>
+<td>&#x223C;</td>
 <td><code>&amp;sim;</code></td>
-<td>&tilde;</td>
+<td>&#x2DC;</td>
 <td><code>&amp;tilde;</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;array&#125;&#123;|c|c|c|c|&#125;</span><br><span class="line">\hline</span><br><span class="line">&#123;\alpha&#125; &amp; &#123;\backslash alpha&#125; &amp; &#123;\theta&#125; &amp; &#123;\backslash theta&#125; \\\\</span><br><span class="line">\hline</span><br><span class="line">&#123;\beta&#125; &amp; &#123;\backslash beta&#125; &amp; &#123;\vartheta&#125; &amp; &#123;\backslash vartheta&#125; \\\\</span><br><span class="line">\hline</span><br><span class="line">&#123;\gamma&#125; &amp; &#123;\backslash gamma&#125; &amp; &#123;\iota&#125; &amp; &#123;\backslash iota&#125; \\\\</span><br><span class="line">\hline</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;"><a href="#&#x5E0C;&#x814A;&#x5B57;&#x6BCD;" class="headerlink" title="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;"></a>&#x5E0C;&#x814A;&#x5B57;&#x6BCD;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\begin{array}{|c|c|c|c|}</span><br><span class="line">\hline</span><br><span class="line">{\alpha} &amp; {\backslash alpha} &amp; {\theta} &amp; {\backslash theta} \\\\</span><br><span class="line">\hline</span><br><span class="line">{\beta} &amp; {\backslash beta} &amp; {\vartheta} &amp; {\backslash vartheta} \\\\</span><br><span class="line">\hline</span><br><span class="line">{\gamma} &amp; {\backslash gamma} &amp; {\iota} &amp; {\backslash iota} \\\\</span><br><span class="line">\hline</span><br><span class="line">\end{array}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \begin{array}{|c|c|c|c|c|c|c|c|}
 \hline
@@ -412,39 +421,39 @@ x,\quad x>0
 \hline
 {\Omega} & {\backslash Omega} & {\Pi} & {\backslash Pi} & {\Phi} & {\backslash Phi} & {} & {} \\\\
 \hline
-\end{array}</script><h3 id="下方括号"><a href="#下方括号" class="headerlink" title="下方括号"></a>下方括号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(x_1,x_2,\underbrace&#123;\ldots&#125;_&#123;\rm ldots&#125; ,x_n) = x_1^2 + x_2^2 + \underbrace&#123;\cdots&#125;_&#123;\rm cdots&#125; + x_n^2  \\</span><br><span class="line">\underbrace&#123;abcdefg&#125;_&#123;n&#125; \\</span><br><span class="line">\overbrace&#123;abcdefg&#125;^&#123;n&#125; \\</span><br><span class="line">\fbox&#123;abcdefg&#125;</span><br></pre></td></tr></table></figure>
+\end{array}</script><h3 id="&#x4E0B;&#x65B9;&#x62EC;&#x53F7;"><a href="#&#x4E0B;&#x65B9;&#x62EC;&#x53F7;" class="headerlink" title="&#x4E0B;&#x65B9;&#x62EC;&#x53F7;"></a>&#x4E0B;&#x65B9;&#x62EC;&#x53F7;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2  \\</span><br><span class="line">\underbrace{abcdefg}_{n} \\</span><br><span class="line">\overbrace{abcdefg}^{n} \\</span><br><span class="line">\fbox{abcdefg}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2  \\
 \underbrace{abcdefg}_{n} \\
 \overbrace{abcdefg}^{n} \\
-\fbox{abcdefg}</script><h3 id="矢量"><a href="#矢量" class="headerlink" title="矢量"></a>矢量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\vec&#123;a&#125; \cdot \vec&#123;b&#125;=0</span><br></pre></td></tr></table></figure>
+\fbox{abcdefg}</script><h3 id="&#x77E2;&#x91CF;"><a href="#&#x77E2;&#x91CF;" class="headerlink" title="&#x77E2;&#x91CF;"></a>&#x77E2;&#x91CF;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\vec{a} \cdot \vec{b}=0</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\vec{a} \cdot \vec{b}=0</script><h3 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\overleftarrow&#123;xy&#125;  \overleftrightarrow&#123;xy&#125;  \overrightarrow&#123;xy&#125;  \overline&#123;xy&#125;</span><br></pre></td></tr></table></figure>
+\vec{a} \cdot \vec{b}=0</script><h3 id="&#x7BAD;&#x5934;"><a href="#&#x7BAD;&#x5934;" class="headerlink" title="&#x7BAD;&#x5934;"></a>&#x7BAD;&#x5934;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\overleftarrow{xy}  \overleftrightarrow{xy}  \overrightarrow{xy}  \overline{xy}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\overleftarrow{xy} \quad \overleftrightarrow{xy} \quad \overrightarrow{xy} \quad \overline{xy}</script><h3 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\lim_&#123;n \to +\infty&#125; \frac&#123;1&#125;&#123;n(n+1)&#125;    \lim_&#123;x\leftarrow&#123;示例&#125;&#125; \frac&#123;1&#125;&#123;n(n+1)&#125;</span><br></pre></td></tr></table></figure>
+\overleftarrow{xy} \quad \overleftrightarrow{xy} \quad \overrightarrow{xy} \quad \overline{xy}</script><h3 id="&#x6781;&#x9650;"><a href="#&#x6781;&#x9650;" class="headerlink" title="&#x6781;&#x9650;"></a>&#x6781;&#x9650;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\lim_{n \to +\infty} \frac{1}{n(n+1)}    \lim_{x\leftarrow{&#x793A;&#x4F8B;}} \frac{1}{n(n+1)}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\lim_{n \to +\infty} \frac{1}{n(n+1)}  \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}</script><h3 id="累乘、集合"><a href="#累乘、集合" class="headerlink" title="累乘、集合"></a>累乘、集合</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\prod_&#123;i=1&#125;^n \frac&#123;1&#125;&#123;i^2&#125;      \bigcup_&#123;i=1&#125;^&#123;2&#125; R</span><br></pre></td></tr></table></figure>
+\lim_{n \to +\infty} \frac{1}{n(n+1)}  \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)}</script><h3 id="&#x7D2F;&#x4E58;&#x3001;&#x96C6;&#x5408;"><a href="#&#x7D2F;&#x4E58;&#x3001;&#x96C6;&#x5408;" class="headerlink" title="&#x7D2F;&#x4E58;&#x3001;&#x96C6;&#x5408;"></a>&#x7D2F;&#x4E58;&#x3001;&#x96C6;&#x5408;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\prod_{i=1}^n \frac{1}{i^2}      \bigcup_{i=1}^{2} R</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\prod_{i=1}^n \frac{1}{i^2}  \quad \bigcup_{i=1}^{2} R</script><h3 id="戴帽符"><a href="#戴帽符" class="headerlink" title="戴帽符"></a>戴帽符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\hat&#123;x&#125;  \widehat&#123;xyz&#125;  \tilde&#123;x&#125;   \widetilde&#123;xyz&#125;</span><br></pre></td></tr></table></figure>
+\prod_{i=1}^n \frac{1}{i^2}  \quad \bigcup_{i=1}^{2} R</script><h3 id="&#x6234;&#x5E3D;&#x7B26;"><a href="#&#x6234;&#x5E3D;&#x7B26;" class="headerlink" title="&#x6234;&#x5E3D;&#x7B26;"></a>&#x6234;&#x5E3D;&#x7B26;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\hat{x}  \widehat{xyz}  \tilde{x}   \widetilde{xyz}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\hat{x} \quad \widehat{xyz} \quad \tilde{x} \quad \widetilde{xyz}</script><h3 id="其他字体"><a href="#其他字体" class="headerlink" title="其他字体"></a>其他字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;\frak &#123;sample&#125;&#125;   &#123;\tt &#123;sample&#125;&#125;   &#123;\sf &#123;sample&#125;&#125;</span><br></pre></td></tr></table></figure>
+\hat{x} \quad \widehat{xyz} \quad \tilde{x} \quad \widetilde{xyz}</script><h3 id="&#x5176;&#x4ED6;&#x5B57;&#x4F53;"><a href="#&#x5176;&#x4ED6;&#x5B57;&#x4F53;" class="headerlink" title="&#x5176;&#x4ED6;&#x5B57;&#x4F53;"></a>&#x5176;&#x4ED6;&#x5B57;&#x4F53;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{\frak {sample}}   {\tt {sample}}   {\sf {sample}}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-{\frak {sample}} \quad {\tt {sample}} \quad {\sf {sample}}</script><h3 id="其他颜色"><a href="#其他颜色" class="headerlink" title="其他颜色"></a>其他颜色</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\color&#123;maroon&#125;&#123;sample&#125;  \color&#123;lime&#125;&#123;sample&#125; \color&#123;blue&#125;&#123;sample&#125;</span><br></pre></td></tr></table></figure>
+{\frak {sample}} \quad {\tt {sample}} \quad {\sf {sample}}</script><h3 id="&#x5176;&#x4ED6;&#x989C;&#x8272;"><a href="#&#x5176;&#x4ED6;&#x989C;&#x8272;" class="headerlink" title="&#x5176;&#x4ED6;&#x989C;&#x8272;"></a>&#x5176;&#x4ED6;&#x989C;&#x8272;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\color{maroon}{sample}  \color{lime}{sample} \color{blue}{sample}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
-\color{maroon}{sample} \quad \color{lime}{sample} \quad \color{blue}{sample}</script><h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\require&#123;cancel&#125;</span><br><span class="line">\cancel&#123;x+y&#125;\\</span><br><span class="line">\bcancel&#123;x+y&#125;\\</span><br><span class="line">\xcancel&#123;x+y&#125;\\</span><br><span class="line">\cancelto&#123;a+b&#125;&#123;x+y&#125;</span><br></pre></td></tr></table></figure>
+\color{maroon}{sample} \quad \color{lime}{sample} \quad \color{blue}{sample}</script><h3 id="&#x5220;&#x9664;&#x7EBF;"><a href="#&#x5220;&#x9664;&#x7EBF;" class="headerlink" title="&#x5220;&#x9664;&#x7EBF;"></a>&#x5220;&#x9664;&#x7EBF;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\require{cancel}</span><br><span class="line">\cancel{x+y}\\</span><br><span class="line">\bcancel{x+y}\\</span><br><span class="line">\xcancel{x+y}\\</span><br><span class="line">\cancelto{a+b}{x+y}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \require{cancel}
 \cancel{x+y}\\
 \bcancel{x+y}\\
 \xcancel{x+y}\\
-\cancelto{a+b}{x+y}</script><h3 id="整段删除"><a href="#整段删除" class="headerlink" title="整段删除"></a>整段删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\require&#123;enclose&#125;</span><br><span class="line">\enclose&#123;horizontalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\enclose&#123;verticalstrike&#125;&#123;\frac&#123;x&#125;&#123;y&#125;&#125;\\</span><br><span class="line">\enclose&#123;updiagonalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\enclose&#123;downdiagonalstrike&#125;&#123;x+y&#125;\\</span><br><span class="line">\enclose&#123;horizontalstrike,updiagonalstrike&#125;&#123;x+y&#125;</span><br></pre></td></tr></table></figure>
+\cancelto{a+b}{x+y}</script><h3 id="&#x6574;&#x6BB5;&#x5220;&#x9664;"><a href="#&#x6574;&#x6BB5;&#x5220;&#x9664;" class="headerlink" title="&#x6574;&#x6BB5;&#x5220;&#x9664;"></a>&#x6574;&#x6BB5;&#x5220;&#x9664;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\require{enclose}</span><br><span class="line">\enclose{horizontalstrike}{x+y}\\</span><br><span class="line">\enclose{verticalstrike}{\frac{x}{y}}\\</span><br><span class="line">\enclose{updiagonalstrike}{x+y}\\</span><br><span class="line">\enclose{downdiagonalstrike}{x+y}\\</span><br><span class="line">\enclose{horizontalstrike,updiagonalstrike}{x+y}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \require{enclose}
 \enclose{horizontalstrike}{x+y}\\
 \enclose{verticalstrike}{\frac{x}{y}}\\
 \enclose{updiagonalstrike}{x+y}\\
 \enclose{downdiagonalstrike}{x+y}\\
-\enclose{horizontalstrike,updiagonalstrike}{x+y}</script><h3 id="交换图表"><a href="#交换图表" class="headerlink" title="交换图表"></a>交换图表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\require&#123;AMScd&#125;</span><br><span class="line">\begin&#123;CD&#125;</span><br><span class="line">    A @&gt;&gt;&gt; B @&gt;&#123;\text&#123;very long label&#125;&#125;&gt;&gt; C \\</span><br><span class="line">    @. @AAA @| \\</span><br><span class="line">    D @= E @&lt;&lt;&lt; F</span><br><span class="line">\end&#123;CD&#125;</span><br></pre></td></tr></table></figure>
+\enclose{horizontalstrike,updiagonalstrike}{x+y}</script><h3 id="&#x4EA4;&#x6362;&#x56FE;&#x8868;"><a href="#&#x4EA4;&#x6362;&#x56FE;&#x8868;" class="headerlink" title="&#x4EA4;&#x6362;&#x56FE;&#x8868;"></a>&#x4EA4;&#x6362;&#x56FE;&#x8868;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\require{AMScd}</span><br><span class="line">\begin{CD}</span><br><span class="line">    A @&gt;&gt;&gt; B @&gt;{\text{very long label}}&gt;&gt; C \\</span><br><span class="line">    @. @AAA @| \\</span><br><span class="line">    D @= E @&lt;&lt;&lt; F</span><br><span class="line">\end{CD}</span><br></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 \require{AMScd}
 \begin{CD}
@@ -470,18 +479,22 @@ f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\c
                             </span>
             </a>
         </li>
-        
-
-        
-
-        
-
-        
-
-        
+        <li>
+            <a target="_blank" href="https://github.com/jianzhiting">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+	<li>
+            <a target="_blank" href="https://space.bilibili.com/50146626?from=search&seid=15037865582393636035/">
+                            <span>
+                                <i class="iconfont icon-bilibili-line"></i>
+                            </span>
+            </a>
+        </li>
 
     </ul>
-    
     <p>
 	to work harder
         <!-- 
@@ -496,12 +509,12 @@ f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\c
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 <script>
     // We expose some of the variables needed by the front end

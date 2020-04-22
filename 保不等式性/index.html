@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
 
     <title>
         
@@ -17,15 +18,23 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
-    <!-- https://www.bootcdn.cn/mathjax/ -->
+    <link href="//at.alicdn.com/t/font_1165120_0wsyrhj51lx.css" rel="stylesheet" type="text/css">
     
     <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js" integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous"></script>
+    <script>
+    renderMathInElement(document.body,{
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          }
+    );
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->    
     
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body>
@@ -138,12 +147,12 @@
 
     </div>
     <div class="post-content no-indent">
-        <p>数列保不等式性的定义：设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n ≤ b_n</script>，则:</p>
+        <p>&#x6570;&#x5217;&#x4FDD;&#x4E0D;&#x7B49;&#x5F0F;&#x6027;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;&#x8BBE;<script type="math/tex">\{a_n\}</script>&#x4E0E;<script type="math/tex">\{b_n\}</script>&#x5747;&#x4E3A;&#x6536;&#x655B;&#x6570;&#x5217;&#xFF0C;&#x82E5;&#x5B58;&#x5728;&#x6B63;&#x6570;<script type="math/tex">N_0</script>&#xFF0C;&#x4F7F;&#x5F97;&#x5F53;<script type="math/tex">n > N_0</script>&#x65F6;&#x6709;<script type="math/tex">a_n ≤ b_n</script>&#xFF0C;&#x5219;:</p>
 <script type="math/tex; mode=display">
-\lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script><p>如果把定理中的条件换成严格不等式<script type="math/tex">a_n < b_n</script>，结论中仍为<script type="math/tex">\lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script></p>
-<or>以下是一个错误证明：</or>
+\lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script><p>&#x5982;&#x679C;&#x628A;&#x5B9A;&#x7406;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x6362;&#x6210;&#x4E25;&#x683C;&#x4E0D;&#x7B49;&#x5F0F;<script type="math/tex">a_n < b_n</script>&#xFF0C;&#x7ED3;&#x8BBA;&#x4E2D;&#x4ECD;&#x4E3A;<script type="math/tex">\lim_{n \to +\infty} a_n  ≤  \lim_{n \to + \infty} b_n</script></p>
+<or>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x8BC1;&#x660E;&#xFF1A;</or>
 
-<p><hr><br>设<script type="math/tex">\{a_n\}</script>与<script type="math/tex">\{b_n\}</script>均为收敛数列，若存在正数<script type="math/tex">N_0</script>，使得当<script type="math/tex">n > N_0</script>时有<script type="math/tex">a_n < b_n</script>，则<script type="math/tex">\lim_{n \to \infty} a_n \color{red}{<} \lim_{n \to \infty} b_n</script></p>
+<p><hr><br>&#x8BBE;<script type="math/tex">\{a_n\}</script>&#x4E0E;<script type="math/tex">\{b_n\}</script>&#x5747;&#x4E3A;&#x6536;&#x655B;&#x6570;&#x5217;&#xFF0C;&#x82E5;&#x5B58;&#x5728;&#x6B63;&#x6570;<script type="math/tex">N_0</script>&#xFF0C;&#x4F7F;&#x5F97;&#x5F53;<script type="math/tex">n > N_0</script>&#x65F6;&#x6709;<script type="math/tex">a_n < b_n</script>&#xFF0C;&#x5219;<script type="math/tex">\lim_{n \to \infty} a_n \color{red}{<} \lim_{n \to \infty} b_n</script></p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 证：&设\lim_{n \to + \infty}a_n = a，\lim_{n \to + \infty}b_n = b\\
@@ -157,9 +166,9 @@
 &\;\forall\varepsilon>0，\exists\delta>0，有a<b+2\varepsilon-\delta，则a<b\\
 &\;反证：倘若结论不成立，有a\ge b，令\varepsilon=\frac{a-b+\delta}{2}，则a=b+2\varepsilon-\delta与条件矛盾\\
 &\qquad\;\;\;从而必有a<b.得证
-\end{aligned}</script><p><hr><br>分析该证明错误原因：</p>
-<p>根据<script type="math/tex">\color{red}{\exists\delta>0，当n>N_0\quad a_n+\delta\le b_n}</script>可知<script type="math/tex">\delta \le min\{b_n-a_n\}</script></p>
-<p>若当<script type="math/tex">n \to \infty</script>时，<script type="math/tex">b_n-a_n</script>取得最小值，那么<script type="math/tex">\delta = \lim_{n \to \infty} (b_n-a_n)</script> </p>
+\end{aligned}</script><p><hr><br>&#x5206;&#x6790;&#x8BE5;&#x8BC1;&#x660E;&#x9519;&#x8BEF;&#x539F;&#x56E0;&#xFF1A;</p>
+<p>&#x6839;&#x636E;<script type="math/tex">\color{red}{\exists\delta>0，当n>N_0\quad a_n+\delta\le b_n}</script>&#x53EF;&#x77E5;<script type="math/tex">\delta \le min\{b_n-a_n\}</script></p>
+<p>&#x82E5;&#x5F53;<script type="math/tex">n \to \infty</script>&#x65F6;&#xFF0C;<script type="math/tex">b_n-a_n</script>&#x53D6;&#x5F97;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x90A3;&#x4E48;<script type="math/tex">\delta = \lim_{n \to \infty} (b_n-a_n)</script> </p>
 
         <a id="gotop" href="#"><i class="iconfont icon-up-circle"></i></a>
         
@@ -179,18 +188,22 @@
                             </span>
             </a>
         </li>
-        
-
-        
-
-        
-
-        
-
-        
+        <li>
+            <a target="_blank" href="https://github.com/jianzhiting">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+	<li>
+            <a target="_blank" href="https://space.bilibili.com/50146626?from=search&seid=15037865582393636035/">
+                            <span>
+                                <i class="iconfont icon-bilibili-line"></i>
+                            </span>
+            </a>
+        </li>
 
     </ul>
-    
     <p>
 	to work harder
         <!-- 
@@ -205,12 +218,12 @@
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 <script>
     // We expose some of the variables needed by the front end

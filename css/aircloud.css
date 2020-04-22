@@ -64,6 +64,9 @@ or{
 .valine .vemoticon-img{
   width: auto;
 }
+.v[data-class=v] .vcards .vcard .vcontent frame, .v[data-class=v] .vcards .vcard .vcontent iframe, .v[data-class=v] .vcards .vcard .vcontent img{
+  width: auto;
+}
 .red {
   color: red;
 }

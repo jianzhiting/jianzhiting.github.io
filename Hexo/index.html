@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
 
     <title>
         
@@ -17,12 +18,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <link href="//at.alicdn.com/t/font_1165120_w77ne6oe34j.css" rel="stylesheet" type="text/css">
-    <!-- https://www.bootcdn.cn/mathjax/ -->
+    <link href="//at.alicdn.com/t/font_1165120_0wsyrhj51lx.css" rel="stylesheet" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body>
@@ -135,56 +133,56 @@
 
     </div>
     <div class="post-content no-indent">
-        <h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout]&lt;title&gt;` # 如果标题包含空格的话，请使用引号括起来</span><br><span class="line">hexo new &quot;post title with whitespace&quot;</span><br><span class="line"></span><br><span class="line">hexo generate # 生成静态文件</span><br><span class="line"></span><br><span class="line">hexo -d # deploy文件生成后立即部署网站</span><br><span class="line">hexo -w # watch监视文件变动</span><br><span class="line"></span><br><span class="line">hexo server # 启动服务器，在本地查看</span><br><span class="line"></span><br><span class="line">hexo clean # 清除缓存文件 (db.json) 和已生成的静态文件 (public）</span><br></pre></td></tr></table></figure>
-<h3 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h3><ol>
-<li><p>如何使用双标签</p>
-<p>tags: [标签1, 标签2]</p>
+        <h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528;</h2><h3 id="&#x57FA;&#x672C;&#x547D;&#x4EE4;"><a href="#&#x57FA;&#x672C;&#x547D;&#x4EE4;" class="headerlink" title="&#x57FA;&#x672C;&#x547D;&#x4EE4;"></a>&#x57FA;&#x672C;&#x547D;&#x4EE4;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout]&lt;title&gt;` # &#x5982;&#x679C;&#x6807;&#x9898;&#x5305;&#x542B;&#x7A7A;&#x683C;&#x7684;&#x8BDD;&#xFF0C;&#x8BF7;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;</span><br><span class="line">hexo new &quot;post title with whitespace&quot;</span><br><span class="line"></span><br><span class="line">hexo generate # &#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;</span><br><span class="line"></span><br><span class="line">hexo -d # deploy&#x6587;&#x4EF6;&#x751F;&#x6210;&#x540E;&#x7ACB;&#x5373;&#x90E8;&#x7F72;&#x7F51;&#x7AD9;</span><br><span class="line">hexo -w # watch&#x76D1;&#x89C6;&#x6587;&#x4EF6;&#x53D8;&#x52A8;</span><br><span class="line"></span><br><span class="line">hexo server # &#x542F;&#x52A8;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5728;&#x672C;&#x5730;&#x67E5;&#x770B;</span><br><span class="line"></span><br><span class="line">hexo clean # &#x6E05;&#x9664;&#x7F13;&#x5B58;&#x6587;&#x4EF6; (db.json) &#x548C;&#x5DF2;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x6587;&#x4EF6; (public&#xFF09;</span><br></pre></td></tr></table></figure>
+<h3 id="&#x5176;&#x4ED6;&#x64CD;&#x4F5C;"><a href="#&#x5176;&#x4ED6;&#x64CD;&#x4F5C;" class="headerlink" title="&#x5176;&#x4ED6;&#x64CD;&#x4F5C;"></a>&#x5176;&#x4ED6;&#x64CD;&#x4F5C;</h3><ol>
+<li><p>&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x53CC;&#x6807;&#x7B7E;</p>
+<p>tags: [&#x6807;&#x7B7E;1, &#x6807;&#x7B7E;2]</p>
 </li>
-<li><p>如何是使用数学公式渲染器</p>
+<li><p>&#x5982;&#x4F55;&#x662F;&#x4F7F;&#x7528;&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x6E32;&#x67D3;&#x5668;</p>
 <p>mathjax: true</p>
 </li>
-<li><p>评论开关<br>comment: true</p>
+<li><p>&#x8BC4;&#x8BBA;&#x5F00;&#x5173;<br>comment: true</p>
 </li>
 </ol>
-<h3 id="写作提示"><a href="#写作提示" class="headerlink" title="写作提示"></a>写作提示</h3><blockquote>
-<p>这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用这是一段引用</p>
-<p>绿色康</p>
+<h3 id="&#x5199;&#x4F5C;&#x63D0;&#x793A;"><a href="#&#x5199;&#x4F5C;&#x63D0;&#x793A;" class="headerlink" title="&#x5199;&#x4F5C;&#x63D0;&#x793A;"></a>&#x5199;&#x4F5C;&#x63D0;&#x793A;</h3><blockquote>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;&#x8FD9;&#x662F;&#x4E00;&#x6BB5;&#x5F15;&#x7528;</p>
+<p>&#x7EFF;&#x8272;&#x5EB7;</p>
 </blockquote>
 <ol>
-<li><p>安利你偶尔</p>
+<li><p>&#x5B89;&#x5229;&#x4F60;&#x5076;&#x5C14;</p>
 </li>
-<li><p>斯丁哦<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<li><p>&#x65AF;&#x4E01;&#x54E6;<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
 </li>
-<li><p>电视<code>里能</code><sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<li><p>&#x7535;&#x89C6;<code>&#x91CC;&#x80FD;</code><sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
 </li>
-<li><p>僧</p>
+<li><p>&#x50E7;</p>
 </li>
-<li><p>孙工二<strong>十个</strong></p>
-<p><code>if else when{}</code><or>橘色显示</or></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>&#x5B59;&#x5DE5;&#x4E8C;<strong>&#x5341;&#x4E2A;</strong></p>
+<p><code>if else when{}</code><or>&#x6A58;&#x8272;&#x663E;&#x793A;</or></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
-<li><a href="http://www.jiziti.fun">链接</a></li>
-<li><u>下划线</u></li>
-<li><em>斜体</em></li>
-<li>无序列表</li>
-<li><del>删除线</del></li>
+<li><a href="http://www.jiziti.fun">&#x94FE;&#x63A5;</a></li>
+<li><u>&#x4E0B;&#x5212;&#x7EBF;</u></li>
+<li><em>&#x659C;&#x4F53;</em></li>
+<li>&#x65E0;&#x5E8F;&#x5217;&#x8868;</li>
+<li><del>&#x5220;&#x9664;&#x7EBF;</del></li>
 </ul>
 <blockquote id="fn_1">
-<sup>1</sup>. 第一次使用脚注<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+<sup>1</sup>. &#x7B2C;&#x4E00;&#x6B21;&#x4F7F;&#x7528;&#x811A;&#x6CE8;<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#x21A9;</a>
 </blockquote>
 <blockquote id="fn_2">
-<sup>2</sup>. 其他<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+<sup>2</sup>. &#x5176;&#x4ED6;<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#x21A9;</a>
 </blockquote>
-<h2 id="更新变动"><a href="#更新变动" class="headerlink" title="更新变动"></a>更新变动</h2><ul>
-<li>[x] 样式微调</li>
-<li>[x] 评论功能</li>
-<li>[x] 数学公式渲染功能</li>
-<li>[x] 回到顶部功能</li>
-<li>[x] 图片懒加载功能</li>
-<li>[x] <a href="https://www.axutongxue.com/2019/05/blogger-valine.html" target="_blank" rel="noopener">预计更换评论功能，增加匿名评论</a></li>
-<li>[ ] 预计改变渲染引擎，使渲染加速katex</li>
+<h2 id="&#x66F4;&#x65B0;&#x53D8;&#x52A8;"><a href="#&#x66F4;&#x65B0;&#x53D8;&#x52A8;" class="headerlink" title="&#x66F4;&#x65B0;&#x53D8;&#x52A8;"></a>&#x66F4;&#x65B0;&#x53D8;&#x52A8;</h2><ul>
+<li>[x] &#x6837;&#x5F0F;&#x5FAE;&#x8C03;</li>
+<li>[x] &#x8BC4;&#x8BBA;&#x529F;&#x80FD;</li>
+<li>[x] &#x6570;&#x5B66;&#x516C;&#x5F0F;&#x6E32;&#x67D3;&#x529F;&#x80FD;</li>
+<li>[x] &#x56DE;&#x5230;&#x9876;&#x90E8;&#x529F;&#x80FD;</li>
+<li>[x] &#x56FE;&#x7247;&#x61D2;&#x52A0;&#x8F7D;&#x529F;&#x80FD;</li>
+<li>[x] <a href="https://www.axutongxue.com/2019/05/blogger-valine.html" target="_blank" rel="noopener">&#x9884;&#x8BA1;&#x66F4;&#x6362;&#x8BC4;&#x8BBA;&#x529F;&#x80FD;&#xFF0C;&#x589E;&#x52A0;&#x533F;&#x540D;&#x8BC4;&#x8BBA;</a></li>
+<li>[ ] &#x9884;&#x8BA1;&#x6539;&#x53D8;&#x6E32;&#x67D3;&#x5F15;&#x64CE;&#xFF0C;&#x4F7F;&#x6E32;&#x67D3;&#x52A0;&#x901F;katex</li>
 </ul>
 
         <a id="gotop" href="#"><i class="iconfont icon-up-circle"></i></a>
@@ -205,18 +203,22 @@
                             </span>
             </a>
         </li>
-        
-
-        
-
-        
-
-        
-
-        
+        <li>
+            <a target="_blank" href="https://github.com/jianzhiting">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+	<li>
+            <a target="_blank" href="https://space.bilibili.com/50146626?from=search&seid=15037865582393636035/">
+                            <span>
+                                <i class="iconfont icon-bilibili-line"></i>
+                            </span>
+            </a>
+        </li>
 
     </ul>
-    
     <p>
 	to work harder
         <!-- 
@@ -231,12 +233,12 @@
 ----------------------------------------------------------------------------------------------
 	-->
         <a href="https://hexo.io/">Hexo</a></p>
-</footer>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
 
-<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 
 <script>
     // We expose some of the variables needed by the front end
