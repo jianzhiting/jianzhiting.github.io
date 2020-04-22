@@ -61,7 +61,7 @@ or{
 .post-content p img{
   width: 80%;
 }
-.valine .vemoticon-img{
+.v[data-class=v] .vwrap .vpreview frame, .v[data-class=v] .vwrap .vpreview iframe, .v[data-class=v] .vwrap .vpreview img{
   width: auto;
 }
 .v[data-class=v] .vcards .vcard .vcontent frame, .v[data-class=v] .vcards .vcard .vcontent iframe, .v[data-class=v] .vcards .vcard .vcontent img{
