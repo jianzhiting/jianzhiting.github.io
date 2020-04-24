@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jiziti.fun/Hexo/</loc>
+    
+    <lastmod>2020-04-24T14:43:16.219Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.jiziti.fun/about/index.html</loc>
     
     <lastmod>2020-04-22T08:58:55.080Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.jiziti.fun/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/</loc>
     
     <lastmod>2020-04-13T14:34:22.766Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.jiziti.fun/Hexo/</loc>
-    
-    <lastmod>2020-04-12T06:21:14.892Z</lastmod>
     
   </url>
   
