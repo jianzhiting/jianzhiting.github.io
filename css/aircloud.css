@@ -786,6 +786,7 @@ or{
   display: flex;
   flex-direction: row;
   background-color: white;
+  min-height: 80vh;
 }
 .index-container .index-left {
   width: 240px;
@@ -803,6 +804,7 @@ or{
     padding: 0 40px 0 10px;
     display: flex;
     flex-direction: row;
+    min-height: 80vh;
   }
   .index-container .index-left {
     width: 180px;
@@ -820,7 +822,7 @@ or{
     display: flex;
     flex-direction: column;
     padding: 0 25px 0 25px;
-    min-height: 0;
+    min-height: 80vh;
   }
   .index-container .index-left {
     width: 100%;
@@ -828,6 +830,7 @@ or{
   .index-container .index-middle {
     max-width: 100%;
     flex: 1;
+    min-height: 50vh;
   }
   .index-about {
     display: none;
