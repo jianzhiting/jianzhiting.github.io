@@ -44,7 +44,8 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar">
-            <img src="/img/avatar.jpg">
+            <!--<img src="/img/avatar.jpg" /> -->
+	    <img src="https://ae01.alicdn.com/kf/U3ff4bf85cf5e42fd8cd45de2620402f4U.jpg">
         </div>
         <div class="name">
             <i>JiZiTi</i>
@@ -111,7 +112,9 @@
         <!-- Main Content -->
         <div id="tag_cloud" class="tags">
     
-    <a href="#collection" title="collection" rel="4">collection</a>
+    <a href="#collection" title="collection" rel="5">collection</a>
+    
+    <a href="#read" title="read" rel="1">read</a>
     
     <a href="#math" title="math" rel="2">math</a>
     
@@ -126,6 +129,20 @@
                 <span class="fa fa-tag listing-seperator" id="collection">
                     <span class="tag-text">collection</span>
                 </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/推荐/">
+            <h2 class="post-title">
+                推荐
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
     
     <!-- <li class="listing-item">
     <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -177,6 +194,27 @@
         <a href="/数据挖掘知识整理/">
             <h2 class="post-title">
                 数据挖掘知识整理
+            </h2>
+            
+        </a>
+        <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+    </div>
+    
+</div>
+
+<div class="one-tag-list">
+                <span class="fa fa-tag listing-seperator" id="read">
+                    <span class="tag-text">read</span>
+                </span>
+    
+    <!-- <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li> -->
+    <div class="post-preview">
+        <a href="/短篇/">
+            <h2 class="post-title">
+                短篇
             </h2>
             
         </a>
