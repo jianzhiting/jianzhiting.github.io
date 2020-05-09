@@ -672,7 +672,6 @@ or{
 .post-content blockquote {
   font-family: Microsoft YaHei;
   font-size: 13px;
-  font-style: italic;
   width: 100%;
   margin: 0.25em 0;
   padding: 0 0;
@@ -686,7 +685,7 @@ or{
   padding: 0 12px 0 20px;
   border-left: 5px solid #c1c1c1;
   color: #666666;
-  background: #fcfcfc
+  background: #EEF0F4
 }
 .post-content a {
   text-decoration: none;
