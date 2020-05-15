@@ -190,14 +190,14 @@
 
 
 <!--Leancloud 操作库:-->
-<!--<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>-->
+<script src='//cdn1.lncld.net/static/js/3.0.4/av-min.js'></script>
 <!--Valine 的核心代码库:-->
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<!-- <script src='https://axu.nos-eastchina1.126.net/blogger/Valine.min.js'></script> -->
 <script>
 
 window.onload = function(){
 	new Valine({
+	    av: AV,
 	    el: '#gitalk-container',
 	    app_id: 'Kr42r8HXibSngdpUk9xxUMvp-MdYXbMMI',
 	    app_key: 'CoKtiY4Yde8LfhppRU3TVwg9',
@@ -226,7 +226,6 @@ window.onload = function(){
 	    },
 	    avatar: 'identicon',
 	    pageSize: 5,
-	    requiredFields: [],
 	});
 }
 </script>
